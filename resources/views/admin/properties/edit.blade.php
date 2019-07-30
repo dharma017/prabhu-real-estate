@@ -27,8 +27,15 @@
 
                     <div class="form-group form-float">
                         <div class="form-line">
-                            <input type="text" name="title" class="form-control" value="{{$property->title}}">
+                            <input type="text" name="title" class="form-control" value="{{$property->title}}" required>
                             <label class="form-label">Property Title</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group form-float">
+                        <div class="form-line">
+                            <input type="text" maxlength="7" name="code" title="Code must be 7 characters long" class="form-control" value="{{$property->code}}" required>
+                            <label class="form-label">Code</label>
                         </div>
                     </div>
 
@@ -55,6 +62,57 @@
 
                     <div class="form-group form-float">
                         <div class="form-line">
+                            <input type="number" class="form-control" name="living" value="{{$property->living}}" required>
+                            <label class="form-label">Living</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group form-float">
+                        <div class="form-line">
+                            <input type="number" class="form-control" name="kitchen" value="{{$property->kitchen}}" required>
+                            <label class="form-label">Kitchen</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group form-float">
+                        <div class="form-line">
+                            <input type="number" class="form-control" name="store_rooms" value="{{$property->store_rooms}}" required>
+                            <label class="form-label">Store Room</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group form-float">
+                        <div class="form-line">
+                            <input type="text" class="form-control" name="floors" value="{{$property->floors}}" >
+                            <label class="form-label">Floors</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group form-float">
+                        <div class="form-line">
+                            <input type="number" class="form-control" name="parking" value="{{$property->parking}}" required>
+                            <label class="form-label">Parking</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group form-float">
+                        <div class="form-line">
+                            <input type="number" class="form-control" name="build_year" value="{{$property->build_year}}">
+                            <label class="form-label">Build Year</label>
+                        </div>
+                        <div class="help-info">B.S.</div>
+
+                    </div>
+
+                    <div class="form-group form-float">
+                        <div class="form-line">
+                            <input type="text" class="form-control" name="build_type" value="{{$property->build_type}}">
+                            <label class="form-label">Build Type</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group form-float">
+                        <div class="form-line">
                             <input type="text" class="form-control" name="city" value="{{$property->city}}" required>
                             <label class="form-label">City</label>
                         </div>
@@ -69,15 +127,66 @@
 
                     <div class="form-group form-float">
                         <div class="form-line">
-                            <input type="number" class="form-control" name="house_area" value="{{$property->house_area}}" required>
+                            <input type="number" class="form-control" name="house_area" value="{{$property->house_area}}">
                             <label class="form-label">House Area</label>
                         </div>
                         <div class="help-info">Square Feet</div>
                     </div>
 
+                    <div class="form-group form-float">
+                        <div class="form-line">
+                            <input type="number" class="form-control" name="flat_area" value="{{$property->flat_area}}">
+                            <label class="form-label">Flat Area</label>
+                        </div>
+                        <div class="help-info">Square Feet</div>
+                    </div>
+
+                    <div class="form-group form-float">
+                        <div class="form-line">
+                            <input type="text" class="form-control" name="land_area" value="{{$property->land_area}}">
+                            <label class="form-label">Land Area</label>
+                        </div>
+                    </div>
+
                     <div class="form-group">
                         <input type="checkbox" id="featured" name="featured" class="filled-in" value="1" {{ $property->featured ? 'checked' : '' }}/>
                         <label for="featured">Featured</label>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="checkbox" id="assured" name="assured" class="filled-in" value="1" {{ $property->assured ? 'checked' : '' }}/>
+                        <label for="assured">Assured</label>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="checkbox" id="negotiable" name="negotiable" class="filled-in" value="1" {{ $property->negotiable ? 'checked' : '' }}/>
+                        <label for="negotiable">Negotiable</label>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="checkbox" id="ready_to_use" name="ready_to_use" class="filled-in" value="1" {{ $property->ready_to_use ? 'checked' : '' }}/>
+                        <label for="ready_to_use">Ready to use</label>
+                    </div>
+
+                    <div class="form-group form-float">
+                        <div class="form-line">
+                            <input type="text" class="form-control" name="contact_name" value="{{$property->contact_name}}" required>
+                            <label class="form-label">Contact Name</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group form-float">
+                        <div class="form-line">
+                            <input type="number" class="form-control" name="contact_number" value="{{$property->contact_number}}" required>
+                            <label class="form-label">Contact Number</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group form-float">
+                        <div class="form-line">
+                            <input type="number" class="form-control" name="alt_contact_number" value="{{$property->alt_contact_number}}">
+                            <label class="form-label">Alt. Contact Number</label>
+                        </div>
                     </div>
 
                     <hr>
@@ -87,6 +196,21 @@
                     </div>
 
                     <hr>
+
+                    <div class="form-group form-float">
+                        <div class="form-line">
+                            <input type="text" class="form-control" name="property_face" value="{{$property->property_face}}">
+                            <label class="form-label">Property face</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group form-float">
+                        <div class="form-line">
+                            <input type="text" class="form-control" name="road_access" value="{{$property->road_access}}">
+                            <label class="form-label">Road Access</label>
+                        </div>
+                    </div>
+
                     <div class="form-group">
                         <label for="tinymce-nearby">Nearby</label>
                         <textarea name="nearby" id="tinymce-nearby">{{$property->nearby}}</textarea>
@@ -131,6 +255,7 @@
                                 <option value="">-- Please select --</option>
                                 <option value="sale" {{ $property->purpose=='sale' ? 'selected' : '' }}>Sale</option>
                                 <option value="rent" {{ $property->purpose=='rent' ? 'selected' : '' }}>Rent</option>
+                                <option value="lease" {{ $property->purpose=='lease' ? 'selected' : '' }}>Lease</option>
                             </select>
                         </div>
                     </div>
@@ -140,8 +265,13 @@
                             <label>Select type</label>
                             <select name="type" class="form-control show-tick">
                                 <option value="">-- Please select --</option>
+                                <option value="bungalow" {{ $property->type=='bungalow' ? 'selected' : '' }}>Bungalow</option>
                                 <option value="house" {{ $property->type=='house' ? 'selected' : '' }}>House</option>
+                                <option value="land" {{ $property->type=='land' ? 'selected' : '' }}>Land</option>
+                                <option value="rent" {{ $property->type=='rent' ? 'selected' : '' }}>Rent</option>
                                 <option value="apartment" {{ $property->type=='apartment' ? 'selected' : '' }}>Apartment</option>
+                                <option value="colony" {{ $property->type=='colony' ? 'selected' : '' }}>Colony</option>
+                                <option value="flat" {{ $property->type=='flat' ? 'selected' : '' }}>Flat</option>
                             </select>
                         </div>
                     </div>
@@ -162,13 +292,13 @@
                         <h5>Google Map</h5>
                         <div class="form-group">
                             <div class="form-line">
-                                <input type="text" name="location_latitude" class="form-control" value="{{$property->location_latitude}}" required/>
+                                <input type="text" name="location_latitude" class="form-control" value="{{$property->location_latitude}}"/>
                                 <label class="form-label">Latitude</label>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="form-line">
-                                <input type="text" name="location_longitude" class="form-control" value="{{$property->location_longitude}}" required/>
+                                <input type="text" name="location_longitude" class="form-control" value="{{$property->location_longitude}}"/>
                                 <label class="form-label">Longitude</label>
                             </div>
                         </div>
