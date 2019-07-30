@@ -26,57 +26,166 @@
 
                     <div class="form-group form-float">
                         <div class="form-line">
-                            <input type="text" name="title" class="form-control" value="{{old('title')}}">
+                            <input type="text" name="title" class="form-control" value="{{old('title')}}" required>
                             <label class="form-label">Property Title</label>
                         </div>
                     </div>
 
                     <div class="form-group form-float">
                         <div class="form-line">
-                            <input type="number" class="form-control" name="price" required>
+                            <input type="text" maxlength="7" name="code" title="Code must be 7 characters long" class="form-control" value="{{old('code')}}" required>
+                            <label class="form-label">Code</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group form-float">
+                        <div class="form-line">
+                            <input type="number" class="form-control" name="price" value="{{old('price')}}" required>
                             <label class="form-label">Price</label>
                         </div>
                     </div>
 
                     <div class="form-group form-float">
                         <div class="form-line">
-                            <input type="number" class="form-control" name="bedroom" required>
+                            <input type="number" class="form-control" name="bedroom" value="{{old('bedroom')}}" required>
                             <label class="form-label">Bedroom</label>
                         </div>
                     </div>
 
                     <div class="form-group form-float">
                         <div class="form-line">
-                            <input type="number" class="form-control" name="bathroom" required>
+                            <input type="number" class="form-control" name="bathroom" value="{{old('bathroom')}}" required>
                             <label class="form-label">Bathroom</label>
                         </div>
                     </div>
 
                     <div class="form-group form-float">
                         <div class="form-line">
-                            <input type="text" class="form-control" name="city" required>
+                            <input type="number" class="form-control" name="living" value="{{old('living')}}" required>
+                            <label class="form-label">Living</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group form-float">
+                        <div class="form-line">
+                            <input type="number" class="form-control" name="kitchen" value="{{old('kitchen')}}" required>
+                            <label class="form-label">Kitchen</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group form-float">
+                        <div class="form-line">
+                            <input type="number" class="form-control" name="store_rooms" value="{{old('store_rooms')}}" required>
+                            <label class="form-label">Store Room</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group form-float">
+                        <div class="form-line">
+                            <input type="text" class="form-control" name="floors">
+                            <label class="form-label">Floors</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group form-float">
+                        <div class="form-line">
+                            <input type="number" class="form-control" name="parking" value="{{old('parking')}}" required>
+                            <label class="form-label">Parking</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group form-float">
+                        <div class="form-line">
+                            <input type="number" class="form-control" name="build_year">
+                            <label class="form-label">Build Year</label>
+                        </div>
+                        <div class="help-info">B.S.</div>
+
+                    </div>
+
+                    <div class="form-group form-float">
+                        <div class="form-line">
+                            <input type="text" class="form-control" name="build_type">
+                            <label class="form-label">Build Type</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group form-float">
+                        <div class="form-line">
+                            <input type="text" class="form-control" name="city" value="{{old('city')}}" required>
                             <label class="form-label">City</label>
                         </div>
                     </div>
 
                     <div class="form-group form-float">
                         <div class="form-line">
-                            <input type="text" class="form-control" name="address" required>
+                            <input type="text" class="form-control" name="address" value="{{old('address')}}" required>
                             <label class="form-label">Address</label>
                         </div>
                     </div>
 
                     <div class="form-group form-float">
                         <div class="form-line">
-                            <input type="number" class="form-control" name="area" required>
-                            <label class="form-label">Area</label>
+                            <input type="number" class="form-control" name="house_area">
+                            <label class="form-label">House Area</label>
                         </div>
                         <div class="help-info">Square Feet</div>
+                    </div>
+
+                    <div class="form-group form-float">
+                        <div class="form-line">
+                            <input type="number" class="form-control" name="flat_area">
+                            <label class="form-label">Flat Area</label>
+                        </div>
+                        <div class="help-info">Square Feet</div>
+                    </div>
+
+                    <div class="form-group form-float">
+                        <div class="form-line">
+                            <input type="text" class="form-control" name="land_area">
+                            <label class="form-label">Land Area</label>
+                        </div>
                     </div>
 
                     <div class="form-group">
                         <input type="checkbox" id="featured" name="featured" class="filled-in" value="1" />
                         <label for="featured">Featured</label>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="checkbox" id="assured" name="assured" class="filled-in" value="1" />
+                        <label for="assured">Assured</label>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="checkbox" id="negotiable" name="negotiable" class="filled-in" value="1" />
+                        <label for="negotiable">Negotiable</label>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="checkbox" id="ready_to_use" name="ready_to_use" class="filled-in" value="1" />
+                        <label for="ready_to_use">Ready to use</label>
+                    </div>
+
+                    <div class="form-group form-float">
+                        <div class="form-line">
+                            <input type="text" class="form-control" name="contact_name" value="{{old('contact_name')}}" required>
+                            <label class="form-label">Contact Name</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group form-float">
+                        <div class="form-line">
+                            <input type="number" class="form-control" name="contact_number" value="{{old('contact_number')}}" required>
+                            <label class="form-label">Contact Number</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group form-float">
+                        <div class="form-line">
+                            <input type="number" class="form-control" name="alt_contact_number">
+                            <label class="form-label">Alt. Contact Number</label>
+                        </div>
                     </div>
 
                     <hr>
@@ -86,6 +195,21 @@
                     </div>
 
                     <hr>
+
+                    <div class="form-group form-float">
+                        <div class="form-line">
+                            <input type="text" class="form-control" name="property_face">
+                            <label class="form-label">Property face</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group form-float">
+                        <div class="form-line">
+                            <input type="text" class="form-control" name="road_access">
+                            <label class="form-label">Road Access</label>
+                        </div>
+                    </div>
+
                     <div class="form-group">
                         <label for="tinymce-nearby">Nearby</label>
                         <textarea name="nearby" id="tinymce-nearby">{{old('nearby')}}</textarea>
@@ -126,12 +250,12 @@
                             <label>Select type</label>
                             <select name="type" class="form-control show-tick">
                                 <option value="">-- Please select --</option>
-                                <option value="banglow">Banglow</option>
+                                <option value="bungalow">Bungalow</option>
                                 <option value="house">House</option>
                                 <option value="land">Land</option>
                                 <option value="rent">Rent</option>
                                 <option value="apartment">Apartment</option>
-                                <option value="colony">Colonly</option>
+                                <option value="colony">Colony</option>
                                 <option value="flat">Flat</option>
                             </select>
                         </div>
@@ -157,13 +281,13 @@
                         <h5>Google Map</h5>
                         <div class="form-group">
                             <div class="form-line">
-                                <input type="text" name="location_latitude" class="form-control" required/>
+                                <input type="text" name="location_latitude" class="form-control"/>
                                 <label class="form-label">Latitude</label>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="form-line">
-                                <input type="text" name="location_longitude" class="form-control" required/>
+                                <input type="text" name="location_longitude" class="form-control"/>
                                 <label class="form-label">Longitude</label>
                             </div>
                         </div>
