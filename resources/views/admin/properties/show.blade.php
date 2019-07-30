@@ -26,6 +26,8 @@
                         {{$property->title}}
                         <br>
                         <small>Posted By <strong>{{$property->user->name}}</strong> on {{$property->created_at->toFormattedDateString()}}</small>
+                        <small>Code : {{$property->code}}</small>
+
                     </h2>
                 </div>
 
@@ -33,7 +35,7 @@
                     <ul class="list-group">
                         <li class="list-group-item">
                             <strong>Price : </strong>
-                            <span class="right"> &dollar;{{$property->price}}</span>
+                            <span class="right"> NPR.&nbsp;{{$property->price}}</span>
                         </li>
                         <li class="list-group-item">
                             <strong>Bedroom : </strong>
@@ -44,6 +46,36 @@
                             <span class="right">{{$property->bathroom}}</span>
                         </li>
                         <li class="list-group-item">
+                            <strong>Living : </strong>
+                            <span class="right">{{$property->living}}</span>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Kitchen : </strong>
+                            <span class="right">{{$property->kitchen}}</span>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Store Room : </strong>
+                            <span class="right">{{$property->store_rooms}}</span>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Floors : </strong>
+                            <span class="right">{{$property->floors}}</span>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Parking : </strong>
+                            <span class="right">{{$property->parking}}</span>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Build Year : </strong>
+                            <span class="right">{{$property->build_year}} B.S.</span>
+                        </li>
+
+                        <li class="list-group-item">
+                            <strong>Build Type : </strong>
+                            <span class="right">{{$property->build_type}}</span>
+                        </li>
+
+                        <li class="list-group-item">
                             <strong>City : </strong>
                             <span class="right">{{$property->city}}</span>
                         </li>
@@ -51,6 +83,31 @@
                             <strong>Address : </strong>
                             <span class="left">{{$property->address}}</span>
                         </li>
+                        <li class="list-group-item">
+                            <strong>House Area : </strong>
+                            <span class="left">{{$property->house_area}} Square Feet</span>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Flat Area : </strong>
+                            <span class="left">{{$property->flat_area}} Square Feet</span>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Land Area : </strong>
+                            <span class="left">{{$property->land_area}}</span>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Contact Name : </strong>
+                            <span class="left">{{$property->contact_name}}</span>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Contact Number : </strong>
+                            <span class="left">{{$property->contact_number}}</span>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Alt. Contact Number : </strong>
+                            <span class="left">{{$property->alt_contact_number}}</span>
+                        </li>
+
                     </ul>
                 </div>
 
