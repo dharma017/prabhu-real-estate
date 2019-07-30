@@ -81,31 +81,31 @@
                         </li>
                         <li class="list-group-item">
                             <strong>Address : </strong>
-                            <span class="left">{{$property->address}}</span>
+                            <span class="right">{{$property->address}}</span>
                         </li>
                         <li class="list-group-item">
                             <strong>House Area : </strong>
-                            <span class="left">{{$property->house_area}} Square Feet</span>
+                            <span class="right">{{$property->house_area}} Square Feet</span>
                         </li>
                         <li class="list-group-item">
                             <strong>Flat Area : </strong>
-                            <span class="left">{{$property->flat_area}} Square Feet</span>
+                            <span class="right">{{$property->flat_area}} Square Feet</span>
                         </li>
                         <li class="list-group-item">
                             <strong>Land Area : </strong>
-                            <span class="left">{{$property->land_area}}</span>
+                            <span class="right">{{$property->land_area}}</span>
                         </li>
                         <li class="list-group-item">
                             <strong>Contact Name : </strong>
-                            <span class="left">{{$property->contact_name}}</span>
+                            <span class="right">{{$property->contact_name}}</span>
                         </li>
                         <li class="list-group-item">
                             <strong>Contact Number : </strong>
-                            <span class="left">{{$property->contact_number}}</span>
+                            <span class="right">{{$property->contact_number}}</span>
                         </li>
                         <li class="list-group-item">
                             <strong>Alt. Contact Number : </strong>
-                            <span class="left">{{$property->alt_contact_number}}</span>
+                            <span class="right">{{$property->alt_contact_number}}</span>
                         </li>
 
                     </ul>

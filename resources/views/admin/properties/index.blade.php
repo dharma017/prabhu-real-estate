@@ -37,8 +37,8 @@
                                     <th>Purpose</th>
                                     <th>Beds</th>
                                     <th>Baths</th>
-                                    <th><i class="material-icons small">comment</i></th>
-                                    <th><i class="material-icons small">stars</i></th>
+{{--                                    <th><i class="material-icons small">comment</i></th>--}}
+{{--                                    <th><i class="material-icons small">views</i></th>--}}
                                     <th width="150">Action</th>
                                 </tr>
                             </thead>
@@ -63,15 +63,15 @@
                                     <td>{{$property->bedroom}}</td>
                                     <td>{{$property->bathroom}}</td>
 
-                                    <td>
-                                        <span class="badge bg-indigo">{{ $property->comments_count }}</span>
-                                    </td>
+{{--                                    <td>--}}
+{{--                                        <span class="badge bg-indigo">{{ $property->comments_count }}</span>--}}
+{{--                                    </td>--}}
 
-                                    <td>
-                                        @if($property->featured == true)
-                                            <span class="badge bg-indigo"><i class="material-icons small">star</i></span>
-                                        @endif
-                                    </td>
+{{--                                    <td>--}}
+{{--                                        @if($property->featured == true)--}}
+{{--                                            <span class="badge bg-indigo"><i class="material-icons small">star</i></span>--}}
+{{--                                        @endif--}}
+{{--                                    </td>--}}
 
                                     <td class="text-center">
                                         <a href="{{route('admin.properties.show',$property->slug)}}" class="btn btn-success btn-sm waves-effect">
