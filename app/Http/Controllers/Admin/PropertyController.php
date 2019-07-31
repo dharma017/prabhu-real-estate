@@ -271,6 +271,8 @@ class PropertyController extends Controller
         $property->house_area = $request->house_area;
         $property->land_area = $request->land_area;
 
+        $property->available = $request->available == 1;
+
         if (isset($request->featured)) {
             $property->featured = true;
         }

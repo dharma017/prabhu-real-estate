@@ -35,8 +35,8 @@
                                     <th>Author</th>
                                     <th>Type</th>
                                     <th>Purpose</th>
-                                    <th>Beds</th>
-                                    <th>Baths</th>
+                                    <th><i class="material-icons">visibility</i></th>
+                                    <th>Is Approved</th>
 {{--                                    <th><i class="material-icons small">comment</i></th>--}}
 {{--                                    <th><i class="material-icons small">views</i></th>--}}
                                     <th width="150">Action</th>
@@ -60,8 +60,14 @@
                                     <td>{{$property->user->name}}</td>
                                     <td>{{$property->type}}</td>
                                     <td>{{$property->purpose}}</td>
-                                    <td>{{$property->bedroom}}</td>
-                                    <td>{{$property->bathroom}}</td>
+                                    <td>{{$property->view_count}}</td>
+                                    <td>
+                                        @if($property->available == true)
+                                            <span class="badge bg-green">Availabe</span>
+                                        @else
+                                            <span class="badge bg-pink">Sold</span>
+                                        @endif
+                                    </td>
 
 {{--                                    <td>--}}
 {{--                                        <span class="badge bg-indigo">{{ $property->comments_count }}</span>--}}

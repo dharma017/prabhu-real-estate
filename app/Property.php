@@ -46,6 +46,7 @@ class Property extends Model
         'road_access',
         'nearby',
         'view_count',
+        'available',
     ];
 
     public function features()

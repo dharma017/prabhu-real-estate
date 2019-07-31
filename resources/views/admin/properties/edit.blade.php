@@ -247,6 +247,10 @@
                     <h2>SELECT</h2>
                 </div>
                 <div class="body">
+                    <div class="form-group">
+                        <input type="checkbox" id="available" name="available" class="filled-in" value="1" {{ $property->available ? 'checked' : '' }}/>
+                        <label for="available">Available</label>
+                    </div>
 
                     <div class="form-group form-float">
                         <div class="form-line {{$errors->has('purpose') ? 'focused error' : ''}}">

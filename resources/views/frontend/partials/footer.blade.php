@@ -34,20 +34,20 @@
                         <a href="{{ route('property') }}" class="grey-text text-lighten-3">Properties</a>
                     </li>
 
-                    <li class="uppercase {{ Request::is('agents*') ? 'underline' : '' }}">
-                        <a href="{{ route('agents') }}" class="grey-text text-lighten-3">Agents</a>
-                    </li>
-
-                    <li class="uppercase {{ Request::is('gallery*') ? 'underline' : '' }}">
-                        <a href="{{ route('gallery') }}" class="grey-text text-lighten-3">Gallery</a>
-                    </li>
-
-                    <li class="uppercase {{ Request::is('blog*') ? 'underline' : '' }}">
-                        <a href="{{ route('blog') }}" class="grey-text text-lighten-3">Blog</a>
+                    <li class="uppercase {{ Request::is('pricing') ? 'underline' : '' }}">
+                        <a href="" class="grey-text text-lighten-3">Pricing</a>
                     </li>
 
                     <li class="uppercase {{ Request::is('contact') ? 'underline' : '' }}">
-                        <a href="{{ route('contact') }}" class="grey-text text-lighten-3">Contact</a>
+                        <a href="{{ route('contact') }}" class="grey-text text-lighten-3">Service Request</a>
+                    </li>
+
+                    <li class="uppercase {{ Request::is('about-us') ? 'underline' : '' }}">
+                        <a href="" class="grey-text text-lighten-3">About Us</a>
+                    </li>
+
+                    <li class="uppercase {{ Request::is('contact-us') ? 'underline' : '' }}">
+                        <a href="" class="grey-text text-lighten-3">Contact Us</a>
                     </li>
                 </ul>
             </div>
@@ -58,7 +58,7 @@
             @if(isset($footersettings[0]) && $footersettings[0]['footer'])
                 {{ $footersettings[0]['footer'] }}
             @else
-                © 2018 Developer Canvas Studio.
+                © 2019 Developer Canvas Studio.
             @endif
 
             @if(isset($footersettings[0]) && $footersettings[0]['facebook'])

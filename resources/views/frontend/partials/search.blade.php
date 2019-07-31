@@ -17,8 +17,13 @@
                         <div class="input-field col s12 m2">
                             <select name="type" class="browser-default">
                                 <option value="" disabled selected>Choose Type</option>
-                                <option value="apartment">Apartment</option>
+                                <option value="bungalow">Bungalow</option>
                                 <option value="house">House</option>
+                                <option value="land">Land</option>
+                                <option value="rent">Rent</option>
+                                <option value="apartment">Apartment</option>
+                                <option value="colony">Colony</option>
+                                <option value="flat">Flat</option>
                             </select>
                         </div>
 
@@ -27,6 +32,7 @@
                                 <option value="" disabled selected>Purpose</option>
                                 <option value="rent">Rent</option>
                                 <option value="sale">Sale</option>
+                                <option value="lease">Lease</option>
                             </select>
                         </div>
 

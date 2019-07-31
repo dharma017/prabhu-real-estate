@@ -21,23 +21,23 @@
                     </li>
 
                     <li class="{{ Request::is('property*') ? 'active' : '' }}">
-                        <a href="{{ route('property') }}">Properties</a>
+                        <a href="{{ route('property') }}">Property</a>
                     </li>
 
-                    <li class="{{ Request::is('agents*') ? 'active' : '' }}">
-                        <a href="{{ route('agents') }}">Agents</a>
+                    <li class="{{ Request::is('contact*') ? 'active' : '' }}">
+                        <a href="{{ route('contact') }}">Pricing</a>
                     </li>
 
-                    <li class="{{ Request::is('gallery') ? 'active' : '' }}">
-                        <a href="{{ route('gallery') }}">Gallery</a>
+                    <li class="{{ Request::is('service-request*') ? 'active' : '' }}">
+                        <a href="">Service Request</a>
                     </li>
 
-                    <li class="{{ Request::is('blog*') ? 'active' : '' }}">
-                        <a href="{{ route('blog') }}">Blog</a>
+                    <li class="{{ Request::is('about-us*') ? 'active' : '' }}">
+                        <a href="">About Us</a>
                     </li>
 
-                    <li class="{{ Request::is('contact') ? 'active' : '' }}">
-                        <a href="{{ route('contact') }}">Contact</a>
+                    <li class="{{ Request::is('contact-us') ? 'active' : '' }}">
+                        <a href="{{ route('contact') }}">Contact Us</a>
                     </li>
 
                     @guest
@@ -56,6 +56,9 @@
                                 @if(Auth::user()->role->id == 1)
                                     <a href="{{ route('admin.dashboard') }}" class="indigo-text">
                                         <i class="material-icons">person</i>Profile
+                                    </a>
+                                    <a href="{{ route('agents') }}" class="indigo-text">
+                                        <i class="material-icons">people</i>Agents
                                     </a>
                                 @elseif(Auth::user()->role->id == 2)
                                     <a href="{{ route('agent.dashboard') }}" class="indigo-text">
@@ -92,23 +95,23 @@
         </li>
 
         <li class="{{ Request::is('property*') ? 'active' : '' }}">
-            <a href="{{ route('property') }}">Properties</a>
+            <a href="{{ route('property') }}">Property</a>
         </li>
 
-        <li class="{{ Request::is('agents*') ? 'active' : '' }}">
-            <a href="{{ route('agents') }}">Agents</a>
+        <li class="{{ Request::is('pricing') ? 'active' : '' }}">
+            <a href="">Pricing</a>
         </li>
 
-        <li class="{{ Request::is('gallery') ? 'active' : '' }}">
-            <a href="{{ route('gallery') }}">Gallery</a>
+        <li class="{{ Request::is('contact*') ? 'active' : '' }}">
+            <a href="{{ route('contact') }}">Service Request</a>
         </li>
 
-        <li class="{{ Request::is('blog*') ? 'active' : '' }}">
-            <a href="{{ route('blog') }}">Blog</a>
+        <li class="{{ Request::is('about-us') ? 'active' : '' }}">
+            <a href="">About Us</a>
         </li>
 
-        <li class="{{ Request::is('contact') ? 'active' : '' }}">
-            <a href="{{ route('contact') }}">Contact</a>
+        <li class="{{ Request::is('contact-us') ? 'active' : '' }}">
+            <a href="">Contact Us</a>
         </li>
     </ul>
 
