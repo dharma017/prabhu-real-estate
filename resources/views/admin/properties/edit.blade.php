@@ -288,6 +288,18 @@
                         @endforeach
                     </div>
 
+                    <h5>Amenities</h5>
+                    <div class="form-group demo-checkbox">
+                        @foreach($amenities as $amenity)
+                            <input type="checkbox" id="amenities-{{$amenity->id}}" name="amenities[]" class="filled-in chk-col-indigo" value="{{$amenity->id}}"
+                            @foreach($property->amenities as $checked)
+                                {{ ($checked->id == $amenity->id) ? 'checked' : '' }}
+                                    @endforeach
+                            />
+                            <label for="amenities-{{$amenity->id}}">{{$amenity->name}}</label>
+                        @endforeach
+                    </div>
+
                     <div class="clearfix">
                         <h5>Google Map</h5>
                         <div class="form-group">

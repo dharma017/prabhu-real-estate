@@ -269,6 +269,14 @@
                         @endforeach
                     </div>
 
+                    <h5>Amenities</h5>
+                    <div class="form-group demo-checkbox">
+                        @foreach($amenities as $amenity)
+                            <input type="checkbox" id="amenities-{{$amenity->id}}" name="amenities[]" class="filled-in chk-col-indigo" value="{{$amenity->id}}" />
+                            <label for="amenities-{{$amenity->id}}">{{$amenity->name}}</label>
+                        @endforeach
+                    </div>
+
                     <div class="form-group form-float">
                         <div class="form-line">
                             <input type="text" class="form-control" name="video">

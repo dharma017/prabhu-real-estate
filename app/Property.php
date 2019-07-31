@@ -73,4 +73,9 @@ class Property extends Model
         return $this->hasMany(Rating::class, 'property_id');
     }
 
+    public function amenities()
+    {
+        return $this->belongsToMany(Amenity::class)->withTimestamps();
+    }
+
 }

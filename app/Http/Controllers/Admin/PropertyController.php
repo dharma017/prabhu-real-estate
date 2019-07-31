@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Amenity;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Property;
@@ -30,8 +31,9 @@ class PropertyController extends Controller
     public function create()
     {
         $features = Feature::all();
+        $amenities = Amenity::all();
 
-        return view('admin.properties.create', compact('features'));
+        return view('admin.properties.create', compact('features', 'amenities'));
     }
 
 
@@ -139,6 +141,7 @@ class PropertyController extends Controller
         $property->save();
 
         $property->features()->attach($request->features);
+        $property->amenities()->attach($request->amenities);
 
 
         $gallary = $request->file('gallaryimage');
@@ -179,11 +182,12 @@ class PropertyController extends Controller
     public function edit(Property $property)
     {
         $features = Feature::all();
+        $amenities = Amenity::all();
         $property = Property::find($property->id);
 
         $videoembed = $this->convertYoutube($property->video);
 
-        return view('admin.properties.edit', compact('property', 'features', 'videoembed'));
+        return view('admin.properties.edit', compact('property', 'features', 'videoembed', 'amenities'));
     }
 
 
@@ -298,6 +302,7 @@ class PropertyController extends Controller
         $property->save();
 
         $property->features()->sync($request->features);
+        $property->amenities()->sync($request->amenities);
 
         $gallary = $request->file('gallaryimage');
         if ($gallary) {
@@ -349,6 +354,7 @@ class PropertyController extends Controller
         }
 
         $property->features()->detach();
+        $property->amenities()->detach();
         $property->comments()->delete();
 
         Toastr::success('message', 'Property deleted successfully.');
