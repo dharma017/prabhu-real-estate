@@ -29,7 +29,7 @@
                     </li>
 
                     <li class="{{ Request::is('service-request*') ? 'active' : '' }}">
-                        <a href="">Service Request</a>
+                        <a href="{{ route('service-request') }}">Service Request</a>
                     </li>
 
                     <li class="{{ Request::is('about-us*') ? 'active' : '' }}">

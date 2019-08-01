@@ -29,6 +29,9 @@ Route::get('/blog/author/{username}', 'PagesController@blogAuthor')->name('blog.
 Route::get('/contact', 'PagesController@contact')->name('contact');
 Route::post('/contact', 'PagesController@messageContact')->name('contact.message');
 
+Route::get('/service-request', 'PagesController@serviceRequest')->name('service-request');
+Route::post('/service-request', 'PagesController@messageServiceRequest')->name('service-request.message');
+
 
 Auth::routes();
 

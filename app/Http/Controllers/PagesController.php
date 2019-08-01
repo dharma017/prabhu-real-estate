@@ -193,6 +193,43 @@ class PagesController extends Controller
         return view('pages.contact');
     }
 
+    public function serviceRequest()
+    {
+        return view('pages.service-request');
+    }
+
+    public function messageServiceRequest(Request $request)
+    {
+        $request->validate([
+            'name'      => 'required',
+            'email'     => 'required',
+            'phone'     => 'required',
+            'purpose'   => 'required',
+            'message'   => 'required'
+        ]);
+
+        $message  = $request->message;
+        $mailfrom = $request->email;
+
+        // Message::create([
+        //     'agent_id'  => 1,
+        //     'name'      => $request->name,
+        //     'email'     => $mailfrom,
+        //     'phone'     => $request->phone,
+        //     'message'   => $message
+        // ]);
+
+        $adminname  = User::find(1)->name;
+        $mailto     = $request->mailto;
+
+        Mail::to($mailto)->send(new Contact($message,$adminname,$mailfrom));
+
+        if($request->ajax()){
+            return response()->json(['message' => 'Message send successfully.']);
+        }
+
+    }
+
     public function messageContact(Request $request)
     {
         $request->validate([
