@@ -1,11 +1,72 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "368ae87cfe6017c160bc53b2a44918db",
+    "content-hash": "0250a8c929511ff844b947668750fe1b",
     "packages": [
+        {
+            "name": "akaunting/money",
+            "version": "1.0.11",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/akaunting/money.git",
+                "reference": "52d5f3a8d30354dbc07b558263df0560dfa85bf1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/akaunting/money/zipball/52d5f3a8d30354dbc07b558263df0560dfa85bf1",
+                "reference": "52d5f3a8d30354dbc07b558263df0560dfa85bf1",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": ">=5.2 <6.0",
+                "illuminate/view": ">=5.2 <6.0",
+                "php": ">=5.5.9"
+            },
+            "require-dev": {
+                "mockery/mockery": "~0.9",
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Akaunting\\Money\\Provider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Akaunting\\Money\\": "./src"
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Denis Duliçi",
+                    "email": "info@akaunting.com",
+                    "homepage": "https://akaunting.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Currency formatting and conversion package for Laravel.",
+            "keywords": [
+                "convert",
+                "currency",
+                "format",
+                "laravel",
+                "money"
+            ],
+            "time": "2019-04-09T08:29:48+00:00"
+        },
         {
             "name": "brian2694/laravel-toastr",
             "version": "5.5.2",

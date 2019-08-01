@@ -65,7 +65,7 @@
                                 </div>
 
                                 <h5>
-                                    &dollar;{{ $property->price }}
+                                    {{@money_format_nep($property->price)}}
                                     <div class="right" id="propertyrating-{{$property->id}}"></div>
                                 </h5>
                             </div>
@@ -134,7 +134,7 @@
                                 </div>
 
                                 <h5>
-                                    &dollar;{{ $property->price }}
+                                    {{@money_format_nep($property->price)}}
                                     <div class="right" id="propertyrating-{{$property->id}}"></div>
                                 </h5>
                             </div>
@@ -203,7 +203,7 @@
                                 </div>
 
                                 <h5>
-                                    &dollar;{{ $property->price }}
+                                    {{@money_format_nep($property->price)}}
                                     <div class="right" id="propertyrating-{{$property->id}}"></div>
                                 </h5>
                             </div>
@@ -272,7 +272,7 @@
                                 </div>
 
                                 <h5>
-                                    &dollar;{{ $property->price }}
+                                    {{@money_format_nep($property->price)}}
                                     <div class="right" id="propertyrating-{{$property->id}}"></div>
                                 </h5>
                             </div>

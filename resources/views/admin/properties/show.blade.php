@@ -35,7 +35,7 @@
                     <ul class="list-group">
                         <li class="list-group-item">
                             <strong>Price : </strong>
-                            <span class="right"> NPR.&nbsp;{{$property->price}}</span>
+                            <span class="right"> {{@money_format_nep($property->price)}}</span>
                         </li>
                         <li class="list-group-item">
                             <strong>Bedroom : </strong>

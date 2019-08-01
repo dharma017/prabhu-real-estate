@@ -71,12 +71,13 @@
 
                         <span class="btn btn-small disabled b-r-20">Bedroom: {{ $property->bedroom}} </span>
                         <span class="btn btn-small disabled b-r-20">Bathroom: {{ $property->bathroom}} </span>
-                        <span class="btn btn-small disabled b-r-20">Area: {{ $property->area}} Sq Ft</span>
+                        <span class="btn btn-small disabled b-r-20">House Area: {{ $property->area}} Sq Ft</span>
                     </div>
                 </div>
                 <div class="col s12 m4">
                     <div>
-                        <h4 class="left">${{ $property->price }}</h4>
+                        <h4 class="left">{{@money_format_nep($property->price)}}</h4>
+                        <span class="left">({{@money_in_words($property->price)}})</span>
                         <button type="button" class="btn btn-small m-t-25 right disabled b-r-20"> For {{ $property->purpose }}</button>
                     </div>
                 </div>
@@ -112,16 +113,18 @@
                         @endif
                     </div>
 
-                    <div class="card-no-box-shadow card">
-                        <div class="p-15 grey lighten-4">
-                            <h5 class="m-0">Floor Plan</h5>
+                    @if($property->floor_plan)
+                        <div class="card-no-box-shadow card">
+                            <div class="p-15 grey lighten-4">
+                                <h5 class="m-0">Floor Plan</h5>
+                            </div>
+                            <div class="card-image">
+                                @if(Storage::disk('public')->exists('property/'.$property->floor_plan) && $property->floor_plan)
+                                    <img src="{{Storage::url('property/'.$property->floor_plan)}}" alt="{{$property->title}}" class="imgresponsive">
+                                @endif
+                            </div>
                         </div>
-                        <div class="card-image">
-                            @if(Storage::disk('public')->exists('property/'.$property->floor_plan) && $property->floor_plan)
-                                <img src="{{Storage::url('property/'.$property->floor_plan)}}" alt="{{$property->title}}" class="imgresponsive">
-                            @endif
-                        </div>
-                    </div>
+                    @endif
 
                     <div class="card-no-box-shadow card">
                         <div class="p-15 grey lighten-4">
@@ -152,83 +155,83 @@
                         </div>
                     </div>
 
-                    <div class="card-no-box-shadow card">
-                        <div class="p-15 grey lighten-4">
-                            <h5 class="m-0">
-                                {{ $property->comments_count }} Comments
-                                @auth
-                                <div class="right" id="rateYo"></div>
-                                @endauth
-                            </h5>
-                        </div>
-                        <div class="single-narebay p-15">
+{{--                    <div class="card-no-box-shadow card">--}}
+{{--                        <div class="p-15 grey lighten-4">--}}
+{{--                            <h5 class="m-0">--}}
+{{--                                {{ $property->comments_count }} Comments--}}
+{{--                                @auth--}}
+{{--                                <div class="right" id="rateYo"></div>--}}
+{{--                                @endauth--}}
+{{--                            </h5>--}}
+{{--                        </div>--}}
+{{--                        <div class="single-narebay p-15">--}}
 
-                            @foreach($property->comments as $comment)
+{{--                            @foreach($property->comments as $comment)--}}
 
-                                @if($comment->parent_id == NULL)
-                                    <div class="comment">
-                                        <div class="author-image">
-                                            <span style="background-image:url({{ Storage::url('users/'.$comment->users->image) }});"></span>
-                                        </div>
-                                        <div class="content">
-                                            <div class="author-name">
-                                                <strong>{{ $comment->users->name }}</strong>
-                                                <span class="time">{{ $comment->created_at->diffForHumans() }}</span>
+{{--                                @if($comment->parent_id == NULL)--}}
+{{--                                    <div class="comment">--}}
+{{--                                        <div class="author-image">--}}
+{{--                                            <span style="background-image:url({{ Storage::url('users/'.$comment->users->image) }});"></span>--}}
+{{--                                        </div>--}}
+{{--                                        <div class="content">--}}
+{{--                                            <div class="author-name">--}}
+{{--                                                <strong>{{ $comment->users->name }}</strong>--}}
+{{--                                                <span class="time">{{ $comment->created_at->diffForHumans() }}</span>--}}
 
-                                                @auth
-                                                    <span id="commentreplay" class="right replay" data-commentid="{{ $comment->id }}">Replay</span>
-                                                @endauth
+{{--                                                @auth--}}
+{{--                                                    <span id="commentreplay" class="right replay" data-commentid="{{ $comment->id }}">Replay</span>--}}
+{{--                                                @endauth--}}
 
-                                            </div>
-                                            <div class="author-comment">
-                                                {{ $comment->body }}
-                                            </div>
-                                        </div>
-                                        <div id="procomment-{{$comment->id}}"></div>
-                                    </div>
-                                @endif
+{{--                                            </div>--}}
+{{--                                            <div class="author-comment">--}}
+{{--                                                {{ $comment->body }}--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                        <div id="procomment-{{$comment->id}}"></div>--}}
+{{--                                    </div>--}}
+{{--                                @endif--}}
 
-                                @foreach($comment->children as $commentchildren)
-                                    <div class="comment children">
-                                        <div class="author-image">
-                                            <span style="background-image:url({{ Storage::url('users/'.$commentchildren->users->image) }});"></span>
-                                        </div>
-                                        <div class="content">
-                                            <div class="author-name">
-                                                <strong>{{ $commentchildren->users->name }}</strong>
-                                                <span class="time">{{ $commentchildren->created_at->diffForHumans() }}</span>
-                                            </div>
-                                            <div class="author-comment">
-                                                {{ $commentchildren->body }}
-                                            </div>
-                                        </div>
-                                    </div>
-                                @endforeach
+{{--                                @foreach($comment->children as $commentchildren)--}}
+{{--                                    <div class="comment children">--}}
+{{--                                        <div class="author-image">--}}
+{{--                                            <span style="background-image:url({{ Storage::url('users/'.$commentchildren->users->image) }});"></span>--}}
+{{--                                        </div>--}}
+{{--                                        <div class="content">--}}
+{{--                                            <div class="author-name">--}}
+{{--                                                <strong>{{ $commentchildren->users->name }}</strong>--}}
+{{--                                                <span class="time">{{ $commentchildren->created_at->diffForHumans() }}</span>--}}
+{{--                                            </div>--}}
+{{--                                            <div class="author-comment">--}}
+{{--                                                {{ $commentchildren->body }}--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                @endforeach--}}
 
-                            @endforeach
+{{--                            @endforeach--}}
 
-                            @auth
-                                <div class="comment-box">
-                                    <h6>Leave a comment</h6>
-                                    <form action="{{ route('property.comment',$property->id) }}" method="POST">
-                                        @csrf
-                                        <input type="hidden" name="parent" value="0">
+{{--                            @auth--}}
+{{--                                <div class="comment-box">--}}
+{{--                                    <h6>Leave a comment</h6>--}}
+{{--                                    <form action="{{ route('property.comment',$property->id) }}" method="POST">--}}
+{{--                                        @csrf--}}
+{{--                                        <input type="hidden" name="parent" value="0">--}}
 
-                                        <textarea name="body" class="box"></textarea>
-                                        <input type="submit" class="btn indigo" value="Comment">
-                                    </form>
-                                </div>
-                            @endauth
+{{--                                        <textarea name="body" class="box"></textarea>--}}
+{{--                                        <input type="submit" class="btn indigo" value="Comment">--}}
+{{--                                    </form>--}}
+{{--                                </div>--}}
+{{--                            @endauth--}}
 
-                            @guest 
-                                <div class="comment-login">
-                                    <h6>Please Login to comment</h6>
-                                    <a href="{{ route('login') }}" class="btn indigo">Login</a>
-                                </div>
-                            @endguest
-                            
-                        </div>
-                    </div>
+{{--                            @guest --}}
+{{--                                <div class="comment-login">--}}
+{{--                                    <h6>Please Login to comment</h6>--}}
+{{--                                    <a href="{{ route('login') }}" class="btn indigo">Login</a>--}}
+{{--                                </div>--}}
+{{--                            @endguest--}}
+{{--                            --}}
+{{--                        </div>--}}
+{{--                    </div>--}}
 
                 </div>
                 {{-- End ./COL M8 --}}
@@ -323,7 +326,7 @@
                                                 <div class="card-stacked">
                                                     <div class="p-l-10 p-r-10 indigo-text">
                                                         <h6 title="{{$property_related->title}}">{{ str_limit( $property_related->title, 18 ) }}</h6>
-                                                        <strong>&dollar;{{$property_related->price}}</strong>
+                                                        <strong>{{@money_format_nep($property_related->price)}}</strong>
                                                     </div>
                                                 </div>
                                             </div>
