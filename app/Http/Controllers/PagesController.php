@@ -39,10 +39,10 @@ class PagesController extends Controller
         $rating = Rating::where('property_id',$property->id)->where('type','property')->avg('rating');                   
 
         $relatedproperty = Property::latest()
-                    ->where('purpose', $property->purpose)
-                    ->where('type', $property->type)
-                    ->where('bedroom', $property->bedroom)
-                    ->where('bathroom', $property->bathroom)
+                    // ->where('purpose', $property->purpose)
+                    // ->where('type', $property->type)
+                    // ->where('bedroom', $property->bedroom)
+                    // ->where('bathroom', $property->bathroom)
                     ->where('id', '!=' , $property->id)
                     ->take(5)->get();
 
