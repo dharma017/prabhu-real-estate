@@ -39,7 +39,7 @@
                     </li>
 
                     <li class="uppercase {{ Request::is('contact') ? 'underline' : '' }}">
-                        <a href="{{ route('contact') }}" class="grey-text text-lighten-3">Service Request</a>
+                        <a href="{{ route('service-request') }}" class="grey-text text-lighten-3">Service Request</a>
                     </li>
 
                     <li class="uppercase {{ Request::is('about-us') ? 'underline' : '' }}">

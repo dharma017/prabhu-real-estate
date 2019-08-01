@@ -32,6 +32,11 @@ Route::post('/contact', 'PagesController@messageContact')->name('contact.message
 Route::get('/service-request', 'PagesController@serviceRequest')->name('service-request');
 Route::post('/service-request', 'PagesController@messageServiceRequest')->name('service-request.message');
 
+Route::get('/pricing', 'PagesController@pricing')->name('pricing');
+
+Route::get('/about-us', 'PagesController@aboutUs')->name('about-us');
+
+
 
 Auth::routes();
 

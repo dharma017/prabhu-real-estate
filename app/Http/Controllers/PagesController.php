@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Page;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Mail;
@@ -196,6 +197,18 @@ class PagesController extends Controller
     public function serviceRequest()
     {
         return view('pages.service-request');
+    }
+
+    public function pricing()
+    {
+        $page = Page::where('slug', 'pricing')->first();
+        return view('pages.pricing', compact('page'));
+    }
+
+    public function aboutUs()
+    {
+        $page = Page::where('slug', 'about-us')->first();
+        return view('pages.about-us', compact('page'));
     }
 
     public function messageServiceRequest(Request $request)
