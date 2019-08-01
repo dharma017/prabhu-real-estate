@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Agent;
 
+use App\Amenity;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
@@ -29,8 +30,9 @@ class PropertyController extends Controller
     public function create()
     {   
         $features = Feature::all();
+        $amenities = Amenity::all();
 
-        return view('agent.properties.create',compact('features'));
+        return view('agent.properties.create',compact('features', 'amenities'));
     }
 
 

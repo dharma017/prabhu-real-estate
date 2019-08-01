@@ -78,45 +78,45 @@
 
                 </div>
 
-                <div class="col s12 m4">
-                    <div class="clearfix">
+{{--                <div class="col s12 m4">--}}
+{{--                    <div class="clearfix">--}}
 
-                        <div>
-                            <ul class="collection with-header m-t-0">
-                                <li class="collection-header grey lighten-4">
-                                    <h5 class="m-0">Contact with Agent</h5>
-                                </li>
-                                <li class="collection agent-message">
-                                    <form class="agent-message-box" action="" method="POST">
-                                        @csrf
-                                        <input type="hidden" name="agent_id" value="{{ $agent->id }}">
-                                        <input type="hidden" name="user_id" value="{{ auth()->id() }}">
-                                            
-                                        <div class="box">
-                                            <input type="text" name="name" placeholder="Your Name">
-                                        </div>
-                                        <div class="box">
-                                            <input type="email" name="email" placeholder="Your Email">
-                                        </div>
-                                        <div class="box">
-                                            <input type="number" name="phone" placeholder="Your Phone">
-                                        </div>
-                                        <div class="box">
-                                            <textarea name="message" placeholder="Your Msssage"></textarea>
-                                        </div>
-                                        <div class="box">
-                                            <button id="msgsubmitbtn" class="btn waves-effect waves-light w100 indigo" type="submit">
-                                                SEND
-                                                <i class="material-icons left">send</i>
-                                            </button>
-                                        </div>
-                                    </form>
-                                </li>
-                            </ul>
-                        </div>
+{{--                        <div>--}}
+{{--                            <ul class="collection with-header m-t-0">--}}
+{{--                                <li class="collection-header grey lighten-4">--}}
+{{--                                    <h5 class="m-0">Contact with Agent</h5>--}}
+{{--                                </li>--}}
+{{--                                <li class="collection agent-message">--}}
+{{--                                    <form class="agent-message-box" action="" method="POST">--}}
+{{--                                        @csrf--}}
+{{--                                        <input type="hidden" name="agent_id" value="{{ $agent->id }}">--}}
+{{--                                        <input type="hidden" name="user_id" value="{{ auth()->id() }}">--}}
+{{--                                            --}}
+{{--                                        <div class="box">--}}
+{{--                                            <input type="text" name="name" placeholder="Your Name">--}}
+{{--                                        </div>--}}
+{{--                                        <div class="box">--}}
+{{--                                            <input type="email" name="email" placeholder="Your Email">--}}
+{{--                                        </div>--}}
+{{--                                        <div class="box">--}}
+{{--                                            <input type="number" name="phone" placeholder="Your Phone">--}}
+{{--                                        </div>--}}
+{{--                                        <div class="box">--}}
+{{--                                            <textarea name="message" placeholder="Your Msssage"></textarea>--}}
+{{--                                        </div>--}}
+{{--                                        <div class="box">--}}
+{{--                                            <button id="msgsubmitbtn" class="btn waves-effect waves-light w100 indigo" type="submit">--}}
+{{--                                                SEND--}}
+{{--                                                <i class="material-icons left">send</i>--}}
+{{--                                            </button>--}}
+{{--                                        </div>--}}
+{{--                                    </form>--}}
+{{--                                </li>--}}
+{{--                            </ul>--}}
+{{--                        </div>--}}
 
-                    </div>
-                </div>
+{{--                    </div>--}}
+{{--                </div>--}}
             </div>
 
         </div>

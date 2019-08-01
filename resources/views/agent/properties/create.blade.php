@@ -52,6 +52,31 @@
                                     <input id="bathroom" name="bathroom" type="number" class="validate">
                                     <label for="bathroom">Bathroom</label>
                                 </div>
+                                <div class="input-field col s6">
+                                    <i class="material-icons prefix">event_seat</i>
+                                    <input id="living" name="living" type="number" class="validate">
+                                    <label for="living">Living</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <i class="material-icons prefix">event_seat</i>
+                                    <input id="kitchen" name="kitchen" type="number" class="validate">
+                                    <label for="kitchen">Kitchen</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <i class="material-icons prefix">event_seat</i>
+                                    <input id="store_rooms" name="store_rooms" type="number" class="validate">
+                                    <label for="store_rooms">Store Room</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <i class="material-icons prefix">event_seat</i>
+                                    <input id="floors" name="floors" type="number" class="validate">
+                                    <label for="floors">Floors</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <i class="material-icons prefix">event_seat</i>
+                                    <input id="parking" name="parking" type="number" class="validate">
+                                    <label for="parking">Parking</label>
+                                </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col s4">
@@ -96,19 +121,55 @@
                                             <span>Rent</span>
                                         </label>
                                     </p>
+                                    <p>
+                                        <label>
+                                            <input class="with-gap" name="purpose" value="lease" type="radio"  />
+                                            <span>Lease</span>
+                                        </label>
+                                    </p>
                                 </div>
                                 <div class="col s3">
                                     <label class="label-custom" for="type">Property Type</label>
                                     <p>
                                         <label>
+                                            <input class="with-gap" name="type" value="bungalow" type="radio"  />
+                                            <span>Bungalow</span>
+                                        </label>
+                                    </p>
+                                    <p>
+                                        <label>
                                             <input class="with-gap" name="type" value="house" type="radio"  />
                                             <span>House</span>
                                         </label>
-                                    <p>
                                     </p>
+                                    <p>
+                                        <label>
+                                            <input class="with-gap" name="type" value="land" type="radio"  />
+                                            <span>Land</span>
+                                        </label>
+                                    </p>
+                                    <p>
+                                        <label>
+                                            <input class="with-gap" name="type" value="rent" type="radio"  />
+                                            <span>Rent</span>
+                                        </label>
+                                    </p>
+                                    <p>
                                         <label>
                                             <input class="with-gap" name="type" value="apartment" type="radio"  />
                                             <span>Apartment</span>
+                                        </label>
+                                    </p>
+                                    <p>
+                                        <label>
+                                            <input class="with-gap" name="type" value="colony" type="radio"  />
+                                            <span>Colony</span>
+                                        </label>
+                                    </p>
+                                    <p>
+                                        <label>
+                                            <input class="with-gap" name="type" value="flat" type="radio"  />
+                                            <span>Flat</span>
                                         </label>
                                     </p>
                                 </div>
@@ -120,6 +181,15 @@
                                         @endforeach
                                     </select>
                                     <label class="label-custom">Select Features</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <select multiple name="amenities[]">
+                                        <option value="" disabled selected>Choose Amenities</option>
+                                        @foreach($amenities as $amenity)
+                                            <option value="{{ $amenity->id }}">{{ $amenity->name }}</option>
+                                        @endforeach
+                                    </select>
+                                    <label class="label-custom">Select Amenities</label>
                                 </div>
                             </div>
 
