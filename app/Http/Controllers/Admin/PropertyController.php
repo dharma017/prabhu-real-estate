@@ -103,8 +103,7 @@ class PropertyController extends Controller
         $property->address = $request->address;
         $property->build_year = $request->build_year;
         $property->build_type = $request->build_type;
-        $property->flat_area = $request->flat_area;
-        $property->house_area = $request->house_area;
+        $property->area = $request->area;
         $property->land_area = $request->land_area;
 
         if (isset($request->featured)) {
@@ -267,8 +266,7 @@ class PropertyController extends Controller
         $property->address = $request->address;
         $property->build_year = $request->build_year;
         $property->build_type = $request->build_type;
-        $property->flat_area = $request->flat_area;
-        $property->house_area = $request->house_area;
+        $property->area = $request->area;
         $property->land_area = $request->land_area;
 
         $property->available = $request->available == 1;

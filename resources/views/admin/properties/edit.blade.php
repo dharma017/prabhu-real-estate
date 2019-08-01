@@ -127,16 +127,8 @@
 
                     <div class="form-group form-float">
                         <div class="form-line">
-                            <input type="number" class="form-control" name="house_area" value="{{$property->house_area}}">
-                            <label class="form-label">House Area</label>
-                        </div>
-                        <div class="help-info">Square Feet</div>
-                    </div>
-
-                    <div class="form-group form-float">
-                        <div class="form-line">
-                            <input type="number" class="form-control" name="flat_area" value="{{$property->flat_area}}">
-                            <label class="form-label">Flat Area</label>
+                            <input type="number" class="form-control" name="area" value="{{$property->area}}">
+                            <label class="form-label">Area</label>
                         </div>
                         <div class="help-info">Square Feet</div>
                     </div>
