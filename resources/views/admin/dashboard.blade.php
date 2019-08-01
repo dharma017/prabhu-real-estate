@@ -91,7 +91,7 @@
                                             {{ str_limit($property->title, 10) }}
                                         </span>
                                     </td>
-                                    <td>&dollar;{{ $property->price }}</td>
+                                    <td>{{@money_format_nep($property->price)}}</td>
                                     <td>{{ $property->city }}</td>
 {{--                                    <td>--}}
 {{--                                        @if($property->featured == 1)--}}
@@ -148,9 +148,9 @@
 {{--            </div>--}}
 {{--        </div>--}}
         <!-- #END# RECENT POSTS -->
-    </div>
+{{--    </div>--}}
 
-    <div class="row clearfix">
+{{--    <div class="row clearfix">--}}
         <!-- USER LIST -->
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
             <div class="card">

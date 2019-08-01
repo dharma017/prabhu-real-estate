@@ -37,12 +37,12 @@
                     </a>
                 </li>
 
-                <li class="{{ Request::is('admin/services*') ? 'active' : '' }}">
-                    <a href="{{ route('admin.services.index') }}">
-                        <i class="material-icons">wb_sunny</i>
-                        <span>Services</span>
-                    </a>
-                </li>
+{{--                <li class="{{ Request::is('admin/services*') ? 'active' : '' }}">--}}
+{{--                    <a href="{{ route('admin.services.index') }}">--}}
+{{--                        <i class="material-icons">wb_sunny</i>--}}
+{{--                        <span>Services</span>--}}
+{{--                    </a>--}}
+{{--                </li>--}}
 
                 <li class="{{ Request::is('admin/pages*') ? 'active' : '' }}">
                     <a href="{{ route('admin.pages.index') }}">
@@ -51,40 +51,40 @@
                     </a>
                 </li>
 
-                <li class="{{ Request::is('admin/testimonials*') ? 'active' : '' }}">
-                    <a href="{{ route('admin.testimonials.index') }}">
-                        <i class="material-icons">view_carousel</i>
-                        <span>Testimonials</span>
-                    </a>
-                </li>
+{{--                <li class="{{ Request::is('admin/testimonials*') ? 'active' : '' }}">--}}
+{{--                    <a href="{{ route('admin.testimonials.index') }}">--}}
+{{--                        <i class="material-icons">view_carousel</i>--}}
+{{--                        <span>Testimonials</span>--}}
+{{--                    </a>--}}
+{{--                </li>--}}
 
-                <li class="header">Blog</li>
-                <li class="{{ Request::is('admin/categories*') ? 'active' : '' }}">
-                    <a href="{{ route('admin.categories.index') }}">
-                        <i class="material-icons">category</i>
-                        <span>Categories</span>
-                    </a>
-                </li>
-                <li class="{{ Request::is('admin/tags*') ? 'active' : '' }}">
-                    <a href="{{ route('admin.tags.index') }}">
-                        <i class="material-icons">label</i>
-                        <span>Tags</span>
-                    </a>
-                </li>
-                <li class="{{ Request::is('admin/posts*') ? 'active' : '' }}">
-                    <a href="{{ route('admin.posts.index') }}">
-                        <i class="material-icons">library_books</i>
-                        <span>Posts</span>
-                    </a>
-                </li>
+{{--                <li class="header">Blog</li>--}}
+{{--                <li class="{{ Request::is('admin/categories*') ? 'active' : '' }}">--}}
+{{--                    <a href="{{ route('admin.categories.index') }}">--}}
+{{--                        <i class="material-icons">category</i>--}}
+{{--                        <span>Categories</span>--}}
+{{--                    </a>--}}
+{{--                </li>--}}
+{{--                <li class="{{ Request::is('admin/tags*') ? 'active' : '' }}">--}}
+{{--                    <a href="{{ route('admin.tags.index') }}">--}}
+{{--                        <i class="material-icons">label</i>--}}
+{{--                        <span>Tags</span>--}}
+{{--                    </a>--}}
+{{--                </li>--}}
+{{--                <li class="{{ Request::is('admin/posts*') ? 'active' : '' }}">--}}
+{{--                    <a href="{{ route('admin.posts.index') }}">--}}
+{{--                        <i class="material-icons">library_books</i>--}}
+{{--                        <span>Posts</span>--}}
+{{--                    </a>--}}
+{{--                </li>--}}
 
-                <li class="header"> </li>
-                <li class="{{ Request::is('admin/galleries*') ? 'active' : '' }}">
-                    <a href="{{ route('admin.album') }}">
-                        <i class="material-icons">view_list</i>
-                        <span>Gallery</span>
-                    </a>
-                </li>
+{{--                <li class="header"> </li>--}}
+{{--                <li class="{{ Request::is('admin/galleries*') ? 'active' : '' }}">--}}
+{{--                    <a href="{{ route('admin.album') }}">--}}
+{{--                        <i class="material-icons">view_list</i>--}}
+{{--                        <span>Gallery</span>--}}
+{{--                    </a>--}}
+{{--                </li>--}}
  
                 <li class="{{ Request::is('admin/settings*') ? 'active' : '' }}">
                     <a href="javascript:void(0);" class="menu-toggle">
@@ -107,11 +107,11 @@
                                 <span>Profile</span>
                             </a>
                         </li>
-                        <li class="{{ Request::is('admin/message*') ? 'active' : '' }}">
-                            <a href="{{ route('admin.message') }}">
-                                <span>Message</span>
-                            </a>
-                        </li>
+{{--                        <li class="{{ Request::is('admin/message*') ? 'active' : '' }}">--}}
+{{--                            <a href="{{ route('admin.message') }}">--}}
+{{--                                <span>Message</span>--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
                     </ul>
                 </li>
                 
