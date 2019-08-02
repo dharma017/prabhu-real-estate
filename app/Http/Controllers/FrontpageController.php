@@ -15,13 +15,42 @@ class FrontpageController extends Controller
     public function index()
     {
         $sliders = Slider::latest()->get();
-        $special_properties = Property::latest()->where('featured',
-            1)->with('rating')->withCount('comments')->take(12)->get();
-        $top_properties = Property::latest()->where('featured',
-            1)->with('rating')->withCount('comments')->take(12)->get();
-        $featured_properties = Property::latest()->where('featured',
-            1)->with('rating')->withCount('comments')->take(12)->get();
-        $normal_properties = Property::latest()->where('featured', 1)->with('rating')->withCount('comments')->get();
+
+        $special_properties = Property::latest()
+            ->with('rating')
+            ->withCount('comments')
+            ->whereHas('features', function ($query) {
+                $query->where('features.slug', '=', 'special-listing');
+            })
+            ->take(12)
+            ->get();
+
+        $top_properties = Property::latest()
+            ->with('rating')
+            ->withCount('comments')
+            ->whereHas('features', function ($query) {
+                $query->where('features.slug', '=', 'top-listing');
+            })
+            ->take(12)
+            ->get();
+
+        $featured_properties = Property::latest()
+            ->with('rating')
+            ->withCount('comments')
+            ->whereHas('features', function ($query) {
+                $query->where('features.slug', '=', 'featured-listing');
+            })
+            ->take(12)
+            ->get();
+
+        $normal_properties = Property::latest()
+            ->with('rating')
+            ->withCount('comments')
+            ->whereHas('features', function ($query) {
+                $query->where('features.slug', '=', 'normal-listing');
+            })
+            ->get();
+
         // $services       = Service::orderBy('service_order')->get();
         // $testimonials   = Testimonial::latest()->get();
         // $posts          = Post::latest()->where('status',1)->take(6)->get();

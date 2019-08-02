@@ -128,7 +128,7 @@
                                     </div>
 
                                     <h5>
-                                        &dollar;{{ $property->price }}
+                                        {{@money_format_nep($property->price)}}
                                         <small class="right">{{ $property->type }} for {{ $property->purpose }}</small>
                                     </h5>
 
