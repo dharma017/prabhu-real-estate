@@ -83,8 +83,8 @@
                                     Area: <strong>{{ $property->area}}</strong> Square Feet
                                 </span>
                                 <span class="btn-flat">
-                                    <i class="material-icons">comment</i> 
-                                    <strong>{{ $property->comments_count}}</strong>
+                                    <i class="material-icons">visibility</i>
+                                    <strong>{{ $property->view_count}}</strong>
                                 </span>
                             </div>
                         </div>
@@ -152,8 +152,8 @@
                                     Area: <strong>{{ $property->area}}</strong> Square Feet
                                 </span>
                                 <span class="btn-flat">
-                                    <i class="material-icons">comment</i>
-                                    <strong>{{ $property->comments_count}}</strong>
+                                    <i class="material-icons">visibility</i>
+                                    <strong>{{ $property->view_count}}</strong>
                                 </span>
                             </div>
                         </div>
@@ -221,8 +221,8 @@
                                     Area: <strong>{{ $property->area}}</strong> Square Feet
                                 </span>
                                 <span class="btn-flat">
-                                    <i class="material-icons">comment</i>
-                                    <strong>{{ $property->comments_count}}</strong>
+                                    <i class="material-icons">visibility</i>
+                                    <strong>{{ $property->view_count}}</strong>
                                 </span>
                             </div>
                         </div>
@@ -290,8 +290,8 @@
                                     Area: <strong>{{ $property->area}}</strong> Square Feet
                                 </span>
                                 <span class="btn-flat">
-                                    <i class="material-icons">comment</i>
-                                    <strong>{{ $property->comments_count}}</strong>
+                                    <i class="material-icons">visibility</i>
+                                    <strong>{{ $property->view_count}}</strong>
                                 </span>
                             </div>
                         </div>

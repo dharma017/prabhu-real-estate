@@ -147,15 +147,15 @@
                                         Area: <strong>{{ $property->area}}</strong> Sq Ft
                                     </span>
                                     <span class="btn-flat">
-                                        <i class="material-icons">comment</i>
-                                        {{ $property->comments_count}}
+                                        <i class="material-icons">visibility</i>
+                                        {{ $property->view_count}}
                                     </span>
 
                                     @if($property->featured == 1)
                                         <span class="right featured-stars">
                                             <i class="material-icons">stars</i>
                                         </span>
-                                    @endif                                    
+                                    @endif
 
                                 </div>
                             </div>
