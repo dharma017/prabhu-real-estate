@@ -155,6 +155,8 @@
                     </div>
 
                     <div>
+                        @if($property->view_count) <span
+                                class="btn btn-small disabled b-r-20">Views: {{ $property->view_count}} </span> @endif
                         @if($property->bedroom) <span
                                 class="btn btn-small disabled b-r-20">Bedroom: {{ $property->bedroom}} </span> @endif
                         @if($property->bathroom)<span
@@ -179,9 +181,6 @@
                     <div>
                         <h4 class="left">{{@money_format_nep($property->price)}}</h4>
                         <span class="left">({{@money_in_words($property->price)}})</span>
-                        @if($property->featured == 1)
-                            <span class="left">10 Views</span>
-                        @endif
                         <button type="button" class="btn btn-small m-t-25 right disabled b-r-20">
                             For {{ $property->purpose }}</button>
                     </div>

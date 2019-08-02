@@ -37,6 +37,12 @@ class PagesController extends Controller
                             ->where('slug', $slug)
                             ->first();
 
+        if (!empty($property))
+        {
+            ++$property->view_count;
+            $property->save();
+        }
+
         $rating = Rating::where('property_id',$property->id)->where('type','property')->avg('rating');                   
 
         $relatedproperty = Property::latest()
