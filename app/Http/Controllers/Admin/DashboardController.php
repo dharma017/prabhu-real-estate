@@ -62,7 +62,7 @@ class DashboardController extends Controller
             'aboutus'   => 'required',
             'facebook'  => 'required|url',
             'twitter'   => 'required|url',
-            'linkedin'  => 'required|url',
+            'instagram'  => 'required|url',
         ]);
 
         Setting::updateOrCreate(
@@ -76,7 +76,7 @@ class DashboardController extends Controller
               'aboutus'  => $request->aboutus,
               'facebook' => $request->facebook,
               'twitter'  => $request->twitter,
-              'linkedin' => $request->linkedin
+              'instagram' => $request->instagram
             ]
         );
 
