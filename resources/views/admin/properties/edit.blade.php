@@ -162,14 +162,14 @@
 
                     <div class="form-group form-float">
                         <div class="form-line">
-                            <input type="text" class="form-control" name="contact_name" value="{{$property->contact_name}}" required>
+                            <input type="text" class="form-control" name="contact_name" value="{{$property->contact_name}}">
                             <label class="form-label">Contact Name</label>
                         </div>
                     </div>
 
                     <div class="form-group form-float">
                         <div class="form-line">
-                            <input type="number" class="form-control" name="contact_number" value="{{$property->contact_number}}" required>
+                            <input type="number" class="form-control" name="contact_number" value="{{$property->contact_number}}">
                             <label class="form-label">Contact Number</label>
                         </div>
                     </div>

@@ -232,7 +232,7 @@
                                 <option value="">-- Please select --</option>
                                 <option value="sale">Sale</option>
                                 <option value="rent">Rent</option>
-                                <option value="rent">Lease</option>
+                                <option value="lease">Lease</option>
                             </select>
                         </div>
                     </div>

@@ -36,7 +36,7 @@
                                     <th>Type</th>
                                     <th>Purpose</th>
                                     <th><i class="material-icons">visibility</i></th>
-                                    <th>Is Approved</th>
+                                    <th>Is Available</th>
 {{--                                    <th><i class="material-icons small">comment</i></th>--}}
 {{--                                    <th><i class="material-icons small">views</i></th>--}}
                                     <th width="150">Action</th>

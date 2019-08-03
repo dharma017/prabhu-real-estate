@@ -52,28 +52,34 @@
                                     <input id="bathroom" name="bathroom" type="number" class="validate">
                                     <label for="bathroom">Bathroom</label>
                                 </div>
+                            </div>
+                            <div class="row">
                                 <div class="input-field col s6">
-                                    <i class="material-icons prefix">event_seat</i>
+                                    <i class="material-icons prefix">airplay</i>
                                     <input id="living" name="living" type="number" class="validate">
                                     <label for="living">Living</label>
                                 </div>
                                 <div class="input-field col s6">
-                                    <i class="material-icons prefix">event_seat</i>
+                                    <i class="material-icons prefix">kitchen</i>
                                     <input id="kitchen" name="kitchen" type="number" class="validate">
                                     <label for="kitchen">Kitchen</label>
                                 </div>
+                            </div>
+                            <div class="row">
                                 <div class="input-field col s6">
-                                    <i class="material-icons prefix">event_seat</i>
+                                    <i class="material-icons prefix">store</i>
                                     <input id="store_rooms" name="store_rooms" type="number" class="validate">
                                     <label for="store_rooms">Store Room</label>
                                 </div>
                                 <div class="input-field col s6">
-                                    <i class="material-icons prefix">event_seat</i>
+                                    <i class="material-icons prefix">airline_seat_legroom_extra</i>
                                     <input id="floors" name="floors" type="number" class="validate">
                                     <label for="floors">Floors</label>
                                 </div>
+                            </div>
+                            <div class="row">
                                 <div class="input-field col s6">
-                                    <i class="material-icons prefix">event_seat</i>
+                                    <i class="material-icons prefix">airport_shuttle</i>
                                     <input id="parking" name="parking" type="number" class="validate">
                                     <label for="parking">Parking</label>
                                 </div>
@@ -174,7 +180,7 @@
                                     </p>
                                 </div>
                                 <div class="input-field col s6">
-                                    <select multiple name="features[]">
+                                    <select name="features[]">
                                         <option value="" disabled selected>Choose Features</option>
                                         @foreach($features as $feature)
                                             <option value="{{ $feature->id }}">{{ $feature->name }}</option>

@@ -27,8 +27,8 @@
                                     <th>Title</th>
                                     <th>Type</th>
                                     <th>City</th>
-                                    <th><i class="material-icons small-star p-t-10">comment</i></th>
-                                    <th><i class="material-icons small-star p-t-10">stars</i></th>
+{{--                                    <th><i class="material-icons small-star p-t-10">comment</i></th>--}}
+{{--                                    <th><i class="material-icons small-star p-t-10">stars</i></th>--}}
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -46,15 +46,15 @@
                                         <td>{{ ucfirst($property->type) }}</td>
                                         <td>{{ ucfirst($property->city) }}</td>
 
-                                        <td class="center">
-                                            <span><i class="material-icons small-comment left">comment</i>{{ $property->comments_count }}</span>
-                                        </td>
+{{--                                        <td class="center">--}}
+{{--                                            <span><i class="material-icons small-comment left">comment</i>{{ $property->comments_count }}</span>--}}
+{{--                                        </td>--}}
 
-                                        <td class="center">
-                                            @if($property->featured == true)
-                                                <span class="indigo-text"><i class="material-icons small-star">stars</i></span>
-                                            @endif
-                                        </td>
+{{--                                        <td class="center">--}}
+{{--                                            @if($property->featured == true)--}}
+{{--                                                <span class="indigo-text"><i class="material-icons small-star">stars</i></span>--}}
+{{--                                            @endif--}}
+{{--                                        </td>--}}
     
                                         <td class="center">
                                             <a href="{{route('property.show',$property->slug)}}" target="_blank" class="btn btn-small green waves-effect">

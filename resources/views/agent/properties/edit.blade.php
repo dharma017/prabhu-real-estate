@@ -55,6 +55,37 @@
                                 </div>
                             </div>
                             <div class="row">
+                                <div class="input-field col s6">
+                                    <i class="material-icons prefix">airplay</i>
+                                    <input id="living" name="living" type="number" value="{{ $property->living }}" class="validate">
+                                    <label for="living">Living</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <i class="material-icons prefix">kitchen</i>
+                                    <input id="kitchen" name="kitchen" type="number" value="{{ $property->kitchen }}" class="validate">
+                                    <label for="kitchen">Kitchen</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <i class="material-icons prefix">store</i>
+                                    <input id="store_rooms" name="store_rooms" type="number" value="{{ $property->store_rooms }}" class="validate">
+                                    <label for="store_rooms">Store Rooms</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <i class="material-icons prefix">airline_seat_legroom_extra</i>
+                                    <input id="floors" name="floors" type="number" value="{{ $property->floors }}" class="validate">
+                                    <label for="floors">Floors</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <i class="material-icons prefix">airport_shuttle</i>
+                                    <input id="parking" name="parking" type="number" value="{{ $property->parking }}" class="validate">
+                                    <label for="parking">Parking</label>
+                                </div>
+                            </div>
+                            <div class="row">
                                 <div class="input-field col s4">
                                     <i class="material-icons prefix">location_city</i>
                                     <input id="city" name="city" type="text" value="{{ $property->city }}" class="validate">
@@ -84,37 +115,73 @@
 
                             <div class="row">
                                 <div class="col s3">
-                                    <label class="label-custom" for="type">Property Type</label>
-                                    <p>
-                                        <label>
-                                            <input class="with-gap" name="type" value="house" type="radio" {{ $property->type == 'house' ? 'checked' : '' }} />
-                                            <span>Sale</span>
-                                        </label>
-                                    <p>
-                                    </p>
-                                        <label>
-                                            <input class="with-gap" name="type" value="apartment" type="radio" {{ $property->type == 'apartment' ? 'checked' : '' }} />
-                                            <span>Rent</span>
-                                        </label>
-                                    </p>
-                                </div>
-                                <div class="col s3">
                                     <label class="label-custom" for="purpose">Property Purpose</label>
                                     <p>
                                         <label>
                                             <input class="with-gap" name="purpose" value="sale" type="radio" {{ $property->purpose == 'sale' ? 'checked' : '' }} />
+                                            <span>Sale</span>
+                                        </label>
+                                    </p>
+                                    <p>
+                                        <label>
+                                            <input class="with-gap" name="purpose" value="rent" type="radio" {{ $property->purpose == 'rent' ? 'checked' : '' }} />
+                                            <span>Rent</span>
+                                        </label>
+                                    </p>
+                                    <p>
+                                    <label>
+                                        <input class="with-gap" name="purpose" value="lease" type="radio" {{ $property->purpose == 'lease' ? 'checked' : '' }} />
+                                        <span>Lease</span>
+                                    </label>
+                                    </p>
+                                </div>
+                                <div class="col s3">
+                                    <label class="label-custom" for="type">Property Type</label>
+                                    <p>
+                                        <label>
+                                            <input class="with-gap" name="type" value="bungalow" type="radio" {{ $property->type == 'bungalow' ? 'checked' : '' }} />
+                                            <span>Bungalow</span>
+                                        </label>
+                                    <p>
+                                    <p>
+                                        <label>
+                                            <input class="with-gap" name="type" value="house" type="radio" {{ $property->type == 'house' ? 'checked' : '' }} />
                                             <span>House</span>
                                         </label>
                                     <p>
-                                    </p>
+                                    <p>
                                         <label>
-                                            <input class="with-gap" name="purpose" value="rent" type="radio" {{ $property->purpose == 'rent' ? 'checked' : '' }} />
+                                            <input class="with-gap" name="type" value="land" type="radio" {{ $property->type == 'land' ? 'checked' : '' }} />
+                                            <span>Land</span>
+                                        </label>
+                                    <p>
+                                    <p>
+                                        <label>
+                                            <input class="with-gap" name="type" value="rent" type="radio" {{ $property->type == 'rent' ? 'checked' : '' }} />
+                                            <span>Rent</span>
+                                        </label>
+                                    <p>
+                                    <p>
+                                        <label>
+                                            <input class="with-gap" name="type" value="apartment" type="radio" {{ $property->type == 'apartment' ? 'checked' : '' }} />
                                             <span>Apartment</span>
                                         </label>
-                                    </p>
+                                    <p>
+                                    <p>
+                                        <label>
+                                            <input class="with-gap" name="type" value="colony" type="radio" {{ $property->type == 'colony' ? 'checked' : '' }} />
+                                            <span>Colony</span>
+                                        </label>
+                                    <p>
+                                    <p>
+                                        <label>
+                                            <input class="with-gap" name="type" value="flat" type="radio" {{ $property->type == 'flat' ? 'checked' : '' }} />
+                                            <span>Flat</span>
+                                        </label>
+                                    <p>
                                 </div>
                                 <div class="input-field col s6">
-                                    <select multiple name="features[]">
+                                    <select name="features[]">
                                         <option value="" disabled>Choose Features</option>
                                         @foreach($features as $feature)
                                             <option value="{{ $feature->id }}" 
@@ -125,6 +192,20 @@
                                         @endforeach
                                     </select>
                                     <label class="label-custom">Select Features</label>
+                                </div>
+
+                                <div class="input-field col s6">
+                                    <select multiple name="amenities[]">
+                                        <option value="" disabled>Choose Amenities</option>
+                                        @foreach($amenities as $amenity)
+                                            <option value="{{ $amenity->id }}"
+                                            @foreach($property->amenities as $checked)
+                                                {{ ($checked->id == $amenity->id) ? 'selected' : '' }}
+                                                    @endforeach
+                                            >{{ $amenity->name }}</option>
+                                        @endforeach
+                                    </select>
+                                    <label class="label-custom">Select Amenities</label>
                                 </div>
                             </div>
 
