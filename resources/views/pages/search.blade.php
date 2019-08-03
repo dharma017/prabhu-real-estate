@@ -44,44 +44,44 @@
                                 </select>
                             </div>
     
-                            <div class="input-field col s12">
-                                <select name="bedroom" class="browser-default">
-                                    <option value="" disabled selected>Choose Bedroom</option>
-                                    @foreach($bedroomdistinct as $bedroom)
-                                        <option value="{{$bedroom->bedroom}}">{{$bedroom->bedroom}}</option>
-                                    @endforeach
-                                </select>
-                            </div>
+{{--                            <div class="input-field col s12">--}}
+{{--                                <select name="bedroom" class="browser-default">--}}
+{{--                                    <option value="" disabled selected>Choose Bedroom</option>--}}
+{{--                                    @foreach($bedroomdistinct as $bedroom)--}}
+{{--                                        <option value="{{$bedroom->bedroom}}">{{$bedroom->bedroom}}</option>--}}
+{{--                                    @endforeach--}}
+{{--                                </select>--}}
+{{--                            </div>--}}
 
-                            <div class="input-field col s12">
-                                <select name="bathroom" class="browser-default">
-                                    <option value="" disabled selected>Choose Bathroom</option>
-                                    @foreach($bathroomdistinct as $bathroom)
-                                        <option value="{{$bathroom->bathroom}}">{{$bathroom->bathroom}}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-    
+{{--                            <div class="input-field col s12">--}}
+{{--                                <select name="bathroom" class="browser-default">--}}
+{{--                                    <option value="" disabled selected>Choose Bathroom</option>--}}
+{{--                                    @foreach($bathroomdistinct as $bathroom)--}}
+{{--                                        <option value="{{$bathroom->bathroom}}">{{$bathroom->bathroom}}</option>--}}
+{{--                                    @endforeach--}}
+{{--                                </select>--}}
+{{--                            </div>--}}
+
                             <div class="input-field col s12">
                                 <input type="number" name="minprice" id="minprice" class="custominputbox">
                                 <label for="minprice">Min Price</label>
                             </div>
-    
+
                             <div class="input-field col s12">
                                 <input type="number" name="maxprice" id="maxprice" class="custominputbox">
                                 <label for="maxprice">Max Price</label>
                             </div>
-    
-                            <div class="input-field col s12">
-                                <input type="number" name="minarea" id="minarea" class="custominputbox">
-                                <label for="minarea">Floor Min Area</label>
-                            </div>
-    
-                            <div class="input-field col s12">
-                                <input type="number" name="maxarea" id="maxarea" class="custominputbox">
-                                <label for="maxarea">Floor Max Area</label>
-                            </div>
-                            
+
+{{--                            <div class="input-field col s12">--}}
+{{--                                <input type="number" name="minarea" id="minarea" class="custominputbox">--}}
+{{--                                <label for="minarea">Floor Min Area</label>--}}
+{{--                            </div>--}}
+
+{{--                            <div class="input-field col s12">--}}
+{{--                                <input type="number" name="maxarea" id="maxarea" class="custominputbox">--}}
+{{--                                <label for="maxarea">Floor Max Area</label>--}}
+{{--                            </div>--}}
+
                             <div class="input-field col s12">
                                 <div class="switch">
                                     <label>

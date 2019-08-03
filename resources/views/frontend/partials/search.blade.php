@@ -9,7 +9,7 @@
                 <form action="{{ route('search')}} " method="GET">
 
                     <div class="searchbar">
-                        <div class="input-field col s12 m3">
+                        <div class="input-field col s12 m5">
                             <input type="text" name="city" id="autocomplete-input" class="autocomplete custominputbox" autocomplete="off">
                             <label for="autocomplete-input">Enter City or State</label>
                         </div>
@@ -36,16 +36,16 @@
                             </select>
                         </div>
 
-                        <div class="input-field col s12 m2">
-                            <select name="bedroom" class="browser-default">
-                                <option value="" disabled selected>Bedroom</option>
-                                @if(isset($bedroomdistinct))
-                                    @foreach($bedroomdistinct as $bedroom)
-                                        <option value="{{$bedroom->bedroom}}">{{$bedroom->bedroom}}</option>
-                                    @endforeach
-                                @endif
-                            </select>
-                        </div>
+{{--                        <div class="input-field col s12 m2">--}}
+{{--                            <select name="bedroom" class="browser-default">--}}
+{{--                                <option value="" disabled selected>Bedroom</option>--}}
+{{--                                @if(isset($bedroomdistinct))--}}
+{{--                                    @foreach($bedroomdistinct as $bedroom)--}}
+{{--                                        <option value="{{$bedroom->bedroom}}">{{$bedroom->bedroom}}</option>--}}
+{{--                                    @endforeach--}}
+{{--                                @endif--}}
+{{--                            </select>--}}
+{{--                        </div>--}}
 
                         <div class="input-field col s12 m2">
                             <input type="text" name="maxprice" id="maxprice" class="custominputbox">
