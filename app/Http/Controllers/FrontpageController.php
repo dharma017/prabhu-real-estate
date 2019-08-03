@@ -22,6 +22,7 @@ class FrontpageController extends Controller
             ->whereHas('features', function ($query) {
                 $query->where('features.slug', '=', 'special-listing');
             })
+            ->where('status', 1)
             ->take(12)
             ->get();
 
@@ -31,6 +32,7 @@ class FrontpageController extends Controller
             ->whereHas('features', function ($query) {
                 $query->where('features.slug', '=', 'top-listing');
             })
+            ->where('status', 1)
             ->take(12)
             ->get();
 
@@ -40,6 +42,7 @@ class FrontpageController extends Controller
             ->whereHas('features', function ($query) {
                 $query->where('features.slug', '=', 'featured-listing');
             })
+            ->where('status', 1)
             ->take(12)
             ->get();
 
@@ -49,6 +52,7 @@ class FrontpageController extends Controller
             ->whereHas('features', function ($query) {
                 $query->where('features.slug', '=', 'normal-listing');
             })
+            ->where('status', 1)
             ->get();
 
         // $services       = Service::orderBy('service_order')->get();
@@ -104,6 +108,7 @@ class FrontpageController extends Controller
             ->when($featured, function ($query, $featured) {
                 return $query->where('featured', '=', 1);
             })
+            ->where('status', 1)
             ->paginate(10);
 
         return view('pages.search', compact('properties'));

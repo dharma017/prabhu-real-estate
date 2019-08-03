@@ -39,7 +39,6 @@ class PropertyController extends Controller
 
     public function store(Request $request)
     {
-        // echo '<pre>';print_r($request);exit;
         $request->validate([
             'title' => 'required|unique:properties|max:255',
             'price' => 'required',
@@ -106,6 +105,14 @@ class PropertyController extends Controller
         $property->area = $request->area;
         $property->land_area = $request->land_area;
 
+        if (isset($request->available)) {
+            $property->available = true;
+        }
+
+        if (isset($request->status)) {
+            $property->status = true;
+        }
+
         if (isset($request->featured)) {
             $property->featured = true;
         }
@@ -121,8 +128,6 @@ class PropertyController extends Controller
         if (isset($request->assured)) {
             $property->assured = true;
         }
-
-        $property->available = true;
 
         $property->agent_id = Auth::id();
         $property->contact_name = $request->contact_name;
@@ -269,22 +274,40 @@ class PropertyController extends Controller
         $property->area = $request->area;
         $property->land_area = $request->land_area;
 
-        $property->available = $request->available == 1;
+        if (isset($request->available)) {
+            $property->available = true;
+        } else {
+            $property->available = false;
+        }
+
+        if (isset($request->status)) {
+            $property->status = true;
+        } else {
+            $property->status = false;
+        }
 
         if (isset($request->featured)) {
             $property->featured = true;
+        } else {
+            $property->featured = false;
         }
 
         if (isset($request->negotiable)) {
             $property->negotiable = true;
+        } else {
+            $property->negotiable = false;
         }
 
         if (isset($request->ready_to_use)) {
             $property->ready_to_use = true;
+        } else {
+            $property->ready_to_use = false;
         }
 
         if (isset($request->assured)) {
             $property->assured = true;
+        } else {
+            $property->assured = false;
         }
 
         $property->contact_name = $request->contact_name;

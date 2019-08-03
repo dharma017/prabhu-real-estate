@@ -45,7 +45,7 @@ class AppServiceProvider extends ServiceProvider
             });
 
             view()->composer('frontend.partials.footer', function($view) {
-                $view->with('footerproperties', Property::latest()->take(3)->get());
+                $view->with('footerproperties', Property::latest()->where('status', 1)->take(3)->get());
                 $view->with('footersettings', Setting::select('footer','aboutus','facebook','twitter','instagram')->get());
             });
 

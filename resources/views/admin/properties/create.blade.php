@@ -224,6 +224,10 @@
                     <h2>SELECT</h2>
                 </div>
                 <div class="body">
+                    <div class="form-group">
+                        <input type="checkbox" id="status" name="status" class="filled-in" value="1" checked/>
+                        <label for="status">Status</label>
+                    </div>
 
                     <div class="form-group form-float">
                         <div class="form-line {{$errors->has('purpose') ? 'focused error' : ''}}">

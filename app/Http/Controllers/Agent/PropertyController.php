@@ -114,6 +114,7 @@ class PropertyController extends Controller
         $property->address = $request->address;
         $property->area = $request->area;
         $property->available = true;
+        $property->status = false;
 
         if (isset($request->featured)) {
             $property->featured = true;

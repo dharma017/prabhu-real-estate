@@ -181,8 +181,15 @@
                     <div>
                         <h4 class="left">{{@money_format_nep($property->price)}}</h4>
                         <span class="left">({{@money_in_words($property->price)}})</span>
-                        <button type="button" class="btn btn-small m-t-25 right disabled b-r-20">
-                            For {{ $property->purpose }}</button>
+                            @if($property->available)
+                                <button type="button" class="btn btn-small m-t-25 right disabled b-r-20">
+                                    For {{ $property->purpose }}
+                                </button>
+                            @else
+                            <button type="button" class="btn btn-small m-t-25 right b-r-20 red">
+                                Sold
+                            </button>
+                            @endif
                     </div>
                 </div>
             </div>
@@ -345,63 +352,63 @@
                 <div class="col s12 m4">
                     <div class="clearfix">
 
-                        <div>
-                            <ul class="collection with-header m-t-0">
-                                <li class="collection-header grey lighten-4">
-                                    <h5 class="m-0">Contact with Agent</h5>
-                                </li>
-                                <li class="collection-item p-0">
-                                    @if($property->user)
-                                        <div class="card horizontal card-no-shadow">
-                                            <div class="card-image p-l-10 agent-image">
-                                                <img src="{{Storage::url('users/'.$property->user->image)}}"
-                                                     alt="{{ $property->user->username }}" class="imgresponsive">
-                                            </div>
-                                            <div class="card-stacked">
-                                                <div class="p-l-10 p-r-10">
-                                                    <h5 class="m-t-b-0">{{ $property->user->name }}</h5>
-                                                    <strong>{{ $property->user->email }}</strong>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="p-l-10 p-r-10">
-                                            <p>{{ $property->user->about }}</p>
-                                            <a href="{{ route('agents.show',$property->agent_id) }}"
-                                               class="profile-link">Profile</a>
-                                        </div>
-                                    @endif
-                                </li>
+{{--                        <div>--}}
+{{--                            <ul class="collection with-header m-t-0">--}}
+{{--                                <li class="collection-header grey lighten-4">--}}
+{{--                                    <h5 class="m-0">Contact with Agent</h5>--}}
+{{--                                </li>--}}
+{{--                                <li class="collection-item p-0">--}}
+{{--                                    @if($property->user)--}}
+{{--                                        <div class="card horizontal card-no-shadow">--}}
+{{--                                            <div class="card-image p-l-10 agent-image">--}}
+{{--                                                <img src="{{Storage::url('users/'.$property->user->image)}}"--}}
+{{--                                                     alt="{{ $property->user->username }}" class="imgresponsive">--}}
+{{--                                            </div>--}}
+{{--                                            <div class="card-stacked">--}}
+{{--                                                <div class="p-l-10 p-r-10">--}}
+{{--                                                    <h5 class="m-t-b-0">{{ $property->user->name }}</h5>--}}
+{{--                                                    <strong>{{ $property->user->email }}</strong>--}}
+{{--                                                </div>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                        <div class="p-l-10 p-r-10">--}}
+{{--                                            <p>{{ $property->user->about }}</p>--}}
+{{--                                            <a href="{{ route('agents.show',$property->agent_id) }}"--}}
+{{--                                               class="profile-link">Profile</a>--}}
+{{--                                        </div>--}}
+{{--                                    @endif--}}
+{{--                                </li>--}}
 
-                                <li class="collection agent-message">
-                                    <form class="agent-message-box" action="" method="POST">
-                                        @csrf
-                                        <input type="hidden" name="agent_id" value="{{ $property->user->id }}">
-                                        <input type="hidden" name="user_id" value="{{ auth()->id() }}">
-                                        <input type="hidden" name="property_id" value="{{ $property->id }}">
+{{--                                <li class="collection agent-message">--}}
+{{--                                    <form class="agent-message-box" action="" method="POST">--}}
+{{--                                        @csrf--}}
+{{--                                        <input type="hidden" name="agent_id" value="{{ $property->user->id }}">--}}
+{{--                                        <input type="hidden" name="user_id" value="{{ auth()->id() }}">--}}
+{{--                                        <input type="hidden" name="property_id" value="{{ $property->id }}">--}}
 
-                                        <div class="box">
-                                            <input type="text" name="name" placeholder="Your Name">
-                                        </div>
-                                        <div class="box">
-                                            <input type="email" name="email" placeholder="Your Email">
-                                        </div>
-                                        <div class="box">
-                                            <input type="number" name="phone" placeholder="Your Phone">
-                                        </div>
-                                        <div class="box">
-                                            <textarea name="message" placeholder="Your Msssage"></textarea>
-                                        </div>
-                                        <div class="box">
-                                            <button id="msgsubmitbtn" class="btn waves-effect waves-light w100 indigo"
-                                                    type="submit">
-                                                SEND
-                                                <i class="material-icons left">send</i>
-                                            </button>
-                                        </div>
-                                    </form>
-                                </li>
-                            </ul>
-                        </div>
+{{--                                        <div class="box">--}}
+{{--                                            <input type="text" name="name" placeholder="Your Name">--}}
+{{--                                        </div>--}}
+{{--                                        <div class="box">--}}
+{{--                                            <input type="email" name="email" placeholder="Your Email">--}}
+{{--                                        </div>--}}
+{{--                                        <div class="box">--}}
+{{--                                            <input type="number" name="phone" placeholder="Your Phone">--}}
+{{--                                        </div>--}}
+{{--                                        <div class="box">--}}
+{{--                                            <textarea name="message" placeholder="Your Msssage"></textarea>--}}
+{{--                                        </div>--}}
+{{--                                        <div class="box">--}}
+{{--                                            <button id="msgsubmitbtn" class="btn waves-effect waves-light w100 indigo"--}}
+{{--                                                    type="submit">--}}
+{{--                                                SEND--}}
+{{--                                                <i class="material-icons left">send</i>--}}
+{{--                                            </button>--}}
+{{--                                        </div>--}}
+{{--                                    </form>--}}
+{{--                                </li>--}}
+{{--                            </ul>--}}
+{{--                        </div>--}}
 
 {{--                        <div>--}}
 {{--                            <ul class="collection with-header">--}}

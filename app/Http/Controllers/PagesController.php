@@ -51,6 +51,7 @@ class PagesController extends Controller
                     // ->where('bedroom', $property->bedroom)
                     // ->where('bathroom', $property->bathroom)
                     ->where('id', '!=' , $property->id)
+                    ->where('status', 1)
                     ->take(5)->get();
 
         $videoembed = $this->convertYoutube($property->video, 560, 315);
@@ -354,6 +355,7 @@ class PagesController extends Controller
             ->whereHas('features', function ($query) {
                 $query->where('features.slug', '=', request('featureslug'));
             })
+            ->where('status', 1)
             ->paginate(12);
 
         return view('pages.properties.property', compact('properties','cities'));

@@ -240,6 +240,11 @@
                 </div>
                 <div class="body">
                     <div class="form-group">
+                        <input type="checkbox" id="status" name="status" class="filled-in" value="1" {{ $property->status ? 'checked' : '' }}/>
+                        <label for="status">Status</label>
+                    </div>
+
+                    <div class="form-group">
                         <input type="checkbox" id="available" name="available" class="filled-in" value="1" {{ $property->available ? 'checked' : '' }}/>
                         <label for="available">Available</label>
                     </div>
