@@ -41,7 +41,7 @@ class DashboardController extends Controller
             'name'      => 'required',
             'username'  => 'required',
             'email'     => 'required|email',
-            'image'     => 'image|mimes:jpeg,jpg,png',
+            'image'     => 'required|image|mimes:jpeg,jpg,png',
             'about'     => 'max:250'
         ]);
 
