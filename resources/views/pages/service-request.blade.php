@@ -58,36 +58,31 @@
                                 <label for="phone">Phone</label>
                             </div>
 
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix">mode_edit</i>
+                                <textarea id="message" name="message" class="materialize-textarea"></textarea>
+                                <label for="message">Message</label>
+                            </div>
+
                             <div class="row">
-                                <div class="input-field col s12">
-                                    <i class="small material-icons prefix">add</i>
+                                <div class="col s12">
                                     <label for="phone">Purpose</label>
                                     <br>
                                     <p>
                                         <label>
-                                            <input class="with-gap" name="purpose" value="sale" type="radio"  />
+                                            <input class="with-gap" name="purpose" value="sale" type="radio" checked  />
                                             <span>Sale</span>
                                         </label>
-                                    </p>
-                                    <p>
                                         <label>
                                             <input class="with-gap" name="purpose" value="rent" type="radio"  />
                                             <span>Rent</span>
                                         </label>
-                                    </p>
-                                    <p>
                                         <label>
                                             <input class="with-gap" name="purpose" value="lease" type="radio"  />
                                             <span>Lease</span>
                                         </label>
                                     </p>
                                 </div>
-                            </div>
-
-                            <div class="input-field col s12">
-                                <i class="material-icons prefix">mode_edit</i>
-                                <textarea id="message" name="message" class="materialize-textarea"></textarea>
-                                <label for="message">Message</label>
                             </div>
                             
                             <button id="msgsubmitbtn" class="btn waves-effect waves-light indigo darken-4 btn-large" type="submit">
