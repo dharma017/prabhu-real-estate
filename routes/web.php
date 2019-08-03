@@ -37,7 +37,8 @@ Route::get('/pricing', 'PagesController@pricing')->name('pricing');
 
 Route::get('/about-us', 'PagesController@aboutUs')->name('about-us');
 
-
+Route::get('/auth/redirect/{provider}', 'SocialController@redirect');
+Route::get('/callback/{provider}', 'SocialController@callback');
 
 Auth::routes();
 
