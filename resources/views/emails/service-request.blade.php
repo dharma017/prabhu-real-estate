@@ -1,5 +1,14 @@
 @component('mail::message')
-# Hello, {{ $name }}
+# Hello, {{ $adminname }}
+
+Name : {{ $name }}
+
+Phone : {{ $phone }}
+
+Email : {{ $mailfrom }}
+
+Purpose : {{ $purpose }}
+
 {{ $message }}
 
 {{--@component('mail::button', ['url' => ''])--}}

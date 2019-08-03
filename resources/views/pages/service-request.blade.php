@@ -110,7 +110,7 @@
                 e.preventDefault();
 
                 var data = $(this).serialize();
-                var url = "{{ route('contact.message') }}";
+                var url = "{{ route('service-request.message') }}";
                 var btn = $('#msgsubmitbtn');
 
                 $.ajax({

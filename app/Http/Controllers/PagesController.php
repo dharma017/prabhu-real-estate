@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ServiceRequest;
 use App\Page;
+use App\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Mail;
@@ -22,43 +24,44 @@ use DB;
 
 class PagesController extends Controller
 {
+
     public function properties()
     {
-        $cities     = Property::select('city','city_slug')->distinct('city_slug')->get();
+        $cities = Property::select('city', 'city_slug')->distinct('city_slug')->get();
         $properties = Property::latest()->with('rating')->withCount('comments')->paginate(12);
 
-        return view('pages.properties.property', compact('properties','cities'));
+        return view('pages.properties.property', compact('properties', 'cities'));
     }
 
     public function propertieshow($slug)
     {
-        $property = Property::with('features','gallery','user','comments')
-                            ->withCount('comments')
-                            ->where('slug', $slug)
-                            ->first();
+        $property = Property::with('features', 'gallery', 'user', 'comments')
+            ->withCount('comments')
+            ->where('slug', $slug)
+            ->first();
 
-        if (!empty($property))
-        {
+        if ( ! empty($property)) {
             ++$property->view_count;
             $property->save();
         }
 
-        $rating = Rating::where('property_id',$property->id)->where('type','property')->avg('rating');                   
+        $rating = Rating::where('property_id', $property->id)->where('type', 'property')->avg('rating');
 
         $relatedproperty = Property::latest()
-                    // ->where('purpose', $property->purpose)
-                    // ->where('type', $property->type)
-                    // ->where('bedroom', $property->bedroom)
-                    // ->where('bathroom', $property->bathroom)
-                    ->where('id', '!=' , $property->id)
-                    ->where('status', 1)
-                    ->take(5)->get();
+            // ->where('purpose', $property->purpose)
+            // ->where('type', $property->type)
+            // ->where('bedroom', $property->bedroom)
+            // ->where('bathroom', $property->bathroom)
+            ->where('id', '!=', $property->id)
+            ->where('status', 1)
+            ->take(5)->get();
 
         $videoembed = $this->convertYoutube($property->video, 560, 315);
 
-        $cities = Property::select('city','city_slug')->distinct('city_slug')->get();
+        $cities = Property::select('city', 'city_slug')->distinct('city_slug')->get();
 
-        return view('pages.properties.single', compact('property','rating','relatedproperty','videoembed','cities'));
+        return view('pages.properties.single',
+            compact('property', 'rating', 'relatedproperty', 'videoembed', 'cities'));
     }
 
 
@@ -72,10 +75,10 @@ class PagesController extends Controller
 
     public function agentshow($id)
     {
-        $agent      = User::findOrFail($id);
+        $agent = User::findOrFail($id);
         $properties = Property::latest()->where('agent_id', $id)->paginate(10);
 
-        return view('pages.agents.single', compact('agent','properties'));
+        return view('pages.agents.single', compact('agent', 'properties'));
     }
 
 
@@ -83,29 +86,29 @@ class PagesController extends Controller
     public function blog()
     {
         $month = request('month');
-        $year  = request('year');
+        $year = request('year');
 
         $posts = Post::latest()->withCount('comments')
-                                ->when($month, function ($query, $month) {
-                                    return $query->whereMonth('created_at', Carbon::parse($month)->month);
-                                })
-                                ->when($year, function ($query, $year) {
-                                    return $query->whereYear('created_at', $year);
-                                })
-                                ->where('status',1)
-                                ->paginate(10);
+            ->when($month, function ($query, $month) {
+                return $query->whereMonth('created_at', Carbon::parse($month)->month);
+            })
+            ->when($year, function ($query, $year) {
+                return $query->whereYear('created_at', $year);
+            })
+            ->where('status', 1)
+            ->paginate(10);
 
         return view('pages.blog.index', compact('posts'));
     }
 
     public function blogshow($slug)
     {
-        $post = Post::with('comments')->withCount('comments')->where('slug', $slug)->first(); 
+        $post = Post::with('comments')->withCount('comments')->where('slug', $slug)->first();
 
         $blogkey = 'blog-' . $post->id;
-        if(!Session::has($blogkey)){
+        if ( ! Session::has($blogkey)) {
             $post->increment('view_count');
-            Session::put($blogkey,1);
+            Session::put($blogkey, 1);
         }
 
         return view('pages.blog.single', compact('post'));
@@ -116,16 +119,16 @@ class PagesController extends Controller
     public function blogComments(Request $request, $id)
     {
         $request->validate([
-            'body'  => 'required'
+            'body' => 'required'
         ]);
 
         $post = Post::find($id);
 
         $post->comments()->create(
             [
-                'user_id'   => Auth::id(),
-                'body'      => $request->body,
-                'parent'    => $request->parent,
+                'user_id' => Auth::id(),
+                'body' => $request->body,
+                'parent' => $request->parent,
                 'parent_id' => $request->parent_id
             ]
         );
@@ -137,12 +140,12 @@ class PagesController extends Controller
     // BLOG CATEGORIES
     public function blogCategories()
     {
-        $posts = Post::latest()->withCount(['comments','categories'])
-                                ->whereHas('categories', function($query){
-                                    $query->where('categories.slug', '=', request('slug'));
-                                })
-                                ->where('status',1)
-                                ->paginate(10);
+        $posts = Post::latest()->withCount(['comments', 'categories'])
+            ->whereHas('categories', function ($query) {
+                $query->where('categories.slug', '=', request('slug'));
+            })
+            ->where('status', 1)
+            ->paginate(10);
 
         return view('pages.blog.index', compact('posts'));
     }
@@ -151,11 +154,11 @@ class PagesController extends Controller
     public function blogTags()
     {
         $posts = Post::latest()->withCount('comments')
-                                ->whereHas('tags', function($query){
-                                    $query->where('tags.slug', '=', request('slug'));
-                                })
-                                ->where('status',1)
-                                ->paginate(10);
+            ->whereHas('tags', function ($query) {
+                $query->where('tags.slug', '=', request('slug'));
+            })
+            ->where('status', 1)
+            ->paginate(10);
 
         return view('pages.blog.index', compact('posts'));
     }
@@ -164,37 +167,36 @@ class PagesController extends Controller
     public function blogAuthor()
     {
         $posts = Post::latest()->withCount('comments')
-                                ->whereHas('user', function($query){
-                                    $query->where('username', '=', request('username'));
-                                })
-                                ->where('status',1)
-                                ->paginate(10);
+            ->whereHas('user', function ($query) {
+                $query->where('username', '=', request('username'));
+            })
+            ->where('status', 1)
+            ->paginate(10);
 
         return view('pages.blog.index', compact('posts'));
     }
-
 
 
     // MESSAGE TO AGENT (SINGLE AGENT PAGE)
     public function messageAgent(Request $request)
     {
         $request->validate([
-            'agent_id'  => 'required',
-            'name'      => 'required',
-            'email'     => 'required',
-            'phone'     => 'required',
-            'message'   => 'required'
+            'agent_id' => 'required',
+            'name' => 'required',
+            'email' => 'required',
+            'phone' => 'required',
+            'message' => 'required'
         ]);
 
         Message::create($request->all());
 
-        if($request->ajax()){
+        if ($request->ajax()) {
             return response()->json(['message' => 'Message send successfully.']);
         }
 
     }
 
-    
+
     // CONATCT PAGE
     public function contact()
     {
@@ -209,20 +211,21 @@ class PagesController extends Controller
     public function show($slug)
     {
         $page = Page::where('slug', $slug)->first();
+
         return view('pages.single', compact('page'));
     }
 
     public function messageServiceRequest(Request $request)
     {
         $request->validate([
-            'name'      => 'required',
-            'email'     => 'required',
-            'phone'     => 'required',
-            'purpose'   => 'required',
-            'message'   => 'required'
+            'name' => 'required',
+            'email' => 'required',
+            'phone' => 'required',
+            'purpose' => 'required',
+            'message' => 'required'
         ]);
 
-        $message  = $request->message;
+        $message = $request->message;
         $mailfrom = $request->email;
 
         // Message::create([
@@ -233,12 +236,19 @@ class PagesController extends Controller
         //     'message'   => $message
         // ]);
 
-        $adminname  = User::find(1)->name;
-        $mailto     = $request->mailto;
+        $setting = Setting::select('name', 'phone', 'email', 'address')->first();
 
-        Mail::to($mailto)->send(new Contact($message,$adminname,$mailfrom));
+        $adminname = $setting->name;
+        $mailto = $request->mailto;
+        $purpose = $request->purpose;
+        $name = $request->name;
+        $phone = $request->phone;
 
-        if($request->ajax()){
+        // dd($request->toArray());
+
+        Mail::to($mailto)->send(new ServiceRequest($message, $purpose, $name, $phone, $adminname, $mailfrom));
+
+        if ($request->ajax()) {
             return response()->json(['message' => 'Message send successfully.']);
         }
 
@@ -247,29 +257,29 @@ class PagesController extends Controller
     public function messageContact(Request $request)
     {
         $request->validate([
-            'name'      => 'required',
-            'email'     => 'required',
-            'phone'     => 'required',
-            'message'   => 'required'
+            'name' => 'required',
+            'email' => 'required',
+            'phone' => 'required',
+            'message' => 'required'
         ]);
 
-        $message  = $request->message;
+        $message = $request->message;
         $mailfrom = $request->email;
-        
+
         Message::create([
-            'agent_id'  => 1,
-            'name'      => $request->name,
-            'email'     => $mailfrom,
-            'phone'     => $request->phone,
-            'message'   => $message
+            'agent_id' => 1,
+            'name' => $request->name,
+            'email' => $mailfrom,
+            'phone' => $request->phone,
+            'message' => $message
         ]);
-            
-        $adminname  = User::find(1)->name;
-        $mailto     = $request->mailto;
 
-        Mail::to($mailto)->send(new Contact($message,$adminname,$mailfrom));
+        $adminname = User::find(1)->name;
+        $mailto = $request->mailto;
 
-        if($request->ajax()){
+        Mail::to($mailto)->send(new Contact($message, $adminname, $mailfrom));
+
+        if ($request->ajax()) {
             return response()->json(['message' => 'Message send successfully.']);
         }
 
@@ -286,7 +296,7 @@ class PagesController extends Controller
     {
         $galleries = Gallery::latest()->paginate(12);
 
-        return view('pages.gallery',compact('galleries'));
+        return view('pages.gallery', compact('galleries'));
     }
 
 
@@ -294,16 +304,16 @@ class PagesController extends Controller
     public function propertyComments(Request $request, $id)
     {
         $request->validate([
-            'body'  => 'required'
+            'body' => 'required'
         ]);
 
         $property = Property::find($id);
 
         $property->comments()->create(
             [
-                'user_id'   => Auth::id(),
-                'body'      => $request->body,
-                'parent'    => $request->parent,
+                'user_id' => Auth::id(),
+                'body' => $request->body,
+                'parent' => $request->parent,
                 'parent_id' => $request->parent_id
             ]
         );
@@ -315,17 +325,17 @@ class PagesController extends Controller
     // PROPERTY RATING
     public function propertyRating(Request $request)
     {
-        $rating      = $request->input('rating');
+        $rating = $request->input('rating');
         $property_id = $request->input('property_id');
-        $user_id     = $request->input('user_id');
-        $type        = 'property';
+        $user_id = $request->input('user_id');
+        $type = 'property';
 
         $rating = Rating::updateOrCreate(
             ['user_id' => $user_id, 'property_id' => $property_id, 'type' => $type],
             ['rating' => $rating]
         );
 
-        if($request->ajax()){
+        if ($request->ajax()) {
             return response()->json(['rating' => $rating]);
         }
     }
@@ -334,17 +344,17 @@ class PagesController extends Controller
     // PROPERTY CITIES
     public function propertyCities()
     {
-        $cities     = Property::select('city','city_slug')->distinct('city_slug')->get();
+        $cities = Property::select('city', 'city_slug')->distinct('city_slug')->get();
         $properties = Property::latest()->with('rating')->withCount('comments')
-                        ->where('city_slug', request('cityslug'))
-                        ->paginate(12);
+            ->where('city_slug', request('cityslug'))
+            ->paginate(12);
 
-        return view('pages.properties.property', compact('properties','cities'));
+        return view('pages.properties.property', compact('properties', 'cities'));
     }
 
     public function propertyFeatures()
     {
-        $cities     = Property::select('city','city_slug')->distinct('city_slug')->get();
+        $cities = Property::select('city', 'city_slug')->distinct('city_slug')->get();
         $properties = Property::latest()->with('rating')->withCount('comments')
             ->whereHas('features', function ($query) {
                 $query->where('features.slug', '=', request('featureslug'));
@@ -352,17 +362,18 @@ class PagesController extends Controller
             ->where('status', 1)
             ->paginate(12);
 
-        return view('pages.properties.property', compact('properties','cities'));
+        return view('pages.properties.property', compact('properties', 'cities'));
     }
 
 
     // YOUTUBE LINK TO EMBED CODE
-    private function convertYoutube($youtubelink, $w = 250, $h = 140) {
+    private function convertYoutube($youtubelink, $w = 250, $h = 140)
+    {
         return preg_replace(
             "/\s*[a-zA-Z\/\/:\.]*youtu(be.com\/watch\?v=|.be\/)([a-zA-Z0-9\-_]+)([a-zA-Z0-9\/\*\-\_\?\&\;\%\=\.]*)/i",
             "<iframe width=\"$w\" height=\"$h\" src=\"//www.youtube.com/embed/$2\" frameborder=\"0\" allowfullscreen></iframe>",
             $youtubelink
         );
     }
-    
+
 }

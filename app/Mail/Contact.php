@@ -20,7 +20,7 @@ class Contact extends Mailable
      *
      * @return void
      */
-    public function __construct($message,$name,$mailfrom)
+    public function __construct($message, $name, $mailfrom)
     {
         $this->name     = $name;
         $this->message  = $message;
