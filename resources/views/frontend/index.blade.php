@@ -92,6 +92,8 @@
                 @endforeach
 
             </div>
+            <a href="{{ route('property.feature', 'special-listing') }}" class="waves-effect waves-light btn right">View All</a>
+
         </div>
     </section>
 
@@ -161,6 +163,7 @@
                 @endforeach
 
             </div>
+            <a href="{{ route('property.feature', 'top-listing') }}" class="waves-effect waves-light btn right">View All</a>
         </div>
     </section>
 
@@ -230,6 +233,7 @@
                 @endforeach
 
             </div>
+            <a href="{{ route('property.feature', 'featured-listing') }}" class="waves-effect waves-light btn right">View All</a>
         </div>
     </section>
 
