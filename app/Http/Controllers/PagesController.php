@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ContactRequest;
 use App\Mail\ServiceRequest;
 use App\Page;
 use App\Setting;
@@ -213,6 +214,41 @@ class PagesController extends Controller
         $page = Page::where('slug', $slug)->first();
 
         return view('pages.single', compact('page'));
+    }
+
+    public function messageContactRequest(Request $request)
+    {
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'phone' => 'required',
+            'message' => 'required'
+        ]);
+
+        $message = $request->message;
+        $mailfrom = $request->email;
+
+        Message::create([
+            'agent_id' => 1,
+            'name' => $request->name,
+            'email' => $mailfrom,
+            'phone' => $request->phone,
+            'message' => $message
+        ]);
+
+        $setting = Setting::select('name', 'phone', 'email', 'address')->first();
+
+        $adminname = $setting->name;
+        $mailto = $request->mailto;
+        $name = $request->name;
+        $phone = $request->phone;
+
+        Mail::to($mailto)->send(new ContactRequest($message, $name, $phone, $adminname, $mailfrom));
+
+        if ($request->ajax()) {
+            return response()->json(['message' => 'Message send successfully.']);
+        }
+
     }
 
     public function messageServiceRequest(Request $request)

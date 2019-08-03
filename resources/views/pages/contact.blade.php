@@ -115,7 +115,7 @@
                 e.preventDefault();
 
                 var data = $(this).serialize();
-                var url = "{{ route('contact.message') }}";
+                var url = "{{ route('contact-request.message') }}";
                 var btn = $('#msgsubmitbtn');
 
                 $.ajax({
