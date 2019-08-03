@@ -347,6 +347,18 @@ class PagesController extends Controller
         return view('pages.properties.property', compact('properties','cities'));
     }
 
+    public function propertyFeatures()
+    {
+        $cities     = Property::select('city','city_slug')->distinct('city_slug')->get();
+        $properties = Property::latest()->with('rating')->withCount('comments')
+            ->whereHas('features', function ($query) {
+                $query->where('features.slug', '=', request('featureslug'));
+            })
+            ->paginate(12);
+
+        return view('pages.properties.property', compact('properties','cities'));
+    }
+
 
     // YOUTUBE LINK TO EMBED CODE
     private function convertYoutube($youtubelink, $w = 250, $h = 140) {

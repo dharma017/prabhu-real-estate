@@ -12,6 +12,7 @@ Route::post('/property/message', 'PagesController@messageAgent')->name('property
 Route::post('/property/comment/{id}', 'PagesController@propertyComments')->name('property.comment');
 Route::post('/property/rating', 'PagesController@propertyRating')->name('property.rating');
 Route::get('/property/city/{cityslug}', 'PagesController@propertyCities')->name('property.city');
+Route::get('/property/feature/{featureslug}', 'PagesController@propertyFeatures')->name('property.feature');
 
 Route::get('/agents', 'PagesController@agents')->name('agents');
 Route::get('/agents/{id}', 'PagesController@agentshow')->name('agents.show');

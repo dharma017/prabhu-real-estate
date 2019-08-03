@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Feature;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\Auth;
@@ -49,7 +50,10 @@ class AppServiceProvider extends ServiceProvider
             });
 
             view()->composer('frontend.partials.navbar', function($view) {
-                $view->with('navbarsettings', Setting::select('name')->get());
+                $navbarsettings     = Setting::select('name')->get();
+                $features     = Feature::all();
+
+                $view->with(compact('navbarsettings','features'));
             });
 
             view()->composer('backend.partials.navbar', function($view) {

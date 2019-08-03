@@ -21,7 +21,13 @@
                     </li>
 
                     <li class="{{ Request::is('property*') ? 'active' : '' }}">
-                        <a href="{{ route('property') }}">Property</a>
+                        <a class='dropdown-trigger' data-target='dropdown1' href='#'>Property</a>
+                        <!-- Dropdown Structure -->
+                        <ul id='dropdown1' class='dropdown-content'>
+                            @foreach ($features as $feature)
+                                <li><a href="{{ route('property.feature', $feature->slug) }}">{{ $feature->name }}</a></li>
+                            @endforeach
+                        </ul>
                     </li>
 
                     <li class="{{ Request::is('pricing*') ? 'active' : '' }}">

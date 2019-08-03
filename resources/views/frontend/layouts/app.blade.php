@@ -85,7 +85,10 @@
             });
 
             $(".dropdown-trigger").dropdown({
-                top: '65px'
+                top: '65px',
+                // hover : true,
+                coverTrigger: false,
+                alignment: 'left'
             });
 
             $('.tooltipped').tooltip();

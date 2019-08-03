@@ -13,19 +13,19 @@
                 <h4 class="section-heading">Properties</h4>
             </div>
 
-            <div class="row">
-                <div class="city-categories">
-                    @foreach($cities as $city)
-                        <div class="col s12 m3">
-                            <a href="{{ route('property.city',$city->city_slug) }}">
-                                <div class="city-category">
-                                    <span>{{ $city->city }}</span>
-                                </div>
-                            </a>
-                        </div>
-                    @endforeach
-                </div>
-            </div>
+{{--            <div class="row">--}}
+{{--                <div class="city-categories">--}}
+{{--                    @foreach($cities as $city)--}}
+{{--                        <div class="col s12 m3">--}}
+{{--                            <a href="{{ route('property.city',$city->city_slug) }}">--}}
+{{--                                <div class="city-category">--}}
+{{--                                    <span>{{ $city->city }}</span>--}}
+{{--                                </div>--}}
+{{--                            </a>--}}
+{{--                        </div>--}}
+{{--                    @endforeach--}}
+{{--                </div>--}}
+{{--            </div>--}}
 
             <div class="row">
 
@@ -66,8 +66,8 @@
                                 </div>
 
                                 <h5>
-                                    &dollar;{{ $property->price }}
-                                    <div class="right" id="propertyrating-{{$property->id}}"></div>
+                                    {{@money_format_nep($property->price)}}
+{{--                                    <div class="right" id="propertyrating-{{$property->id}}"></div>--}}
                                 </h5>                                
                             </div>
                             <div class="card-action property-action">
@@ -84,8 +84,8 @@
                                     Area: <strong>{{ $property->area}}</strong> Square Feet
                                 </span>
                                 <span class="btn-flat">
-                                    <i class="material-icons">comment</i> 
-                                    <strong>{{ $property->comments_count}}</strong>
+                                    <i class="material-icons">visibility</i>
+                                    <strong>{{ $property->view_count}}</strong>
                                 </span>
                             </div>
                         </div>
