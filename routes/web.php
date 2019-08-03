@@ -33,10 +33,6 @@ Route::post('/contact', 'PagesController@messageContact')->name('contact.message
 Route::get('/service-request', 'PagesController@serviceRequest')->name('service-request');
 Route::post('/service-request', 'PagesController@messageServiceRequest')->name('service-request.message');
 
-Route::get('/pricing', 'PagesController@pricing')->name('pricing');
-
-Route::get('/about-us', 'PagesController@aboutUs')->name('about-us');
-
 Route::get('/auth/redirect/{provider}', 'SocialController@redirect');
 Route::get('/callback/{provider}', 'SocialController@callback');
 
@@ -118,3 +114,5 @@ Route::group(['prefix'=>'user','namespace'=>'User','middleware'=>['auth','user']
     Route::delete('message/delete/{id}','DashboardController@messageDelete')->name('messages.destroy');
 
 });
+
+Route::get('{page}', 'PagesController@show')->name('pages.show');

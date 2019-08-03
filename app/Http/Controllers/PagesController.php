@@ -206,16 +206,10 @@ class PagesController extends Controller
         return view('pages.service-request');
     }
 
-    public function pricing()
+    public function show($slug)
     {
-        $page = Page::where('slug', 'pricing')->first();
-        return view('pages.pricing', compact('page'));
-    }
-
-    public function aboutUs()
-    {
-        $page = Page::where('slug', 'about-us')->first();
-        return view('pages.about-us', compact('page'));
+        $page = Page::where('slug', $slug)->first();
+        return view('pages.single', compact('page'));
     }
 
     public function messageServiceRequest(Request $request)

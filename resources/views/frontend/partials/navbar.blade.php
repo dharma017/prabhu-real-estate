@@ -31,7 +31,7 @@
                     </li>
 
                     <li class="{{ Request::is('pricing*') ? 'active' : '' }}">
-                        <a href="{{ route('pricing') }}">Pricing</a>
+                        <a href="{{ route('pages.show', 'pricing') }}">Pricing</a>
                     </li>
 
                     <li class="{{ Request::is('service-request*') ? 'active' : '' }}">
@@ -39,10 +39,10 @@
                     </li>
 
                     <li class="{{ Request::is('about-us*') ? 'active' : '' }}">
-                        <a href="{{ route('about-us') }}">About Us</a>
+                        <a href="{{ route('pages.show', 'about-us') }}">About Us</a>
                     </li>
 
-                    <li class="{{ Request::is('contact-us') ? 'active' : '' }}">
+                    <li class="{{ Request::is('contact') ? 'active' : '' }}">
                         <a href="{{ route('contact') }}">Contact Us</a>
                     </li>
 
