@@ -42,9 +42,9 @@
                                 @else
                                     <span class="card-image-bg"><span>
                                 @endif
-                                @if($property->featured == 1)
-                                    <a class="btn-floating halfway-fab waves-effect waves-light indigo" title="Featured"><i class="small material-icons">star</i></a>
-                                @endif
+{{--                                @if($property->featured == 1)--}}
+{{--                                    <a class="btn-floating halfway-fab waves-effect waves-light indigo" title="Featured"><i class="small material-icons">star</i></a>--}}
+{{--                                @endif--}}
                             </div>
                             <div class="card-content property-content">
                                 <a href="{{ route('property.show',$property->slug) }}">
@@ -113,9 +113,9 @@
                                 @else
                                     <span class="card-image-bg"><span>
                                 @endif
-                                            @if($property->featured == 1)
-                                                <a class="btn-floating halfway-fab waves-effect waves-light indigo" title="Featured"><i class="small material-icons">star</i></a>
-                                @endif
+{{--                                            @if($property->featured == 1)--}}
+{{--                                                <a class="btn-floating halfway-fab waves-effect waves-light indigo" title="Featured"><i class="small material-icons">star</i></a>--}}
+{{--                                @endif--}}
                             </div>
                             <div class="card-content property-content">
                                 <a href="{{ route('property.show',$property->slug) }}">
@@ -183,9 +183,9 @@
                                 @else
                                     <span class="card-image-bg"><span>
                                 @endif
-                                            @if($property->featured == 1)
-                                                <a class="btn-floating halfway-fab waves-effect waves-light indigo" title="Featured"><i class="small material-icons">star</i></a>
-                                @endif
+{{--                                            @if($property->featured == 1)--}}
+{{--                                                <a class="btn-floating halfway-fab waves-effect waves-light indigo" title="Featured"><i class="small material-icons">star</i></a>--}}
+{{--                                @endif--}}
                             </div>
                             <div class="card-content property-content">
                                 <a href="{{ route('property.show',$property->slug) }}">
@@ -253,9 +253,9 @@
                                 @else
                                     <span class="card-image-bg"><span>
                                 @endif
-                                            @if($property->featured == 1)
-                                                <a class="btn-floating halfway-fab waves-effect waves-light indigo" title="Featured"><i class="small material-icons">star</i></a>
-                                @endif
+{{--                                @if(//$property->featured == 1)--}}
+{{--                                    <a class="btn-floating halfway-fab waves-effect waves-light indigo" title="Featured"><i class="small material-icons">star</i></a>--}}
+{{--                    @endif--}}
                             </div>
                             <div class="card-content property-content">
                                 <a href="{{ route('property.show',$property->slug) }}">
