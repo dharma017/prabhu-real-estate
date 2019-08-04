@@ -30,25 +30,29 @@
             <div class="col m2 s12">
                 <h5 class="white-text uppercase">Menu</h5>
                 <ul>
-                    <li class="uppercase {{ Request::is('property*') ? 'underline' : '' }}">
-                        <a href="{{ route('property') }}" class="grey-text text-lighten-3">Properties</a>
+{{--                    <li class="uppercase {{ Request::is('pricing') ? 'underline' : '' }}">--}}
+{{--                        <a href="{{ route('pricing') }}" class="grey-text text-lighten-3">Pricing</a>--}}
+{{--                    </li>--}}
+
+{{--                    <li class="uppercase {{ Request::is('service-request') ? 'underline' : '' }}">--}}
+{{--                        <a href="{{ route('service-request') }}" class="grey-text text-lighten-3">Service Request</a>--}}
+{{--                    </li>--}}
+
+{{--                    <li class="uppercase {{ Request::is('about-us') ? 'underline' : '' }}">--}}
+{{--                        <a href="{{ route('about-us') }}" class="grey-text text-lighten-3">About Us</a>--}}
+{{--                    </li>--}}
+
+                    <li class="uppercase {{ Request::is('privacy-policy') ? 'underline' : '' }}">
+                        <a href="{{ route('pages.show', 'privacy-policy') }}" class="grey-text text-lighten-3">Privacy</a>
                     </li>
 
-                    <li class="uppercase {{ Request::is('pricing') ? 'underline' : '' }}">
-                        <a href="" class="grey-text text-lighten-3">Pricing</a>
+                    <li class="uppercase {{ Request::is('terms-and-conditions') ? 'underline' : '' }}">
+                        <a href="{{ route('pages.show', 'terms-and-conditions') }}" class="grey-text text-lighten-3">Terms Of Use</a>
                     </li>
 
-                    <li class="uppercase {{ Request::is('contact') ? 'underline' : '' }}">
-                        <a href="{{ route('contact') }}" class="grey-text text-lighten-3">Service Request</a>
-                    </li>
-
-                    <li class="uppercase {{ Request::is('about-us') ? 'underline' : '' }}">
-                        <a href="" class="grey-text text-lighten-3">About Us</a>
-                    </li>
-
-                    <li class="uppercase {{ Request::is('contact-us') ? 'underline' : '' }}">
-                        <a href="" class="grey-text text-lighten-3">Contact Us</a>
-                    </li>
+{{--                    <li class="uppercase {{ Request::is('contact') ? 'underline' : '' }}">--}}
+{{--                        <a href="{{ route('contact') }}" class="grey-text text-lighten-3">Contact Us</a>--}}
+{{--                    </li>--}}
                 </ul>
             </div>
         </div>
@@ -67,8 +71,8 @@
             @if(isset($footersettings[0]) && $footersettings[0]['twitter'])
                 <a class="grey-text text-lighten-4 right m-r-10" href="{{ $footersettings[0]['twitter'] }}" target="_blank">TWITTER</a>
             @endif
-            @if(isset($footersettings[0]) && $footersettings[0]['linkedin'])
-                <a class="grey-text text-lighten-4 right m-r-10" href="{{ $footersettings[0]['linkedin'] }}" target="_blank">LINKEDIN</a>
+            @if(isset($footersettings[0]) && $footersettings[0]['instagram'])
+                <a class="grey-text text-lighten-4 right m-r-10" href="{{ $footersettings[0]['instagram'] }}" target="_blank">INSTAGRAM</a>
             @endif
 
         </div>

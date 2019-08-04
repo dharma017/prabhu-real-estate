@@ -12,7 +12,7 @@
 
                 <div class="col s12 m8">
                     <div class="contact-content">
-                        <h4 class="contact-title">Contact Us</h4>
+                        <h4 class="contact-title">Service Request</h4>
 
                         <form id="contact-us" action="" method="POST">
                             @csrf
@@ -63,6 +63,27 @@
                                 <textarea id="message" name="message" class="materialize-textarea"></textarea>
                                 <label for="message">Message</label>
                             </div>
+
+                            <div class="row">
+                                <div class="col s12">
+                                    <label for="phone">Purpose</label>
+                                    <br>
+                                    <p>
+                                        <label>
+                                            <input class="with-gap" name="purpose" value="sale" type="radio" checked  />
+                                            <span>Sale</span>
+                                        </label>
+                                        <label>
+                                            <input class="with-gap" name="purpose" value="rent" type="radio"  />
+                                            <span>Rent</span>
+                                        </label>
+                                        <label>
+                                            <input class="with-gap" name="purpose" value="lease" type="radio"  />
+                                            <span>Lease</span>
+                                        </label>
+                                    </p>
+                                </div>
+                            </div>
                             
                             <button id="msgsubmitbtn" class="btn waves-effect waves-light indigo darken-4 btn-large" type="submit">
                                 <span>SEND</span>
@@ -73,32 +94,6 @@
 
                     </div>
                 </div> <!-- /.col -->
-
-                <div class="col s12 m4">
-                    <div class="contact-sidebar">
-                        <div class="m-t-30">
-                            <i class="material-icons left">call</i>
-                            <h6 class="uppercase">Call us Now</h6>
-                            @if(isset($contactsettings[0]) && $contactsettings[0]['phone'])
-                                <h6 class="bold m-l-40">{{ $contactsettings[0]['phone'] }}</h6>
-                            @endif
-                        </div>
-                        <div class="m-t-30">
-                            <i class="material-icons left">mail</i>
-                            <h6 class="uppercase">Email Address</h6>
-                            @if(isset($contactsettings[0]) && $contactsettings[0]['email'])
-                                <h6 class="bold m-l-40">{{ $contactsettings[0]['email'] }}</h6>
-                            @endif
-                        </div>
-                        <div class="m-t-30">
-                            <i class="material-icons left">map</i>
-                            <h6 class="uppercase">Address</h6>
-                            @if(isset($contactsettings[0]) && $contactsettings[0]['address'])
-                                <h6 class="bold m-l-40">{!! $contactsettings[0]['address'] !!}</h6>
-                            @endif
-                        </div>
-                    </div>
-                </div>
 
             </div>
         </div>
@@ -115,7 +110,7 @@
                 e.preventDefault();
 
                 var data = $(this).serialize();
-                var url = "{{ route('contact-request.message') }}";
+                var url = "{{ route('service-request.message') }}";
                 var btn = $('#msgsubmitbtn');
 
                 $.ajax({

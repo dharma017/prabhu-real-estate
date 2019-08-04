@@ -15,6 +15,6 @@ class Setting extends Model
         'aboutus',
         'facebook',
         'twitter',
-        'linkedin',
+        'instagram',
     ];
 }

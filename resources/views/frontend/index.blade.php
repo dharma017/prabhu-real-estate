@@ -83,8 +83,8 @@
                                     Area: <strong>{{ $property->area}}</strong> Square Feet
                                 </span>
                                 <span class="btn-flat">
-                                    <i class="material-icons">comment</i> 
-                                    <strong>{{ $property->comments_count}}</strong>
+                                    <i class="material-icons">visibility</i>
+                                    <strong>{{ $property->view_count}}</strong>
                                 </span>
                             </div>
                         </div>
@@ -92,6 +92,8 @@
                 @endforeach
 
             </div>
+            <a href="{{ route('property.feature', 'special-listing') }}" class="waves-effect waves-light btn right">View All</a>
+
         </div>
     </section>
 
@@ -152,8 +154,8 @@
                                     Area: <strong>{{ $property->area}}</strong> Square Feet
                                 </span>
                                 <span class="btn-flat">
-                                    <i class="material-icons">comment</i>
-                                    <strong>{{ $property->comments_count}}</strong>
+                                    <i class="material-icons">visibility</i>
+                                    <strong>{{ $property->view_count}}</strong>
                                 </span>
                             </div>
                         </div>
@@ -161,6 +163,7 @@
                 @endforeach
 
             </div>
+            <a href="{{ route('property.feature', 'top-listing') }}" class="waves-effect waves-light btn right">View All</a>
         </div>
     </section>
 
@@ -221,8 +224,8 @@
                                     Area: <strong>{{ $property->area}}</strong> Square Feet
                                 </span>
                                 <span class="btn-flat">
-                                    <i class="material-icons">comment</i>
-                                    <strong>{{ $property->comments_count}}</strong>
+                                    <i class="material-icons">visibility</i>
+                                    <strong>{{ $property->view_count}}</strong>
                                 </span>
                             </div>
                         </div>
@@ -230,6 +233,7 @@
                 @endforeach
 
             </div>
+            <a href="{{ route('property.feature', 'featured-listing') }}" class="waves-effect waves-light btn right">View All</a>
         </div>
     </section>
 
@@ -290,8 +294,8 @@
                                     Area: <strong>{{ $property->area}}</strong> Square Feet
                                 </span>
                                 <span class="btn-flat">
-                                    <i class="material-icons">comment</i>
-                                    <strong>{{ $property->comments_count}}</strong>
+                                    <i class="material-icons">visibility</i>
+                                    <strong>{{ $property->view_count}}</strong>
                                 </span>
                             </div>
                         </div>

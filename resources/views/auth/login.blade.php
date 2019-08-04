@@ -50,10 +50,14 @@
                                 <button type="submit" class="waves-effect waves-light btn indigo">
                                     {{ __('Login') }}
                                 </button>
-
                                 <a class="indigo-text p-l-15" href="{{ route('password.request') }}">
                                     {{ __('Forgot Your Password?') }}
                                 </a>
+                                <hr>
+                                <div class="col-md-8 offset-md-4">
+                                    <a href="{{ url('/auth/redirect/facebook') }}" class="btn btn-primary"><i class="fa fa-facebook"></i> Facebook</a>
+                                </div>
+
                             </div>
                         </div>
 

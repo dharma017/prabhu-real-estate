@@ -12,6 +12,7 @@ Route::post('/property/message', 'PagesController@messageAgent')->name('property
 Route::post('/property/comment/{id}', 'PagesController@propertyComments')->name('property.comment');
 Route::post('/property/rating', 'PagesController@propertyRating')->name('property.rating');
 Route::get('/property/city/{cityslug}', 'PagesController@propertyCities')->name('property.city');
+Route::get('/property/feature/{featureslug}', 'PagesController@propertyFeatures')->name('property.feature');
 
 Route::get('/agents', 'PagesController@agents')->name('agents');
 Route::get('/agents/{id}', 'PagesController@agentshow')->name('agents.show');
@@ -28,7 +29,13 @@ Route::get('/blog/author/{username}', 'PagesController@blogAuthor')->name('blog.
 
 Route::get('/contact', 'PagesController@contact')->name('contact');
 Route::post('/contact', 'PagesController@messageContact')->name('contact.message');
+Route::post('/contact-request', 'PagesController@messageContactRequest')->name('contact-request.message');
 
+Route::get('/service-request', 'PagesController@serviceRequest')->name('service-request');
+Route::post('/service-request', 'PagesController@messageServiceRequest')->name('service-request.message');
+
+Route::get('/auth/redirect/{provider}', 'SocialController@redirect');
+Route::get('/callback/{provider}', 'SocialController@callback');
 
 Auth::routes();
 
@@ -108,3 +115,5 @@ Route::group(['prefix'=>'user','namespace'=>'User','middleware'=>['auth','user']
     Route::delete('message/delete/{id}','DashboardController@messageDelete')->name('messages.destroy');
 
 });
+
+Route::get('{page}', 'PagesController@show')->name('pages.show');

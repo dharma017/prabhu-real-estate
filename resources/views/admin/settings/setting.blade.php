@@ -82,8 +82,8 @@
                         </div>
                         <div class="form-group">
                             <div class="form-line">
-                                <input type="text" name="linkedin" class="form-control" value="{{ $settings->linkedin or old('linkedin') }}">
-                                <label class="form-label">LinkedIn Handler</label>
+                                <input type="text" name="instagram" class="form-control" value="{{ $settings->instagram or old('instagram') }}">
+                                <label class="form-label">Instagram Handler</label>
                             </div>
                         </div>
 

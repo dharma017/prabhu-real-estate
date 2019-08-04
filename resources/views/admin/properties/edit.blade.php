@@ -162,14 +162,14 @@
 
                     <div class="form-group form-float">
                         <div class="form-line">
-                            <input type="text" class="form-control" name="contact_name" value="{{$property->contact_name}}" required>
+                            <input type="text" class="form-control" name="contact_name" value="{{$property->contact_name}}">
                             <label class="form-label">Contact Name</label>
                         </div>
                     </div>
 
                     <div class="form-group form-float">
                         <div class="form-line">
-                            <input type="number" class="form-control" name="contact_number" value="{{$property->contact_number}}" required>
+                            <input type="number" class="form-control" name="contact_number" value="{{$property->contact_number}}">
                             <label class="form-label">Contact Number</label>
                         </div>
                     </div>
@@ -239,6 +239,11 @@
                     <h2>SELECT</h2>
                 </div>
                 <div class="body">
+                    <div class="form-group">
+                        <input type="checkbox" id="status" name="status" class="filled-in" value="1" {{ $property->status ? 'checked' : '' }}/>
+                        <label for="status">Status</label>
+                    </div>
+
                     <div class="form-group">
                         <input type="checkbox" id="available" name="available" class="filled-in" value="1" {{ $property->available ? 'checked' : '' }}/>
                         <label for="available">Available</label>

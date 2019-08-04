@@ -21,7 +21,7 @@
                 <div class="body">
 
                     <div class="table-responsive">
-                        <table class="table table-bordered table-striped table-hover dataTable js-exportable">
+                        <table class="table table-bordered table-striped table-hover dataTable">
                             <thead>
                                 <tr>
                                     <th>SL.</th>
@@ -46,7 +46,7 @@
                                             <a href="{{route('admin.message.read',$message->id)}}" class="btn btn-warning btn-sm waves-effect">
                                                 <i class="material-icons">local_library</i>
                                             </a>
-                                        @else 
+                                        @else
                                             <a href="{{route('admin.message.read',$message->id)}}" class="btn btn-success btn-sm waves-effect">
                                                 <i class="material-icons">done</i>
                                             </a>

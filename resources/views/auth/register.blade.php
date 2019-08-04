@@ -57,12 +57,12 @@
                             </div>
                         </div>
                         
-                        <p>
-                            <label>
-                                <input type="checkbox" name="agent" class="filled-in" />
-                                <span>{{ __('Registration as Agent') }}</span>
-                            </label>
-                        </p>
+{{--                        <p>--}}
+{{--                            <label>--}}
+{{--                                <input type="checkbox" name="agent" class="filled-in" />--}}
+{{--                                <span>{{ __('Registration as Agent') }}</span>--}}
+{{--                            </label>--}}
+{{--                        </p>--}}
                         
                         <div class="row">
                             <div class="input-field col s12">

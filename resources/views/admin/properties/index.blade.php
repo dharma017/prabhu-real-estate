@@ -26,7 +26,7 @@
                 </div>
                 <div class="body">
                     <div class="table-responsive">
-                        <table class="table table-bordered table-striped table-hover dataTable js-exportable">
+                        <table class="table table-bordered table-striped table-hover dataTable">
                             <thead>
                                 <tr>
                                     <th>SL.</th>
@@ -35,8 +35,9 @@
                                     <th>Author</th>
                                     <th>Type</th>
                                     <th>Purpose</th>
-                                    <th><i class="material-icons">visibility</i></th>
-                                    <th>Is Approved</th>
+                                    <th>Views</th>
+                                    <th>Is Available</th>
+                                    <th>Status</th>
 {{--                                    <th><i class="material-icons small">comment</i></th>--}}
 {{--                                    <th><i class="material-icons small">views</i></th>--}}
                                     <th width="150">Action</th>
@@ -66,6 +67,13 @@
                                             <span class="badge bg-green">Availabe</span>
                                         @else
                                             <span class="badge bg-pink">Sold</span>
+                                        @endif
+                                    </td>
+                                    <td>
+                                        @if($property->status == true)
+                                            <span class="badge bg-green">Published</span>
+                                        @else
+                                            <span class="badge bg-pink">Pending</span>
                                         @endif
                                     </td>
 

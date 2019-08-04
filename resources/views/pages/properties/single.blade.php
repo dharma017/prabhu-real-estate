@@ -155,6 +155,8 @@
                     </div>
 
                     <div>
+                        @if($property->view_count) <span
+                                class="btn btn-small disabled b-r-20">Views: {{ $property->view_count}} </span> @endif
                         @if($property->bedroom) <span
                                 class="btn btn-small disabled b-r-20">Bedroom: {{ $property->bedroom}} </span> @endif
                         @if($property->bathroom)<span
@@ -179,11 +181,15 @@
                     <div>
                         <h4 class="left">{{@money_format_nep($property->price)}}</h4>
                         <span class="left">({{@money_in_words($property->price)}})</span>
-                        @if($property->featured == 1)
-                            <span class="left">10 Views</span>
-                        @endif
-                        <button type="button" class="btn btn-small m-t-25 right disabled b-r-20">
-                            For {{ $property->purpose }}</button>
+                            @if($property->available)
+                                <button type="button" class="btn btn-small m-t-25 right disabled b-r-20">
+                                    For {{ $property->purpose }}
+                                </button>
+                            @else
+                                <button type="button" class="btn btn-small m-t-25 right b-r-20 red">
+                                    Sold
+                                </button>
+                            @endif
                     </div>
                 </div>
             </div>
@@ -346,78 +352,172 @@
                 <div class="col s12 m4">
                     <div class="clearfix">
 
-                        <div>
-                            <ul class="collection with-header m-t-0">
-                                <li class="collection-header grey lighten-4">
-                                    <h5 class="m-0">Contact with Agent</h5>
-                                </li>
-                                <li class="collection-item p-0">
-                                    @if($property->user)
-                                        <div class="card horizontal card-no-shadow">
-                                            <div class="card-image p-l-10 agent-image">
-                                                <img src="{{Storage::url('users/'.$property->user->image)}}"
-                                                     alt="{{ $property->user->username }}" class="imgresponsive">
-                                            </div>
-                                            <div class="card-stacked">
-                                                <div class="p-l-10 p-r-10">
-                                                    <h5 class="m-t-b-0">{{ $property->user->name }}</h5>
-                                                    <strong>{{ $property->user->email }}</strong>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="p-l-10 p-r-10">
-                                            <p>{{ $property->user->about }}</p>
-                                            <a href="{{ route('agents.show',$property->agent_id) }}"
-                                               class="profile-link">Profile</a>
-                                        </div>
-                                    @endif
-                                </li>
+{{--                                                <div>--}}
+{{--                                                    <ul class="collection with-header m-t-0">--}}
+{{--                                                        <li class="collection-header grey lighten-4">--}}
+{{--                                                            <h5 class="m-0">Contact with Agent</h5>--}}
+{{--                                                        </li>--}}
+{{--                                                        <li class="collection-item p-0">--}}
+{{--                                                            @if($property->user)--}}
+{{--                                                                <div class="card horizontal card-no-shadow">--}}
+{{--                                                                    <div class="card-image p-l-10 agent-image">--}}
+{{--                                                                        <img src="{{Storage::url('users/'.$property->user->image)}}"--}}
+{{--                                                                             alt="{{ $property->user->username }}" class="imgresponsive">--}}
+{{--                                                                    </div>--}}
+{{--                                                                    <div class="card-stacked">--}}
+{{--                                                                        <div class="p-l-10 p-r-10">--}}
+{{--                                                                            <h5 class="m-t-b-0">{{ $property->user->name }}</h5>--}}
+{{--                                                                            <strong>{{ $property->user->email }}</strong>--}}
+{{--                                                                        </div>--}}
+{{--                                                                    </div>--}}
+{{--                                                                </div>--}}
+{{--                                                                <div class="p-l-10 p-r-10">--}}
+{{--                                                                    <p>{{ $property->user->about }}</p>--}}
+{{--                                                                    <a href="{{ route('agents.show',$property->agent_id) }}"--}}
+{{--                                                                       class="profile-link">Profile</a>--}}
+{{--                                                                </div>--}}
+{{--                                                            @endif--}}
+{{--                                                        </li>--}}
 
-                                <li class="collection agent-message">
-                                    <form class="agent-message-box" action="" method="POST">
-                                        @csrf
-                                        <input type="hidden" name="agent_id" value="{{ $property->user->id }}">
-                                        <input type="hidden" name="user_id" value="{{ auth()->id() }}">
-                                        <input type="hidden" name="property_id" value="{{ $property->id }}">
+{{--                                                        <li class="collection agent-message">--}}
+{{--                                                            <form class="agent-message-box" action="" method="POST">--}}
+{{--                                                                @csrf--}}
+{{--                                                                <input type="hidden" name="agent_id" value="{{ $property->user->id }}">--}}
+{{--                                                                <input type="hidden" name="user_id" value="{{ auth()->id() }}">--}}
+{{--                                                                <input type="hidden" name="property_id" value="{{ $property->id }}">--}}
 
-                                        <div class="box">
-                                            <input type="text" name="name" placeholder="Your Name">
+{{--                                                                <div class="box">--}}
+{{--                                                                    <input type="text" name="name" placeholder="Your Name">--}}
+{{--                                                                </div>--}}
+{{--                                                                <div class="box">--}}
+{{--                                                                    <input type="email" name="email" placeholder="Your Email">--}}
+{{--                                                                </div>--}}
+{{--                                                                <div class="box">--}}
+{{--                                                                    <input type="number" name="phone" placeholder="Your Phone">--}}
+{{--                                                                </div>--}}
+{{--                                                                <div class="box">--}}
+{{--                                                                    <textarea name="message" placeholder="Your Msssage"></textarea>--}}
+{{--                                                                </div>--}}
+{{--                                                                <div class="box">--}}
+{{--                                                                    <button id="msgsubmitbtn" class="btn waves-effect waves-light w100 indigo"--}}
+{{--                                                                            type="submit">--}}
+{{--                                                                        SEND--}}
+{{--                                                                        <i class="material-icons left">send</i>--}}
+{{--                                                                    </button>--}}
+{{--                                                                </div>--}}
+{{--                                                            </form>--}}
+{{--                                                        </li>--}}
+{{--                                                    </ul>--}}
+{{--                                                </div>--}}
+
+{{--                                                <div>--}}
+{{--                                                    <ul class="collection with-header">--}}
+{{--                                                        <li class="collection-header grey lighten-4">--}}
+{{--                                                            <h5 class="m-0">City List</h5>--}}
+{{--                                                        </li>--}}
+{{--                                                        @foreach($cities as $city)--}}
+{{--                                                            <li class="collection-item p-0">--}}
+{{--                                                                <a class="city-list" href="{{ route('property.city',$city->city_slug) }}">--}}
+{{--                                                                    <span>{{ $city->city }}</span>--}}
+{{--                                                                </a>--}}
+{{--                                                            </li>--}}
+{{--                                                        @endforeach--}}
+{{--                                                    </ul>--}}
+{{--                                                </div>--}}
+
+
+                        <div class="collection with-header  m-t-0">
+
+                            <h2 class="sidebar-title">search property</h2>
+
+                            <form class="sidebar-search" action="{{ route('search')}}" method="GET">
+
+                                <div class="searchbar">
+                                    <div class="input-field col s12">
+                                        <input type="text" name="city" id="autocomplete-input-sidebar" class="autocomplete custominputbox" autocomplete="off">
+                                        <label for="autocomplete-input-sidebar">Enter City or State</label>
+                                    </div>
+
+                                    <div class="input-field col s12">
+                                        <select name="type" class="browser-default">
+                                            <option value="" disabled selected>Choose Type</option>
+                                            <option value="bungalow">Bungalow</option>
+                                            <option value="house">House</option>
+                                            <option value="land">Land</option>
+                                            <option value="rent">Rent</option>
+                                            <option value="apartment">Apartment</option>
+                                            <option value="colony">Colony</option>
+                                            <option value="flat">Flat</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="input-field col s12">
+                                        <select name="purpose" class="browser-default">
+                                            <option value="" disabled selected>Choose Purpose</option>
+                                            <option value="rent">Rent</option>
+                                            <option value="sale">Sale</option>
+                                            <option value="lease">Lease</option>
+                                        </select>
+                                    </div>
+
+                                    {{--                            <div class="input-field col s12">--}}
+                                    {{--                                <select name="bedroom" class="browser-default">--}}
+                                    {{--                                    <option value="" disabled selected>Choose Bedroom</option>--}}
+                                    {{--                                    @foreach($bedroomdistinct as $bedroom)--}}
+                                    {{--                                        <option value="{{$bedroom->bedroom}}">{{$bedroom->bedroom}}</option>--}}
+                                    {{--                                    @endforeach--}}
+                                    {{--                                </select>--}}
+                                    {{--                            </div>--}}
+
+                                    {{--                            <div class="input-field col s12">--}}
+                                    {{--                                <select name="bathroom" class="browser-default">--}}
+                                    {{--                                    <option value="" disabled selected>Choose Bathroom</option>--}}
+                                    {{--                                    @foreach($bathroomdistinct as $bathroom)--}}
+                                    {{--                                        <option value="{{$bathroom->bathroom}}">{{$bathroom->bathroom}}</option>--}}
+                                    {{--                                    @endforeach--}}
+                                    {{--                                </select>--}}
+                                    {{--                            </div>--}}
+
+                                    <div class="input-field col s12">
+                                        <input type="number" name="minprice" id="minprice" class="custominputbox">
+                                        <label for="minprice">Min Price</label>
+                                    </div>
+
+                                    <div class="input-field col s12">
+                                        <input type="number" name="maxprice" id="maxprice" class="custominputbox">
+                                        <label for="maxprice">Max Price</label>
+                                    </div>
+
+                                    {{--                            <div class="input-field col s12">--}}
+                                    {{--                                <input type="number" name="minarea" id="minarea" class="custominputbox">--}}
+                                    {{--                                <label for="minarea">Floor Min Area</label>--}}
+                                    {{--                            </div>--}}
+
+                                    {{--                            <div class="input-field col s12">--}}
+                                    {{--                                <input type="number" name="maxarea" id="maxarea" class="custominputbox">--}}
+                                    {{--                                <label for="maxarea">Floor Max Area</label>--}}
+                                    {{--                            </div>--}}
+
+                                    <div class="input-field col s12">
+                                        <div class="switch">
+                                            <label>
+                                                <input type="checkbox" name="featured">
+                                                <span class="lever"></span>
+                                                Featured
+                                            </label>
                                         </div>
-                                        <div class="box">
-                                            <input type="email" name="email" placeholder="Your Email">
-                                        </div>
-                                        <div class="box">
-                                            <input type="number" name="phone" placeholder="Your Phone">
-                                        </div>
-                                        <div class="box">
-                                            <textarea name="message" placeholder="Your Msssage"></textarea>
-                                        </div>
-                                        <div class="box">
-                                            <button id="msgsubmitbtn" class="btn waves-effect waves-light w100 indigo"
-                                                    type="submit">
-                                                SEND
-                                                <i class="material-icons left">send</i>
-                                            </button>
-                                        </div>
-                                    </form>
-                                </li>
-                            </ul>
+                                    </div>
+                                    <div class="input-field col s12">
+                                        <button class="btn btnsearch indigo" type="submit">
+                                            <i class="material-icons left">search</i>
+                                            <span>SEARCH</span>
+                                        </button>
+                                    </div>
+                                </div>
+
+                            </form>
+
                         </div>
-
-{{--                        <div>--}}
-{{--                            <ul class="collection with-header">--}}
-{{--                                <li class="collection-header grey lighten-4">--}}
-{{--                                    <h5 class="m-0">City List</h5>--}}
-{{--                                </li>--}}
-{{--                                @foreach($cities as $city)--}}
-{{--                                    <li class="collection-item p-0">--}}
-{{--                                        <a class="city-list" href="{{ route('property.city',$city->city_slug) }}">--}}
-{{--                                            <span>{{ $city->city }}</span>--}}
-{{--                                        </a>--}}
-{{--                                    </li>--}}
-{{--                                @endforeach--}}
-{{--                            </ul>--}}
-{{--                        </div>--}}
 
                         <div>
                             <ul class="collection with-header">

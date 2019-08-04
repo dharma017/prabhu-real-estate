@@ -1,12 +1,13 @@
-<!-- SEARCH SECTION -->
 <section class="indigo darken-2 white-text center search-bar">
 	<div class="search-bar__fixed">
 		<div class="container">
 			<div class="row m-b-0">
 				<div class="col s12">
+
 					<form action="{{ route('search')}} " method="GET">
+
 						<div class="searchbar">
-							<div class="input-field col s12 m3">
+							<div class="input-field col s12 m5">
 								<input type="text" name="city" id="autocomplete-input" class="autocomplete custominputbox" autocomplete="off">
 								<label for="autocomplete-input">Enter City or State</label>
 							</div>
@@ -33,16 +34,16 @@
 								</select>
 							</div>
 
-							<div class="input-field col s12 m2">
-								<select name="bedroom" class="browser-default">
-									<option value="" disabled selected>Bedroom</option>
-									@if(isset($bedroomdistinct))
-										@foreach($bedroomdistinct as $bedroom)
-											<option value="{{$bedroom->bedroom}}">{{$bedroom->bedroom}}</option>
-										@endforeach
-									@endif
-								</select>
-							</div>
+	{{--                        <div class="input-field col s12 m2">--}}
+	{{--                            <select name="bedroom" class="browser-default">--}}
+	{{--                                <option value="" disabled selected>Bedroom</option>--}}
+	{{--                                @if(isset($bedroomdistinct))--}}
+	{{--                                    @foreach($bedroomdistinct as $bedroom)--}}
+	{{--                                        <option value="{{$bedroom->bedroom}}">{{$bedroom->bedroom}}</option>--}}
+	{{--                                    @endforeach--}}
+	{{--                                @endif--}}
+	{{--                            </select>--}}
+	{{--                        </div>--}}
 
 							<div class="input-field col s12 m2">
 								<input type="text" name="maxprice" id="maxprice" class="custominputbox">
@@ -55,7 +56,9 @@
 								</button>
 							</div>
 						</div>
+
 					</form>
+
 				</div>
 			</div>
 		</div>

@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Feature;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\Auth;
@@ -44,12 +45,15 @@ class AppServiceProvider extends ServiceProvider
             });
 
             view()->composer('frontend.partials.footer', function($view) {
-                $view->with('footerproperties', Property::latest()->take(3)->get());
-                $view->with('footersettings', Setting::select('footer','aboutus','facebook','twitter','linkedin')->get());
+                $view->with('footerproperties', Property::latest()->where('status', 1)->take(3)->get());
+                $view->with('footersettings', Setting::select('footer','aboutus','facebook','twitter','instagram')->get());
             });
 
             view()->composer('frontend.partials.navbar', function($view) {
-                $view->with('navbarsettings', Setting::select('name')->get());
+                $navbarsettings     = Setting::select('name')->get();
+                $features     = Feature::all();
+
+                $view->with(compact('navbarsettings','features'));
             });
 
             view()->composer('backend.partials.navbar', function($view) {
@@ -58,6 +62,10 @@ class AppServiceProvider extends ServiceProvider
             });
 
             view()->composer('pages.contact', function($view) {
+                $view->with('contactsettings', Setting::select('phone','email','address')->get());
+            });
+
+            view()->composer('pages.service-request', function($view) {
                 $view->with('contactsettings', Setting::select('phone','email','address')->get());
             });
 

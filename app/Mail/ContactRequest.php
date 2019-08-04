@@ -7,12 +7,15 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class Contact extends Mailable
+class ContactRequest extends Mailable
 {
+
     use Queueable, SerializesModels;
 
-    public $name;
     public $message;
+    public $name;
+    public $phone;
+    public $adminname;
     public $mailfrom;
 
     /**
@@ -20,10 +23,17 @@ class Contact extends Mailable
      *
      * @return void
      */
-    public function __construct($message, $name, $mailfrom)
-    {
-        $this->name     = $name;
-        $this->message  = $message;
+    public function __construct(
+        $message,
+        $name,
+        $phone,
+        $adminname,
+        $mailfrom
+    ) {
+        $this->message = $message;
+        $this->name = $name;
+        $this->phone = $phone;
+        $this->adminname = $adminname;
         $this->mailfrom = $mailfrom;
     }
 
@@ -34,6 +44,6 @@ class Contact extends Mailable
      */
     public function build()
     {
-        return $this->from($this->mailfrom)->markdown('emails.contact');
+        return $this->from($this->mailfrom)->markdown('emails.contact-request');
     }
 }
