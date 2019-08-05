@@ -101,9 +101,9 @@
         </li>
 
         <li class="{{ Request::is('property*') ? 'active' : '' }}">
-            <a class='dropdown-trigger' data-target='dropdown1' href='#'>Property</a>
+            <a class='dropdown-trigger' data-target='dropdown_mobile' href='#'>Property</a>
             <!-- Dropdown Structure -->
-            <ul id='dropdown1' class='dropdown-content'>
+            <ul id='dropdown_mobile' class='dropdown-content'>
                 @foreach ($features as $feature)
                     <li><a href="{{ route('property.feature', $feature->slug) }}">{{ $feature->name }}</a></li>
                 @endforeach
@@ -125,51 +125,6 @@
         <li class="{{ Request::is('contact') ? 'active' : '' }}">
             <a href="{{ route('contact') }}">Contact Us</a>
         </li>
-
-        @guest
-            <li><a href="{{ route('login') }}">Login</a></li>
-            <li><a href="{{ route('register') }}">Register</a></li>
-        @else
-            <li>
-                <a class="dropdown-trigger" href="#!" data-target="dropdown-auth-frontend">
-                    {{ ucfirst(Auth::user()->username) }}
-                    <i class="material-icons right">arrow_drop_down</i>
-                </a>
-            </li>
-
-            <ul id="dropdown-auth-frontend" class="dropdown-content">
-                <li>
-                    @if(Auth::user()->role->id == 1)
-                        <a href="{{ route('admin.dashboard') }}" class="indigo-text">
-                            <i class="material-icons">person</i>Profile
-                        </a>
-                        <a href="{{ route('agents') }}" class="indigo-text">
-                            <i class="material-icons">people</i>Agents
-                        </a>
-                    @elseif(Auth::user()->role->id == 2)
-                        <a href="{{ route('agent.dashboard') }}" class="indigo-text">
-                            <i class="material-icons">person</i>Profile
-                        </a>
-                    @elseif(Auth::user()->role->id == 3)
-                        <a href="{{ route('user.dashboard') }}" class="indigo-text">
-                            <i class="material-icons">person</i>Profile
-                        </a>
-                    @endif
-                </li>
-                <li>
-                    <a class="dropdownitem indigo-text" href="{{ route('logout') }}"
-                       onclick="event.preventDefault();
-                                    document.getElementById('logout-form').submit();">
-                        <i class="material-icons">power_settings_new</i>{{ __('Logout') }}
-                    </a>
-
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                        @csrf
-                    </form>
-                </li>
-            </ul>
-
-        @endguest
     </ul>
 
 </div>
