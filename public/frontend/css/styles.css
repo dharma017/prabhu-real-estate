@@ -820,3 +820,9 @@ li.collection.agent-message {
     z-index: 99 !important;
 }
 
+@media only screen and (max-width: 992px) {
+    nav .brand-logo {
+        left: 45%;
+        font-size: 14px !important;
+    }
+}
