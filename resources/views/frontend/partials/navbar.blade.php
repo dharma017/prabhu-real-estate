@@ -101,23 +101,29 @@
         </li>
 
         <li class="{{ Request::is('property*') ? 'active' : '' }}">
-            <a href="{{ route('property') }}">Property</a>
+            <a class='dropdown-trigger' data-target='dropdown1' href='#'>Property</a>
+            <!-- Dropdown Structure -->
+            <ul id='dropdown1' class='dropdown-content'>
+                @foreach ($features as $feature)
+                    <li><a href="{{ route('property.feature', $feature->slug) }}">{{ $feature->name }}</a></li>
+                @endforeach
+            </ul>
         </li>
 
-        <li class="{{ Request::is('pricing') ? 'active' : '' }}">
-            <a href="">Pricing</a>
+        <li class="{{ Request::is('pricing*') ? 'active' : '' }}">
+            <a href="{{ route('pages.show', 'pricing') }}">Pricing</a>
         </li>
 
-        <li class="{{ Request::is('contact*') ? 'active' : '' }}">
-            <a href="{{ route('contact') }}">Service Request</a>
+        <li class="{{ Request::is('service-request*') ? 'active' : '' }}">
+            <a href="{{ route('service-request') }}">Service Request</a>
         </li>
 
-        <li class="{{ Request::is('about-us') ? 'active' : '' }}">
-            <a href="">About Us</a>
+        <li class="{{ Request::is('about-us*') ? 'active' : '' }}">
+            <a href="{{ route('pages.show', 'about-us') }}">About Us</a>
         </li>
 
-        <li class="{{ Request::is('contact-us') ? 'active' : '' }}">
-            <a href="">Contact Us</a>
+        <li class="{{ Request::is('contact') ? 'active' : '' }}">
+            <a href="{{ route('contact') }}">Contact Us</a>
         </li>
     </ul>
 

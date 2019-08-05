@@ -815,3 +815,8 @@ li.collection.agent-message {
     margin-top: 95px;
     padding-left: 20px;
 }
+
+.sidenav-overlay {
+    z-index: 99 !important;
+}
+
