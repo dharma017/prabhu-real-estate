@@ -22,6 +22,8 @@ class DatabaseSeeder extends Seeder
                 'image'         => 'default.png',
                 'about'         => 'Bio of admin',
                 'password'      => bcrypt('123456'),
+                'provider'      => null,
+                'provider_id'   => null,
                 'created_at'    => date("Y-m-d H:i:s")
             ],
             [
@@ -32,6 +34,8 @@ class DatabaseSeeder extends Seeder
                 'image'         => 'default.png',
                 'about'         => '',
                 'password'      => bcrypt('123456'),
+                'provider'      => null,
+                'provider_id'   => null,
                 'created_at'    => date("Y-m-d H:i:s")
             ],
             [
@@ -42,6 +46,8 @@ class DatabaseSeeder extends Seeder
                 'image'         => 'default.png',
                 'about'         => null,
                 'password'      => bcrypt('123456'),
+                'provider'      => null,
+                'provider_id'   => null,
                 'created_at'    => date("Y-m-d H:i:s")
             ],
         ]);
