@@ -993,3 +993,14 @@ li.collection.agent-message {
 		max-width: 33.33%;
 	}
 }
+
+.sidenav-overlay {
+    z-index: 99 !important;
+}
+
+@media only screen and (max-width: 992px) {
+    nav .brand-logo {
+        left: 45%;
+        font-size: 14px !important;
+    }
+}

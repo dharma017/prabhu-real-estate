@@ -156,25 +156,25 @@
 
                     <div>
                         @if($property->view_count) <span
-                                class="btn btn-small disabled b-r-20">Views: {{ $property->view_count}} </span> @endif
+                                class="btn btn-small disabled b-r-20 m-t-10">Views: {{ $property->view_count}} </span> @endif
                         @if($property->bedroom) <span
-                                class="btn btn-small disabled b-r-20">Bedroom: {{ $property->bedroom}} </span> @endif
+                                class="btn btn-small disabled b-r-20 m-t-10">Bedroom: {{ $property->bedroom}} </span> @endif
                         @if($property->bathroom)<span
-                                class="btn btn-small disabled b-r-20">Bathroom: {{ $property->bathroom}} </span>@endif
+                                class="btn btn-small disabled b-r-20 m-t-10">Bathroom: {{ $property->bathroom}} </span>@endif
                         @if($property->living)<span
-                                class="btn btn-small disabled b-r-20">Living: {{ $property->living}} </span>@endif
+                                class="btn btn-small disabled b-r-20 m-t-10">Living: {{ $property->living}} </span>@endif
                         @if($property->kitchen)<span
-                                class="btn btn-small disabled b-r-20">Kitchen: {{ $property->kitchen}} </span>@endif
+                                class="btn btn-small disabled b-r-20 m-t-10">Kitchen: {{ $property->kitchen}} </span>@endif
                         @if($property->store_rooms)<span
-                                class="btn btn-small disabled b-r-20">Store Room: {{ $property->store_rooms}} </span>@endif
+                                class="btn btn-small disabled b-r-20 m-t-10">Store Room: {{ $property->store_rooms}} </span>@endif
                         @if($property->floors)<span
-                                class="btn btn-small disabled b-r-20">Floors: {{ $property->floors}} </span>@endif
+                                class="btn btn-small disabled b-r-20 m-t-10">Floors: {{ $property->floors}} </span>@endif
                         @if($property->parking) <span
-                                class="btn btn-small disabled b-r-20">Parking: {{ $property->parking}} </span>@endif
+                                class="btn btn-small disabled b-r-20 m-t-10">Parking: {{ $property->parking}} </span>@endif
                         @if($property->area)<span
-                                class="btn btn-small disabled b-r-20">Area: {{ $property->area}} Sq Ft</span>@endif
+                                class="btn btn-small disabled b-r-20 m-t-10">Area: {{ $property->area}} Sq Ft</span>@endif
                         @if($property->land_area)<span
-                                class="btn btn-small disabled b-r-20">Land Area: {{ $property->land_area}}</span>@endif
+                                class="btn btn-small disabled b-r-20 m-t-10">Land Area: {{ $property->land_area}}</span>@endif
                     </div>
                 </div>
                 <div class="col s12 m4">
