@@ -14,10 +14,14 @@
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger">
                     <i class="material-icons">menu</i>
                 </a>
-                
+
                 <ul class="right hide-on-med-and-down">
                     <li class="{{ Request::is('/') ? 'active' : '' }}">
                         <a href="{{ route('home') }}">Home</a>
+                    </li>
+
+                    <li class="{{ Request::is('about-us*') ? 'active' : '' }}">
+                        <a href="{{ route('pages.show', 'about-us') }}">About Us</a>
                     </li>
 
                     <li class="{{ Request::is('property*') ? 'active' : '' }}">
@@ -38,17 +42,13 @@
                         <a href="{{ route('service-request') }}">Service Request</a>
                     </li>
 
-                    <li class="{{ Request::is('about-us*') ? 'active' : '' }}">
-                        <a href="{{ route('pages.show', 'about-us') }}">About Us</a>
-                    </li>
-
                     <li class="{{ Request::is('contact') ? 'active' : '' }}">
                         <a href="{{ route('contact') }}">Contact Us</a>
                     </li>
 
                     @guest
-                        <li><a href="{{ route('login') }}"><i class="material-icons">input</i></a></li>
-                        <li><a href="{{ route('register') }}"><i class="material-icons">person_add</i></a></li>
+                        <li><a href="{{ route('login') }}">Login</a></li>
+                        <li><a href="{{ route('register') }}">Post free</a></li>
                     @else
                         <li>
                             <a class="dropdown-trigger" href="#!" data-target="dropdown-auth-frontend">
@@ -94,10 +94,14 @@
             </div>
         </div>
     </nav>
-    
+
     <ul class="sidenav" id="mobile-demo">
         <li class="{{ Request::is('/') ? 'active' : '' }}">
             <a href="{{ route('home') }}">Home</a>
+        </li>
+
+        <li class="{{ Request::is('about-us*') ? 'active' : '' }}">
+            <a href="{{ route('pages.show', 'about-us') }}">About Us</a>
         </li>
 
         <li class="{{ Request::is('property*') ? 'active' : '' }}">
@@ -118,17 +122,13 @@
             <a href="{{ route('service-request') }}">Service Request</a>
         </li>
 
-        <li class="{{ Request::is('about-us*') ? 'active' : '' }}">
-            <a href="{{ route('pages.show', 'about-us') }}">About Us</a>
-        </li>
-
         <li class="{{ Request::is('contact') ? 'active' : '' }}">
             <a href="{{ route('contact') }}">Contact Us</a>
         </li>
 
         @guest
-            <li><a href="{{ route('login') }}"><i class="material-icons">input</i></a></li>
-            <li><a href="{{ route('register') }}"><i class="material-icons">person_add</i></a></li>
+            <li><a href="{{ route('login') }}">Login</a></li>
+            <li><a href="{{ route('register') }}">Post free</a></li>
         @else
             <li>
                 <a class="dropdown-trigger" href="#!" data-target="dropdown-auth-frontend_mobile">

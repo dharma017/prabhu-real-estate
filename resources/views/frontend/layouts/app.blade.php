@@ -8,23 +8,24 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel Real Estate') }}</title>
+    <title>{{ config('app.name', 'Prabhu Real Estate') }}</title>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" rel="stylesheet">
+
     <!-- Styles -->
     <link href="{{ asset('frontend/css/materialize.min.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css">
 
     @yield('styles')
-    
+
     <link href="{{ asset('frontend/css/styles.css') }}" rel="stylesheet">
 </head>
 
     <body>
-        
+
         {{-- MAIN NAVIGATION BAR --}}
         @include('frontend.partials.navbar')
 
@@ -35,7 +36,7 @@
 
         {{-- SEARCH BAR --}}
         @include('frontend.partials.search')
-        
+
         {{-- MAIN CONTENT --}}
         <div class="main">
             @yield('content')
@@ -82,7 +83,7 @@
                 @foreach ($errors->all() as $error)
                     toastr.error('{{ $error }}','Error',{
                         closeButtor: true,
-                        progressBar: true 
+                        progressBar: true
                     });
                 @endforeach
             @endif
@@ -103,7 +104,7 @@
                 indicators: true,
             });
 
-            var city_list =<?php echo json_encode($citylist);?>;
+            var city_list =<?php echo json_encode($citylist); ?>;
             $('input.autocomplete').autocomplete({
                 data: city_list
             });

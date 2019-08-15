@@ -52,7 +52,7 @@
 
 							<div class="input-field col s12 m1">
 								<button class="btn btnsearch waves-effect waves-light w100" type="submit">
-									<i class="material-icons">search</i>
+									<!-- <i class="material-icons">search</i>  -->Search
 								</button>
 							</div>
 						</div>
