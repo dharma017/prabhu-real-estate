@@ -291,7 +291,7 @@ nav .brand-logo i {
 	padding-right: 18px;
 }
 
-.dropdown-trigger::before {
+.dropdown-trigger:before {
 	width: 6px;
 	height: 6px;
 	content: "";
@@ -307,6 +307,10 @@ nav .brand-logo i {
 	-ms-transform: rotate( -45deg );
 	-o-transform: rotate( -45deg );
 	transform: rotate( -45deg );
+}
+
+[data-target="dropdown-auth-frontend"].dropdown-trigger:before {
+	content: none;
 }
 
 .dropdown-content li>a, .dropdown-content li>span,
