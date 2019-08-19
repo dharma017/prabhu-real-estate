@@ -146,7 +146,7 @@
             <div class="row">
                 <div class="col s12 m8">
                     <div class="single-title">
-                        <h4 class="single-title">{{ $property->title }}</h4>
+                        <h1 class="single-title">{{ $property->title }}</h1>
                     </div>
 
                     <div class="address m-b-30">
@@ -611,7 +611,7 @@
                             @csrf
                         <input type="hidden" name="parent" value="1">
                         <input type="hidden" name="parent_id" value="` + commentid + `">
-                            
+
                             <textarea name="body" class="box" placeholder="Leave a comment"></textarea>
                             <input type="submit" class="btn indigo" value="Comment">
                         </form>
@@ -655,7 +655,7 @@
         })
     </script>
 
-    <script src="{{ asset('frontend/js/jssor.slider.min.js') }}"></script>
+    <!-- <script src="{{ asset('frontend/js/jssor.slider.min.js') }}"></script>
     <script>
         jssor_1_slider_init = function () {
 
@@ -866,8 +866,6 @@
 
             var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
 
-            /*#region responsive code begin*/
-
             var MAX_WIDTH = 980;
 
             function ScaleSlider() {
@@ -889,13 +887,39 @@
             $Jssor$.$AddEvent(window, "load", ScaleSlider);
             $Jssor$.$AddEvent(window, "resize", ScaleSlider);
             $Jssor$.$AddEvent(window, "orientationchange", ScaleSlider);
-            /*#endregion responsive code end*/
         };
 
         @if(!$property->gallery->isEmpty())
         jssor_1_slider_init();
         @endif
 
+    </script> -->
+
+
+    <!-- Initialize Swiper -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.js" type="text/javascript"></script>
+    <script>
+        var galleryThumbs = new Swiper('.gallery-thumbs', {
+            spaceBetween: 10,
+            slidesPerView: 4,
+            // loop: true,
+            // freeMode: true,
+            // loopedSlides: 5, //looped slides should be the same
+            watchSlidesVisibility: true,
+            watchSlidesProgress: true,
+        });
+        var galleryTop = new Swiper('.gallery-top', {
+            spaceBetween: 10,
+            // loop:true,
+            // loopedSlides: 5, //looped slides should be the same
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            thumbs: {
+                swiper: galleryThumbs,
+            },
+        });
     </script>
     <script>
         function initMap() {
