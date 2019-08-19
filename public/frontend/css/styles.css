@@ -1041,7 +1041,7 @@ li.collection.agent-message {
 }
 
 .card {
-	height: 100%;
+	/* height: 100%; */
 	margin: 0;
 }
 
