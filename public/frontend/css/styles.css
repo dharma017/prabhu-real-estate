@@ -226,7 +226,8 @@
 }
 
 .section-properties .card .card-content {
-	padding: 15px;
+	padding: 10px;
+	word-wrap: break-word;
 }
 
 .section-properties .card-image-bg {
@@ -1434,6 +1435,8 @@ li.collection.agent-message {
 
 	.section-properties .card .card-image img {
 		position: static;
+		height: auto;
+		width: 100%;
 		-webkit-transform: none;
 		   -moz-transform: none;
 		    -ms-transform: none;
