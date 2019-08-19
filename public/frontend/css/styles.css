@@ -1300,6 +1300,29 @@ li.collection.agent-message {
 	margin-bottom: 0;
 }
 
+/* slider */
+
+.gallery-top {
+	height: 80%;
+	width: 100%;
+}
+.gallery-thumbs {
+	height: 20%;
+	box-sizing: border-box;
+	padding: 10px 0;
+}
+.gallery-thumbs .swiper-slide {
+	height: 100%;
+	opacity: 0.4;
+}
+.gallery-thumbs .swiper-slide-thumb-active {
+	opacity: 1;
+}
+
+.swiper-container img {
+	max-width:  100%;
+}
+
 @media all and ( min-width: 230px ) {
 	.s12 {
 		width: 100%;
@@ -1439,9 +1462,9 @@ li.collection.agent-message {
 		width: 100%;
 		-webkit-transform: none;
 		   -moz-transform: none;
-		    -ms-transform: none;
-		     -o-transform: none;
-		        transform: none;
+			-ms-transform: none;
+			 -o-transform: none;
+				transform: none;
 
 	}
 }
