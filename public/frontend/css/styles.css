@@ -1357,6 +1357,7 @@ li.collection.agent-message {
 h1.single-title {
 	margin-top: 0;
 	color: #3366ff;
+	font-size: 3.2rem;
 	font-weight: 600;
 	word-wrap: break-word;
 }
