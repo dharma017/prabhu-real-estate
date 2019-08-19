@@ -179,14 +179,16 @@
                 </div>
                 <div class="col s12 m4">
                     <div>
-                        <h4 class="left">{{@money_format_nep($property->price)}}</h4>
-                        <span class="left">({{@money_in_words($property->price)}})</span>
+                        <h4 class="left w100">
+                            <strong>{{@money_format_nep($property->price)}}</strong>
+                        </h4>
+                        <span class="left w100">({{@money_in_words($property->price)}})</span>
                             @if($property->available)
-                                <button type="button" class="btn btn-small m-t-25 right disabled b-r-20">
+                                <button type="button" class="btn btn-small m-t-25 left disabled b-r-20">
                                     For {{ $property->purpose }}
                                 </button>
                             @else
-                                <button type="button" class="btn btn-small m-t-25 right b-r-20 red">
+                                <button type="button" class="btn btn-small m-t-25 left b-r-20 red">
                                     Sold
                                 </button>
                             @endif
