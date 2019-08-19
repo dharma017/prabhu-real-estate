@@ -244,7 +244,8 @@
                             <h5 class="m-0">Location</h5>
                         </div>
                         <div class="card-image">
-                            <div id="map"></div>
+                            <!-- <div id="map"></div> -->
+                            <iframe src="http://maps.google.com/maps?q=<?php echo $property->location_latitude; ?>, <?php echo $property->location_longitude; ?>&z=12&output=embed" width="360" height="270" frameborder="0" style="border:0"></iframe>
                         </div>
                     </div>
 
@@ -921,11 +922,11 @@
             },
         });
     </script>
-    <script>
+    <!-- <script>
         function initMap() {
             var propLatLng = {
-                lat: <?php echo $property->location_latitude; ?>,
-                lng: <?php echo $property->location_longitude; ?>
+                lat: <?php //echo $property->location_latitude; ?>,
+                lng: <?php //echo $property->location_longitude; ?>
             };
 
             var map = new google.maps.Map(document.getElementById('map'), {
@@ -936,11 +937,11 @@
             var marker = new google.maps.Marker({
                 position: propLatLng,
                 map: map,
-                title: '<?php echo $property->title; ?>'
+                title: '<?php //echo $property->title; ?>'
             });
         }
-    </script>
-    <script async defer
+    </script> -->
+    <!-- <script async defer
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBRLaJEjRudGCuEi1_pqC4n3hpVHIyJJZA&callback=initMap">
-    </script>
+    </script> -->
 @endsection
