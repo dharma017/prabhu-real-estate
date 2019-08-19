@@ -108,7 +108,7 @@
             @foreach($top_properties as $property)
             <div class="col s12 m3">
                 <div class="card property__block property__block--for-{{ $property->purpose }} property__block--{{ $property->type }} property__block--type-{{ ucfirst($property->type) }}">
-                    <a href="{{ route('property.show',$property->slug) }}" class=" tooltipped" data-position="bottom" data-tooltip="{{ $property->title }}">
+                    <a href="{{ route('property.show',$property->slug) }}" title="{{ $property->title }}">
                         <div class="card-image">
                             @if(Storage::disk('public')->exists('property/'.$property->image) && $property->image)
                             <span class="card-image-bg">
@@ -180,7 +180,7 @@
             @foreach($featured_properties as $property)
             <div class="col s12 m3">
                 <div class="card property__block property__block--for-{{ $property->purpose }} property__block--{{ $property->type }} property__block--type-{{ ucfirst($property->type) }}">
-                    <a href="{{ route('property.show',$property->slug) }}" class=" tooltipped" data-position="bottom" data-tooltip="{{ $property->title }}">
+                    <a href="{{ route('property.show',$property->slug) }}" title="{{ $property->title }}">
                         <div class="card-image">
                             @if(Storage::disk('public')->exists('property/'.$property->image) && $property->image)
                             <span class="card-image-bg">
@@ -249,7 +249,7 @@
             @foreach($normal_properties as $property)
             <div class="col s12 m3">
                 <div class="card property__block property__block--for-{{ $property->purpose }} property__block--{{ $property->type }} property__block--type-{{ ucfirst($property->type) }}">
-                    <a href="{{ route('property.show',$property->slug) }}" class=" tooltipped" data-position="bottom" data-tooltip="{{ $property->title }}">
+                    <a href="{{ route('property.show',$property->slug) }}" title="{{ $property->title }}">
                         <div class="card-image">
                             @if(Storage::disk('public')->exists('property/'.$property->image) && $property->image)
                             <span class="card-image-bg">
