@@ -114,3 +114,7 @@
     </div>
 </div>
 </footer>
+
+<script type="text/javascript">
+    jQuery( '.sidebar-search' ).parents( 'body' ).addClass( 'has-side-bar' ).find( '.indigo.search-bar' ).remove();
+</script>

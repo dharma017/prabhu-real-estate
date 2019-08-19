@@ -587,8 +587,8 @@ a.city-list {
 h2.sidebar-title {
 	text-transform: uppercase;
 	font-size: 24px;
-	margin-left: 15px;
-	font-weight: bold;
+	font-weight: 700;
+	margin: 20px 15px;
 }
 
 .sidebar-search .searchbar {
@@ -1336,6 +1336,14 @@ li.collection.agent-message {
 	bottom: auto !important
 }
 
+.has-side-bar .main {
+	padding-top: 30px;
+}
+
+.has-side-bar .indigo.search-bar {
+	display: none;
+}
+
 @media all and ( min-width: 230px ) {
 	.s12 {
 		width: 100%;
@@ -1490,6 +1498,12 @@ li.collection.agent-message {
 		background: rgba( 0, 0, 0, 0.5 );
 		padding-left: 10px;	
 		padding-right: 10px;
+	}
+
+	.sidebar-search .searchbar {
+		height: auto;
+		background: none;
+		margin: 0;
 	}
 
 	.carousel + .search-bar .search-bar__fixed {
