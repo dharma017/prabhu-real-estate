@@ -242,6 +242,7 @@
 
 .section-properties .card .card-image img {
 	height: 100%;
+	width: auto;
 	position: absolute;
 	left: 50%;
 	top: 0;
