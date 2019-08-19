@@ -1319,12 +1319,21 @@ li.collection.agent-message {
 	opacity: 1;
 }
 
+.swiper-slide,
 .swiper-container img {
 	max-width:  100%;
 }
 
 .gallery-top img {
 	width: 100%;
+}
+
+.gm-control-active>img {
+	position: absolute !important;
+	left: 50% !important;
+	top: 50% !important;
+	right: auto !important;
+	bottom: auto !important
 }
 
 @media all and ( min-width: 230px ) {
