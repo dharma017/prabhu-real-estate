@@ -70,9 +70,9 @@
 <script>
 	var galleryThumbs = new Swiper('.gallery-thumbs', {
 		spaceBetween: 10,
-		slidesPerView: 1,
+		slidesPerView: 4,
 		loop: true,
-		// freeMode: true,
+		freeMode: true,
 		loopedSlides: 5, //looped slides should be the same
 		watchSlidesVisibility: true,
 		watchSlidesProgress: true,
