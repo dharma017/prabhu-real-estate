@@ -1432,7 +1432,7 @@ li.collection.agent-message {
 		height: auto;
 	}
 
-	.section-properties .card-image-bg img {
+	.section-properties .card .card-image img {
 		position: static;
 		-webkit-transform: none;
 		   -moz-transform: none;
