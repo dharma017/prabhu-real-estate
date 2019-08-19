@@ -154,6 +154,13 @@
                         <span class="font-18">{{ $property->address }}</span>
                     </div>
 
+                    <div class="address m-b-30">
+                        <i class="small material-icons left">person</i>
+                        <span class="font-18">{{ $property->contact_name }}</span>
+                        <i class="small material-icons left">phone</i>
+                        <span class="font-18">{{ $property->contact_number }}</span>
+                    </div>
+
                     <div>
                         @if($property->view_count) <span
                                 class="btn btn-small disabled b-r-20 m-t-10">Views: {{ $property->view_count}} </span> @endif
