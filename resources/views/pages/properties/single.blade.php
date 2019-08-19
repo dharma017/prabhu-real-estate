@@ -156,7 +156,7 @@
 
                     <div>
                         @if($property->view_count) <span
-                                class="btn btn-small disabled b-r-20 m-t-10">Views: {{ $property->view_count}} </span> @endif
+                                class="btn btn-small disabled b-r-20 m-t-10"><i class="material-icons">visibility</i> Views: {{ $property->view_count}} </span> @endif
                         @if($property->bedroom) <span
                                 class="btn btn-small disabled b-r-20 m-t-10">Bedroom: {{ $property->bedroom}} </span> @endif
                         @if($property->bathroom)<span
@@ -172,9 +172,9 @@
                         @if($property->parking) <span
                                 class="btn btn-small disabled b-r-20 m-t-10">Parking: {{ $property->parking}} </span>@endif
                         @if($property->area)<span
-                                class="btn btn-small disabled b-r-20 m-t-10">Area: {{ $property->area}} Sq Ft</span>@endif
+                                class="btn btn-small disabled b-r-20 m-t-10"><i class="small-icons icon-area"></i> Area: {{ $property->area}} sq.ft</span>@endif
                         @if($property->land_area)<span
-                                class="btn btn-small disabled b-r-20 m-t-10">Land Area: {{ $property->land_area}}</span>@endif
+                                class="btn btn-small disabled b-r-20 m-t-10"><i class="small-icons icon-bathroom"></i> Land Area: {{ $property->land_area}}</span>@endif
                     </div>
                 </div>
                 <div class="col s12 m4">

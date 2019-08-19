@@ -1346,10 +1346,22 @@ li.collection.agent-message {
 	display: none;
 }
 
+.has-side-bar .btn.disabled {
+	text-transform: none;
+}
+
 h1.single-title {
 	margin-top: 0;
 	color: #3366ff;
 	font-weight: 600;
+}
+
+.sidebar-search .col.input-field {
+	margin-bottom: 0;
+}
+
+.collection.with-header {
+	padding-bottom: 20px;
 }
 
 @media all and ( min-width: 230px ) {
@@ -1471,6 +1483,10 @@ h1.single-title {
 		width:  50%;
 		flex:  50%;
 		max-width:  50%;
+	}
+
+	h1.single-title {
+		font-size: 2.4rem;
 	}
 }
 
