@@ -154,9 +154,11 @@
                         <span class="font-18">{{ $property->address }}</span>
                     </div>
 
-                    <div class="address m-b-30">
+                    <div class="contact-person m-b-30">
                         <i class="small material-icons left">person</i>
                         <span class="font-18">{{ $property->contact_name }}</span>
+                    </div>
+                    <div class="contact-number m-b-30">
                         <i class="small material-icons left">phone</i>
                         <span class="font-18">{{ $property->contact_number }}</span>
                     </div>
