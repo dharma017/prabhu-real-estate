@@ -26,7 +26,7 @@
                                     <span class="card-title search-title" title="{{$property->title}}">
                                         <a href="{{ route('property.show',$property->slug) }}">{{ $property->title }}</a>
                                     </span>
-                                    
+
                                     <div class="address">
                                         <i class="small material-icons left">location_city</i>
                                         <span>{{ ucfirst($property->city) }}</span>
@@ -45,11 +45,11 @@
                                 <div class="card-action property-action clearfix">
                                     <span class="btn-flat">
                                         <i class="material-icons">check_box</i>
-                                        Bedroom: <strong>{{ $property->bedroom}}</strong> 
+                                        Bedroom: <strong>{{ $property->bedroom}}</strong>
                                     </span>
                                     <span class="btn-flat">
                                         <i class="material-icons">check_box</i>
-                                        Bathroom: <strong>{{ $property->bathroom}}</strong> 
+                                        Bathroom: <strong>{{ $property->bathroom}}</strong>
                                     </span>
                                     <span class="btn-flat">
                                         <i class="material-icons">check_box</i>
@@ -73,7 +73,7 @@
 
 
                     <div class="m-t-30 m-b-60 center">
-                        {{ 
+                        {{
                             $properties->appends([
                                 'city'      => Request::get('city'),
                                 'type'      => Request::get('type'),
@@ -85,13 +85,14 @@
                                 'minarea'   => Request::get('minarea'),
                                 'maxarea'   => Request::get('maxarea'),
                                 'featured'  => Request::get('featured')
-                            ])->links() 
+                            ])->links()
                         }}
                     </div>
-        
+
                 </div>
 
                 <div class="col s12 m4 card">
+                    <div class="collection with-header  m-t-0">
 
                     <h2 class="sidebar-title">search property</h2>
 
@@ -174,13 +175,14 @@
                             </div>
                             <div class="input-field col s12">
                                 <button class="btn btnsearch indigo" type="submit">
-                                    <i class="material-icons left">search</i>
+                                    <i class="material-icons">search</i>
                                     <span>SEARCH</span>
                                 </button>
                             </div>
                         </div>
 
                     </form>
+                </div>
 
                 </div>
 
