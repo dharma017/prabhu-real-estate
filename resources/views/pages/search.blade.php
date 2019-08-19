@@ -91,7 +91,7 @@
 
                 </div>
 
-                <div class="col s12 m4 card">
+                <div class="col s12 m4">
                     <div class="collection with-header  m-t-0">
 
                     <h2 class="sidebar-title">search property</h2>
