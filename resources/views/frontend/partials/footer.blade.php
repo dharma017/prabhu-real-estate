@@ -114,9 +114,3 @@
     </div>
 </div>
 </footer>
-
-<script type="text/javascript">
-    $( document ).ready( function () {
-        $( '.sidebar-search' ).parents( 'body' ).addClass( 'has-side-bar' ).find( '.indigo.search-bar' ).remove();
-    });
-</script>

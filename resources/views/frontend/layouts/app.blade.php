@@ -118,6 +118,7 @@
 
             $('.tooltipped').tooltip();
 
+             $( '.sidebar-search' ).parents( 'body' ).addClass( 'has-side-bar' ).find( '.indigo.search-bar' ).remove();
         });
         </script>
 
