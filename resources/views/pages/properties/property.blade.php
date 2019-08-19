@@ -6,7 +6,7 @@
 
 @section('content')
 
-<section class="section">
+<section class="section section-properties">
 	<div class="container">
 
 		<div class="row">
@@ -59,7 +59,7 @@
 
                             <h5>
                                 {{@money_format_nep($property->price)}}
-                                <div class="right" id="propertyrating-{{$property->id}}"></div>
+                                <!-- <div class="right" id="propertyrating-{{$property->id}}"></div> -->
                             </h5>
                         </div>
                         <div class="card-action property-action">

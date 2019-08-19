@@ -62,7 +62,7 @@
 
                             <h5>
                                 {{@money_format_nep($property->price)}}
-                                <div class="right" id="propertyrating-{{$property->id}}"></div>
+                                <!-- <div class="right" id="propertyrating-{{$property->id}}"></div> -->
                             </h5>
                         </div>
                         <div class="card-action property-action">
@@ -135,7 +135,7 @@
 
                             <h5>
                                 {{@money_format_nep($property->price)}}
-                                <div class="right" id="propertyrating-{{$property->id}}"></div>
+                                <!-- <div class="right" id="propertyrating-{{$property->id}}"></div> -->
                             </h5>
                         </div>
                         <div class="card-action property-action">
@@ -206,7 +206,7 @@
 
                             <h5>
                                 {{@money_format_nep($property->price)}}
-                                <div class="right" id="propertyrating-{{$property->id}}"></div>
+                                <!-- <div class="right" id="propertyrating-{{$property->id}}"></div> -->
                             </h5>
                         </div>
                         <div class="card-action property-action">
@@ -274,7 +274,7 @@
 
                             <h5>
                                 {{@money_format_nep($property->price)}}
-                                <div class="right" id="propertyrating-{{$property->id}}"></div>
+                                <!-- <div class="right" id="propertyrating-{{$property->id}}"></div> -->
                             </h5>
                         </div>
                         <div class="card-action property-action">
