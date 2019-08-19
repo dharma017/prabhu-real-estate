@@ -245,7 +245,7 @@
                         </div>
                         <div class="card-image">
                             <!-- <div id="map"></div> -->
-                            <iframe src="http://maps.google.com/maps?q=<?php echo $property->location_latitude; ?>, <?php echo $property->location_longitude; ?>&z=12&output=embed" width="360" height="270" frameborder="0" style="border:0"></iframe>
+                            <iframe src="https://maps.google.com/maps?q=<?php echo $property->location_latitude; ?>, <?php echo $property->location_longitude; ?>&z=12&output=embed" width="100%" height="360" frameborder="0" style="border:0"></iframe>
                         </div>
                     </div>
 
@@ -510,7 +510,7 @@
                                     </div>
                                     <div class="input-field col s12">
                                         <button class="btn btnsearch indigo" type="submit">
-                                            <i class="material-icons left">search</i>
+                                            <i class="material-icons">search</i>
                                             <span>SEARCH</span>
                                         </button>
                                     </div>

@@ -603,14 +603,16 @@ h2.sidebar-title {
 .sidebar-search .btnsearch {
 	width: 100%;
 	box-shadow: none;
-	background-color: rgb(30, 47, 126) !important;
+	background-color: #3366ff !important;
 	color: #ffffff;
 }
 
 .sidebar-search .btnsearch span {
-	padding-top: 5px;
-	display: block;
+	/* padding-top: 5px; */
+	display: inline-block;
 	font-weight: bold;
+	position: relative;
+	top: -4px;
 }
 
 .featured-stars i {
@@ -1342,6 +1344,12 @@ li.collection.agent-message {
 
 .has-side-bar .indigo.search-bar {
 	display: none;
+}
+
+h1.single-title {
+	margin-top: 0;
+	color: #3366ff;
+	font-weight: 600;
 }
 
 @media all and ( min-width: 230px ) {
