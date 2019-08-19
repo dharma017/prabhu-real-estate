@@ -7,10 +7,10 @@
 @section('content')
 
     <section class="section">
-        <div class="max-width auth-page">
-    <div class="row">
-        <div class="col s12 m6 offset-m3">
-            <div class="card">
+        <div class="container max-width ">
+            <div class="row">
+                <div class="col s12 m8">
+                    <div class="contact-content">
                         <h4 class="contact-title">Service Request</h4>
 
                         <form id="contact-us" action="" method="POST">
