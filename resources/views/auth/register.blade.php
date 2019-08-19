@@ -1,7 +1,7 @@
 @extends('frontend.layouts.app')
 
 @section('content')
-
+<div class="max-width auth-page">
     <div class="row">
         <div class="col s12 m6 offset-m3">
             <div class="card">
@@ -36,12 +36,12 @@
                                 @endif
                             </div>
                         </div>
-                        
+
                         <div class="row">
                             <div class="input-field col s12">
                                 <label for="password">{{ __('Password') }}</label>
                                 <input id="password" type="password" class="{{ $errors->has('password') ? 'is-invalid' : '' }}" name="password" required>
-                                
+
                                 @if ($errors->has('password'))
                                 <span class="helper-text" data-error="wrong" data-success="right">
                                     <strong>{{ $errors->first('password') }}</strong>
@@ -49,21 +49,21 @@
                                     @endif
                             </div>
                         </div>
-                        
+
                         <div class="row">
                             <div class="input-field col s12">
                                 <label for="password-confirm">{{ __('Confirm Password') }}</label>
                                 <input id="password-confirm" type="password" name="password_confirmation" required>
                             </div>
                         </div>
-                        
+
 {{--                        <p>--}}
 {{--                            <label>--}}
 {{--                                <input type="checkbox" name="agent" class="filled-in" />--}}
 {{--                                <span>{{ __('Registration as Agent') }}</span>--}}
 {{--                            </label>--}}
 {{--                        </p>--}}
-                        
+
                         <div class="row">
                             <div class="input-field col s12">
                                 <button type="submit" class="waves-effect waves-light btn indigo">
@@ -76,5 +76,6 @@
             </div>
         </div>
     </div>
+</div>
 </div>
 @endsection

@@ -9,7 +9,6 @@
     <section class="section">
         <div class="container">
             <div class="row">
-
                 <div class="col s12 m8">
                     <div class="contact-content">
                         <h4 class="contact-title">Service Request</h4>
@@ -64,7 +63,7 @@
                                 <label for="message">Message</label>
                             </div>
 
-                            <div class="row">
+                            <!-- <div class="row"> -->
                                 <div class="col s12">
                                     <label for="phone">Purpose</label>
                                     <br>
@@ -83,8 +82,8 @@
                                         </label>
                                     </p>
                                 </div>
-                            </div>
-                            
+                            <!-- </div> -->
+
                             <button id="msgsubmitbtn" class="btn waves-effect waves-light indigo darken-4 btn-large" type="submit">
                                 <span>SEND</span>
                                 <i class="material-icons right">send</i>

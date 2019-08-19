@@ -68,34 +68,35 @@
             <div class="text-center footer-contact">
                 <h5 class="white-text uppercase">Contact our team</h5>
                 <p>If you need further support to list or find properties, our team is ready to support.</p>
+                <div class="row">
+                    <div class="col col-md-8">
+                        <div class="row">
+                            <div class="col s6 m3 text-center">
+                                <a href="tel:+977-01 41XXXXXX">
+                                    <i class="fa fa-phone fa-3x"></i>
+                                    <p>+977-01 41XXXXXX</p>
+                                </a>
+                            </div>
 
-                <div class="col col-md-8">
-                    <div class="row">
-                        <div class="col s6 m3 text-center">
-                            <a href="tel:+977-01 41XXXXXX">
-                                <i class="fa fa-phone fa-3x"></i>
-                                <p>+977-01 41XXXXXX</p>
-                            </a>
-                        </div>
+                            <div class="col s6 m3 text-center">
+                                <a href="viber://add?number=+977-9851156029" title="Viber">
+                                    <i class="fab fa-viber fa-3x"></i>
+                                    <p>+977-9851156029</p>
+                                </a>
+                            </div>
 
-                        <div class="col s6 m3 text-center">
-                            <a href="viber://add?number=+977-9851156029" title="Viber">
-                                <i class="fab fa-viber fa-3x"></i>
-                                <p>+977-9851156029</p>
-                            </a>
-                        </div>
+                            <div class="col s6 m3 text-center">
+                                <a href="mailto:info@prabhurealestate.com"><i class="fa fa-envelope fa-3x"></i>
+                                    <p>info@prabhurealestate.com</p>
+                                </a>
+                            </div>
 
-                        <div class="col s6 m3 text-center">
-                            <a href="mailto:info@prabhurealestate.com"><i class="fa fa-envelope fa-3x"></i>
-                                <p>info@prabhurealestate.com</p>
-                            </a>
-                        </div>
-
-                        <div class="col s6 m3 text-center">
-                            <a href="fb.com/prabhurealestate" target="_blank">
-                                <i class="fab fa-facebook-square fa-3x"></i>
-                                <p> fb.com/prabhurealestate</p>
-                            </a>
+                            <div class="col s6 m3 text-center">
+                                <a href="fb.com/prabhurealestate" target="_blank">
+                                    <i class="fab fa-facebook-square fa-3x"></i>
+                                    <p> fb.com/prabhurealestate</p>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
