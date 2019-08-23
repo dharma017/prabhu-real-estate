@@ -72,9 +72,9 @@
                     <div class="col col-md-8">
                         <div class="row">
                             <div class="col s6 m3 text-center">
-                                <a href="tel:+977-01 41XXXXXX">
+                                <a href="tel:+977-9851156029">
                                     <i class="fa fa-phone fa-3x"></i>
-                                    <p>+977-01 41XXXXXX</p>
+                                    <p>+977-9851156029</p>
                                 </a>
                             </div>
 
@@ -92,7 +92,7 @@
                             </div>
 
                             <div class="col s6 m3 text-center">
-                                <a href="fb.com/prabhurealestate" target="_blank">
+                                <a href="https://fb.com/prabhurealestate" target="_blank">
                                     <i class="fab fa-facebook-square fa-3x"></i>
                                     <p> fb.com/prabhurealestate</p>
                                 </a>
