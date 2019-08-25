@@ -1052,7 +1052,9 @@ li.collection.agent-message {
 
 
 @media all and ( min-width: 240px ) {
-	.col-12 {
+	.col-12,
+	.col-md-7,
+	.col-md-10 {
 		width: 100%;
 		flex:  100%;
 		max-width: 100%;
@@ -1118,6 +1120,22 @@ li.collection.agent-message {
 		width: 25%;
 		flex:  25%;
 		max-width: 25%;
+	}
+
+	.col-md-7 {
+		flex: 58.333333333333336%;
+		max-width: 58.333333333333336%;
+		width: 58.333333333333336%;
+	}
+
+	.col-md-10 {
+		flex:  83.33333333333334%;
+		max-width: 83.33333333333334%;
+		width: 83.33333333333334%;
+	}
+
+	.justify-content-md-center {
+		justify-content: center;
 	}
 }
 
