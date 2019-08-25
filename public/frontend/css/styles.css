@@ -1060,11 +1060,44 @@ li.collection.agent-message {
 		margin-bottom: 10px;
 		padding-left: 0.75rem;
 		padding-right: 0.75rem;
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+	}
+
+	.price-wrap {
+		padding: 14px 20px;
+		border-radius: 6px;
+		box-shadow: 2px 3px 10px rgba( 0, 0, 0, 0.1 );
+		width: 100%;
+	}
+
+	.price-list .price-wrap {
+		background-color:  rgb(240, 248, 255);
+	}
+
+	.price-list .col-12 + .col-12 .price-wrap {
+    	background: rgba(127, 255, 212, 0.1);
+	}
+
+	.price-list .col-12 + .col-12 + .col-12 .price-wrap {
+    	background: rgb(245, 245, 220);
+	}
+
+	.price-list .col-12 + .col-12 + .col-12 + .col-12 .price-wrap {
+    	background: rgb(240, 230, 140);
+	}
+
+	.price-wrap li {
+		margin-bottom: 6px;
 	}
 
 	.price-list-wrap h3 {
 		font-size: 1.5rem;
 		font-weight: 700;
+		margin-top: 10px;
 	}
 
 	.amount-wrap {
