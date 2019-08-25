@@ -1076,6 +1076,10 @@ li.collection.agent-message {
 		width: 100%;
 	}
 
+	.col-md-7.text-center {
+		text-align: left;
+	}
+
 	.price-list .price-wrap {
 		background-color:  rgb(240, 248, 255);
 	}
@@ -1123,9 +1127,10 @@ li.collection.agent-message {
 	}
 
 	.col-md-7 {
-		flex: 58.333333333333336%;
+		/* flex: 58.333333333333336%;
 		max-width: 58.333333333333336%;
-		width: 58.333333333333336%;
+		width: 58.333333333333336%; */
+		padding-right: 41.66666666667%;
 	}
 
 	.col-md-10 {
