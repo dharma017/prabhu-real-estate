@@ -1058,6 +1058,8 @@ li.collection.agent-message {
 		max-width: 100%;
 		margin-top: 10px;
 		margin-bottom: 10px;
+		padding-left: 0.75rem;
+		padding-right: 0.75rem;
 	}
 
 	.price-list-wrap h3 {
