@@ -1049,6 +1049,43 @@ li.collection.agent-message {
 	margin-bottom: 20px;
 }
 
+
+
+@media all and ( min-width: 240px ) {
+	.col-12 {
+		width: 100%;
+		flex:  100%;
+		max-width: 100%;
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+
+	.price-list-wrap h3 {
+		font-size: 1.5rem;
+		font-weight: 700;
+	}
+
+	.amount-wrap {
+		font-weight: 700;
+	}
+}
+
+@media all and ( min-width: 575px ) {
+	.col-md-3 {
+		width: 50%;
+		flex:  50%;
+		max-width: 50%;
+	}
+}
+
+@media all and ( min-width: 1024px ) {
+	.col-md-3 {
+		width: 25%;
+		flex:  25%;
+		max-width: 25%;
+	}
+}
+
 .card {
 	/* height: 100%; */
 	margin: 0;
