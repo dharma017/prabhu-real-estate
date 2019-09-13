@@ -168,6 +168,14 @@
                     </div>
                     @endif
 
+                     @if($property->alt_contact_number)
+                    <div class="contact-number m-b-30">
+                        <i class="small material-icons left">phone</i>
+                        <span class="font-18">{{ $property->alt_contact_number }}</span>
+                    </div>
+                    @endif
+
+
                     <div>
                         @if($property->view_count) <span
                                 class="btn btn-small disabled b-r-20 m-t-10">Views: {{ $property->view_count}} </span> @endif
