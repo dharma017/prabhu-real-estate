@@ -161,18 +161,18 @@
                     </div>
                     @endif
 
-                    @if($property->contact_number)
+                    @if($property->contact_number || $property->alt_contact_number)
                     <div class="contact-number m-b-30">
                         <i class="small material-icons left">phone</i>
-                        <span class="font-18">{{ $property->contact_number }}</span>
+                        <span class="font-18">{{ $property->contact_number }}@if($property->alt_contact_number), {{ $property->alt_contact_number }}@endif</span>
                     </div>
                     @endif
 
                      @if($property->alt_contact_number)
-                    <div class="contact-number m-b-30">
+                    <!-- <div class="contact-number m-b-30">
                         <i class="small material-icons left">phone</i>
                         <span class="font-18">{{ $property->alt_contact_number }}</span>
-                    </div>
+                    </div> -->
                     @endif
 
 
@@ -206,11 +206,11 @@
                         </h4>
                         <span class="left w100">({{@money_in_words($property->price)}})</span>
                             @if($property->available)
-                                <button type="button" class="btn btn-small m-t-25 left disabled b-r-20">
+                                <button type="button" class="btn btn-small m-t-25 m-r-5 left disabled b-r-20">
                                     For {{ $property->purpose }}
                                 </button>
                             @else
-                                <button type="button" class="btn btn-small m-t-25 left b-r-20 red">
+                                <button type="button" class="btn btn-small m-t-25 m-r-5 left b-r-20 red">
                                     Sold
                                 </button>
                             @endif
