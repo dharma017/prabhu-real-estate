@@ -19,9 +19,11 @@
                             <div>
                                 <div class="card-content property-content">
                                     @if(Storage::disk('public')->exists('property/'.$property->image) && $property->image)
+                                    <a href="{{ route('property.show',$property->slug) }}" title="{{ $property->title }}">
                                         <div class="card-image blog-content-image">
                                             <img src="{{Storage::url('property/'.$property->image)}}" alt="{{$property->title}}">
                                         </div>
+                                    </a>
                                     @endif
                                     <span class="card-title search-title" title="{{$property->title}}">
                                         <a href="{{ route('property.show',$property->slug) }}">{{ $property->title }}</a>
