@@ -58,7 +58,7 @@
                                     </span>
                                     <span class="btn-flat">
                                         <i class="material-icons">check_box</i>
-                                        Area: <strong>{{ $property->area}}</strong> Sq Ft
+                                        Area: <strong>{{ $property->area}}</strong> 
                                     </span>
                                     
                                     @if($property->featured == 1)

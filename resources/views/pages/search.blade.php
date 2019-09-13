@@ -36,9 +36,16 @@
                                         <span>{{ ucfirst($property->address) }}</span>
                                     </div>
 
+                                    <div class="address">
+                                        <i class="small material-icons left">event_note</i>
+                                        <span>{{ $property->type }} for {{ $property->purpose }}</span>
+                                    </div>
+
                                     <h5>
                                         {{@money_format_nep($property->price)}}
-                                        <small class="right">{{ $property->type }} for {{ $property->purpose }}</small>
+                                        @if(isset($property->negotiable))
+                                            <small class="right">{{ $property->negotiable == 1 ? 'Negotiable' : 'Fixed'}}</small>
+                                        @endif
                                     </h5>
 
                                 </div>
@@ -53,7 +60,7 @@
                                     </span>
                                     <span class="btn-flat">
                                         <i class="material-icons">check_box</i>
-                                        Area: <strong>{{ $property->area}}</strong> Sq Ft
+                                        Area: <strong>{{ $property->area}}</strong> 
                                     </span>
                                     <span class="btn-flat">
                                         <i class="material-icons">visibility</i>

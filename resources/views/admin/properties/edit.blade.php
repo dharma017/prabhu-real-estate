@@ -127,10 +127,10 @@
 
                     <div class="form-group form-float">
                         <div class="form-line">
-                            <input type="number" class="form-control" name="area" value="{{$property->area}}">
+                            <input type="text" class="form-control" name="area" value="{{$property->area}}">
                             <label class="form-label">Area</label>
                         </div>
-                        <div class="help-info">Square Feet</div>
+                        <!-- <div class="help-info">Square Feet</div> -->
                     </div>
 
                     <div class="form-group form-float">

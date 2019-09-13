@@ -194,7 +194,7 @@
                         @if($property->parking) <span
                                 class="btn btn-small disabled b-r-20 m-t-10">Parking: {{ $property->parking}} </span>@endif
                         @if($property->area)<span
-                                class="btn btn-small disabled b-r-20 m-t-10">Area: {{ $property->area}} sq.ft.</span>@endif
+                                class="btn btn-small disabled b-r-20 m-t-10">Area: {{ $property->area}} </span>@endif
                         @if($property->land_area)<span
                                 class="btn btn-small disabled b-r-20 m-t-10">Land Area: {{ $property->land_area}}</span>@endif
                     </div>

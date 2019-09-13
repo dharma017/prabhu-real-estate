@@ -85,12 +85,12 @@
                         </li>
                         <li class="list-group-item">
                             <strong>House Area : </strong>
-                            <span class="right">{{$property->house_area}} Square Feet</span>
+                            <span class="right">{{$property->area}}</span>
                         </li>
-                        <li class="list-group-item">
+                        <!-- <li class="list-group-item">
                             <strong>Flat Area : </strong>
-                            <span class="right">{{$property->flat_area}} Square Feet</span>
-                        </li>
+                            <span class="right">{{$property->flat_area}}</span>
+                        </li> -->
                         <li class="list-group-item">
                             <strong>Land Area : </strong>
                             <span class="right">{{$property->land_area}}</span>
