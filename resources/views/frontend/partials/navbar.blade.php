@@ -4,12 +4,13 @@
             <div class="nav-wrapper">
 
                 <a href="{{ route('home') }}" class="brand-logo">
-                    @if(isset($navbarsettings[0]) && $navbarsettings[0]['name'])
+                    <!-- @if(isset($navbarsettings[0]) && $navbarsettings[0]['name'])
                         {{ $navbarsettings[0]['name'] }}
                     @else
                         Real State
                     @endif
-                    <i class="material-icons left">location_city</i>
+                    <i class="material-icons left">location_city</i> -->
+                    <img src="{{ asset('frontend/images/logo.jpg') }}" alt="" class="img-responsive" />
                 </a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger">
                     <i class="material-icons">menu</i>
