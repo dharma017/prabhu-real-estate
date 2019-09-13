@@ -214,6 +214,10 @@
                                     Sold
                                 </button>
                             @endif
+
+                             @if(isset($property->negotiable))
+                                <button type="button" class="btn btn-small m-t-25 left disabled b-r-20">{{ $property->negotiable == 1 ? 'Negotiable' : 'Fixed'}}</button>
+                            @endif
                     </div>
                 </div>
             </div>
