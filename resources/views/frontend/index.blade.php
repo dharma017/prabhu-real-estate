@@ -78,7 +78,7 @@
                             </span>
                             <span class="btn-flat count-area">
                                 <i class="small-icons icon-area"></i>
-                                <strong>{{ $property->area}}</strong> 
+                                <strong>{{ $property->area}}</strong>
                             </span>
                              <span class="btn-flat count-visit">
                                 <i class="material-icons">visibility</i>
@@ -137,6 +137,10 @@
 
                             <h5>
                                 {{@money_format_nep($property->price)}}
+
+                                @if(isset($property->negotiable))
+                                    <small class="right">{{ $property->negotiable == 1 ? 'Negotiable' : 'Fixed'}}</small>
+                                @endif
                                 <!-- <div class="right" id="propertyrating-{{$property->id}}"></div> -->
                             </h5>
                         </div>
@@ -151,7 +155,7 @@
                             </span>
                             <span class="btn-flat count-area">
                                 <i class="small-icons icon-area"></i>
-                                <strong>{{ $property->area}}</strong> 
+                                <strong>{{ $property->area}}</strong>
                             </span>
                              <span class="btn-flat count-visit">
                                 <i class="material-icons">visibility</i>
@@ -208,6 +212,9 @@
 
                             <h5>
                                 {{@money_format_nep($property->price)}}
+                                @if(isset($property->negotiable))
+                                    <small class="right">{{ $property->negotiable == 1 ? 'Negotiable' : 'Fixed'}}</small>
+                                @endif
                                 <!-- <div class="right" id="propertyrating-{{$property->id}}"></div> -->
                             </h5>
                         </div>
@@ -222,7 +229,7 @@
                             </span>
                             <span class="btn-flat count-area">
                                 <i class="small-icons icon-area"></i>
-                                <strong>{{ $property->area}}</strong> 
+                                <strong>{{ $property->area}}</strong>
                             </span>
                              <span class="btn-flat count-visit">
                                 <i class="material-icons">visibility</i>
@@ -276,6 +283,9 @@
 
                             <h5>
                                 {{@money_format_nep($property->price)}}
+                                @if(isset($property->negotiable))
+                                    <small class="right">{{ $property->negotiable == 1 ? 'Negotiable' : 'Fixed'}}</small>
+                                @endif
                                 <!-- <div class="right" id="propertyrating-{{$property->id}}"></div> -->
                             </h5>
                         </div>
@@ -290,7 +300,7 @@
                             </span>
                             <span class="btn-flat count-area">
                                 <i class="small-icons icon-area"></i>
-                                <strong>{{ $property->area}}</strong> 
+                                <strong>{{ $property->area}}</strong>
                             </span>
                              <span class="btn-flat count-visit">
                                 <i class="material-icons">visibility</i>

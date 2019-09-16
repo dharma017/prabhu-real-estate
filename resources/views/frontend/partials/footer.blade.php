@@ -8,6 +8,21 @@
                 @else
                 <p class="grey-text text-lighten-4">Real estate company description goes here.</p>
                 @endif
+
+                <div class="social-media">
+                    <p class="grey-text text-lighten-4">
+                        You can find us on social media too.
+                    </p>
+                    <p>
+                        <a href="https://www.facebook.com/prabhurealestatenepal/?modal=admin_todo_tour" target="_blank">
+                            <i class="fab fa-facebook-square fa-2x"></i>
+                        </a>
+
+                        <a href="https://www.youtube.com/channel/UCtQ6rWPxx0SR6rit1mbSzBA" target="_blank">
+                            <i class="fab fa-youtube-square fa-2x"></i>
+                        </a>
+                    </p>
+                </div>
             </div>
             <div class="col m2 s6">
                 <h5 class="white-text uppercase">Menu</h5>
