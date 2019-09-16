@@ -12,47 +12,39 @@ class FrontpageController extends Controller {
 		$sliders = Slider::latest()->get();
 
 		$special_properties = Property::latest()
-			->with('rating')
-			->withCount('comments')
 			->whereHas('features', function ($query) {
 				$query->where('features.slug', '=', 'special-listing');
 			})
 			->where('status', 1)
+			->orderBy('created_at', 'DESC')
 			->take(12)
 			->get();
 
 		$top_properties = Property::latest()
-			->with('rating')
-			->withCount('comments')
 			->whereHas('features', function ($query) {
 				$query->where('features.slug', '=', 'top-listing');
 			})
 			->where('status', 1)
+			->orderBy('created_at', 'DESC')
 			->take(12)
 			->get();
 
 		$featured_properties = Property::latest()
-			->with('rating')
-			->withCount('comments')
 			->whereHas('features', function ($query) {
 				$query->where('features.slug', '=', 'featured-listing');
 			})
 			->where('status', 1)
+			->orderBy('created_at', 'DESC')
 			->take(12)
 			->get();
 
 		$normal_properties = Property::latest()
-			->with('rating')
-			->withCount('comments')
 			->whereHas('features', function ($query) {
 				$query->where('features.slug', '=', 'normal-listing');
 			})
 			->where('status', 1)
+			->orderBy('created_at', 'DESC')
 			->get();
-
-		// $services       = Service::orderBy('service_order')->get();
-		// $testimonials   = Testimonial::latest()->get();
-		// $posts          = Post::latest()->where('status',1)->take(6)->get();
 
 		return view('frontend.index',
 			compact('sliders', 'special_properties', 'top_properties', 'featured_properties', 'normal_properties'));
