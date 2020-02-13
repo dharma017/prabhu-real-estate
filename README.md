@@ -1,4 +1,4 @@
-## Prabhu Real Estate
+## Real Estate Website
 
 ### Frameworks
 1. Laravel 5.6
@@ -26,8 +26,8 @@
     3. Change Password
 
 ### Install
-01. `git clone git@github.com:dharma017/prabhu-real-estate.git`
-02. `cd prabhu-real-estate`
+01. `git clone git@github.com:dharma017/real-estate-website.git`
+02. `cd real-estate-website`
 03. `composer install`
 04. `cp .env.example .env`
 05. `php artisan key:generate`
